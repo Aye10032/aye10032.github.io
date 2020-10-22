@@ -13,7 +13,7 @@ enableToc: true
 
 # Comment
 comment:
-    livere: MTAyMC81MDk5NC8yNzQ3Ng  # https://www.livere.com
+    livere: MTAyMC8zNzA5MC8xMzYyNg==  # https://www.livere.com
     # disqus: leopard
     # uyan: 2143225  # 有言id,登录有言官网申请
 
@@ -36,7 +36,7 @@ social:
 # Google Analytics
 # 使用博客模板请去掉或者更换 id
 ga:
-    id: UA-84134159-3  
+    id: UA-181041967-1
     host: auto  
 
 
