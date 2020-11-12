@@ -85,7 +85,7 @@ free -m
 
 若看到类似如下信息，则说明修改成功：
 
-![](\images\posts\picv\Screen-Shot-2018-11-21-at-1.16.59-PM.png)
+![](/images/posts/picv/Screen-Shot-2018-11-21-at-1.16.59-PM.png)
 
 
 
@@ -190,17 +190,17 @@ git clone https://github.com/opencv/opencv_contrib.git
 
 若git下载缓慢，可以用gitee进行转载：
 
-![image-20201112202141441](\images\posts\picv\image-20201112202141441.png)
+![image-20201112202141441](/images/posts/picv/image-20201112202141441.png)
 
-![image-20201112202225347](\images\posts\picv\image-20201112202225347.png)
+![image-20201112202225347](/images/posts/picv/image-20201112202225347.png)
 
-![image-20201112202331350](\images\posts\picv\image-20201112202331350.png)
+![image-20201112202331350](/images/posts/picv/image-20201112202331350.png)
 
 
 
 之后只要将仓库代码换为gitee上你down下来的仓库地址即可：
 
-![image-20201112202546806](\images\posts\picv\image-20201112202546806.png)
+![image-20201112202546806](/images/posts/picv/image-20201112202546806.png)
 
 
 
