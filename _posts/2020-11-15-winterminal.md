@@ -34,7 +34,7 @@ windows terminal直接在应用商店里搜索安装即可：
 
 ## 二、安装Chocolatey
 
-Chocolatey是一个Windows下的包管理系统，我们下面的很多插件等都需要使用他来进行安装，安装非常简单，只需要在power shell中执行：
+Chocolatey是一个Windows下的包管理系统，我们下面的很多插件等都需要使用他来进行安装，安装非常简单，只需要在power shell中执行[^1]：
 
 ```powershell
 Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
@@ -42,3 +42,10 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManage
 
 即可完成安装
 
+
+
+
+
+## 参考文献：
+
+[^1]: [chocolatey官方文档](https://chocolatey.org/install#individual)
