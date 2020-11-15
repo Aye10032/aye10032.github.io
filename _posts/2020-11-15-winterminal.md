@@ -75,7 +75,12 @@ Install-Module posh-git -Scope CurrentUser
 Install-Module oh-my-posh -Scope CurrentUser
 ```
 
+同理，若网络条件不佳导致安装失败，可以考虑通过代理安装：
 
+```powershell
+Install-Module posh-git -Scope CurrentUser -Proxy "http://127.0.0.1:1080"
+Install-Module oh-my-posh -Scope CurrentUser -Proxy "http://127.0.0.1:1080"
+```
 
 
 
