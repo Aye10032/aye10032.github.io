@@ -44,11 +44,29 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManage
 
 ![tem2](/images/posts/winterminal/tem2.jpg)
 
+在下面的过程中，若碰到使用Choco命令安装软件包时出现超时报错的，可以考虑为Choco设置代理：
 
+```powershell
+choco config set proxy http://127.0.0.1:1080
+```
+
+![](/images/posts/winterminal/tem3.jpg)
 
 ## 三、安装oh-my-posh[^2]
 
 目前，只要安装了Windows terminal就可以直接安装oh-my-posh了。
+
+注意，下面的操作一定是在<font color=red>**以管理员身份运行的power shell中**</font>进行！
+
+首先在power shell中安装microsoft-windows-terminal包：
+
+```powershell
+choco install microsoft-windows-terminal
+```
+
+之中会碰到询问是否运行安装脚本，输入A（*意为全部同意*），回车
+
+![tem3](/images/posts/winterminal/tem4.jpg)
 
 分别在power shell中运行指令安装posh-git和oh-my-posh：
 
