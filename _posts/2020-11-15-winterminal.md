@@ -96,7 +96,7 @@ Install-Module -Name PSReadLine -AllowPrerelease -Scope CurrentUser -Force -Skip
 
 
 
-### 4、生成配置文件：
+### 4、生成配置文件
 
 ```powershell
 if (!(Test-Path -Path $PROFILE )) { New-Item -Type File -Path $PROFILE -Force }
@@ -116,6 +116,14 @@ Set-Theme Paradox
 ```
 
 最后一行为主题，你也可以换成你自己喜欢的主题[^3]
+
+之后运行此代码，使配置文件生效：
+
+```powershell
+set-executionpolicy remotesigned
+```
+
+
 
 ## 参考文献：
 
