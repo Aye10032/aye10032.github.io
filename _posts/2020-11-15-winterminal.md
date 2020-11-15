@@ -125,8 +125,19 @@ set-executionpolicy remotesigned
 
 
 
+### 5、安装支持字体
+
+由于主题涉及到一些特殊字符，因此需要安装支持这些特殊字符的字体，
+
+oh-my-posh官方文档中推荐的是[Meslo LG M Regular for Powerline Nerd Font](https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/Meslo/M/Regular/complete/Meslo%20LG%20M%20Regular%20Nerd%20Font%20Complete%20Mono.ttf)
+
+当然，你也可以前往这个字体所在的GitHub项目[^4]选择其他自己喜欢的字体下载。
+
+
+
 ## 参考文献：
 
 [^1]: [chocolatey官方文档](https://chocolatey.org/install#individual)
 [^2]:[oh-my-posh](https://github.com/JanDeDobbeleer/oh-my-posh)
 [^3]:[oh-my-posh 主题样例](https://github.com/JanDeDobbeleer/oh-my-posh#themes)
+[^4]: [nerd-fonts项目仓库](https://github.com/ryanoasis/nerd-fonts)
