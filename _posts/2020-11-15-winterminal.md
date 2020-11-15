@@ -42,7 +42,7 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManage
 
 即可完成安装
 
-
+![tem2](/images/posts/winterminal/tem2.jpg)
 
 
 
