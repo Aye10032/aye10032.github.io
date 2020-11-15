@@ -103,9 +103,22 @@ if (!(Test-Path -Path $PROFILE )) { New-Item -Type File -Path $PROFILE -Force }
 notepad $PROFILE
 ```
 
+第一行代码运行之后，即可通过第二行代码打开配置文件
 
+![](/images/posts/winterminal/tem6.jpg)
+
+在此配置文件中输入如下信息：
+
+```powershell
+Import-Module posh-git
+Import-Module oh-my-posh
+Set-Theme Paradox
+```
+
+最后一行为主题，你也可以换成你自己喜欢的主题[^3]
 
 ## 参考文献：
 
 [^1]: [chocolatey官方文档](https://chocolatey.org/install#individual)
 [^2]:[oh-my-posh](https://github.com/JanDeDobbeleer/oh-my-posh)
+[^3]:[oh-my-posh 主题样例](https://github.com/JanDeDobbeleer/oh-my-posh#themes)
