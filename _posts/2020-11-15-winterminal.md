@@ -58,7 +58,7 @@ choco config set proxy http://127.0.0.1:1080
 
 注意，下面的操作一定是在<font color=red>**以管理员身份运行的power shell中**</font>进行！
 
-首先在power shell中安装microsoft-windows-terminal包：
+### 1、安装microsoft-windows-terminal包：
 
 ```powershell
 choco install microsoft-windows-terminal
@@ -68,7 +68,7 @@ choco install microsoft-windows-terminal
 
 ![tem3](/images/posts/winterminal/tem4.jpg)
 
-分别在power shell中运行指令安装posh-git和oh-my-posh：
+### 2、分别安装posh-git和oh-my-posh：
 
 ```powershell
 Install-Module posh-git -Scope CurrentUser
