@@ -82,6 +82,26 @@ Install-Module posh-git -Scope CurrentUser -Proxy "http://127.0.0.1:1080"
 Install-Module oh-my-posh -Scope CurrentUser -Proxy "http://127.0.0.1:1080"
 ```
 
+同样，按A，继续运行安装
+
+![](/images/posts/winterminal/tem5.jpg)
+
+
+
+### 3、安装PSReadLine
+
+```powershell
+Install-Module -Name PSReadLine -AllowPrerelease -Scope CurrentUser -Force -SkipPublisherCheck
+```
+
+
+
+### 4、生成配置文件：
+
+```
+
+```
+
 
 
 ## 参考文献：
