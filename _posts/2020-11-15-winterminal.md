@@ -281,6 +281,16 @@ Remove-PSReadlineKeyHandler 'Ctrl+r'
 
 
 
+## 六、将Windows terminal添加到右键菜单
+
+直接安装：
+
+```powershell
+Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/lextm/windowsterminal-shell/master/install.ps1'))
+```
+
+
+
 ------
 ## 参考文献：
 
