@@ -305,7 +305,7 @@ Remove-Item Env:https_proxy
 
 执行之后，可以看到现在的右键菜单中已经有了Windows terminal。
 
-
+![](/images/posts/winterminal/tem15.jpg)
 
 ------
 ## 参考文献：
