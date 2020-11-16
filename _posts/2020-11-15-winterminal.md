@@ -225,6 +225,26 @@ oh-my-posh官方文档中推荐的是[Meslo LG M Regular for Powerline Nerd Font
 
 
 
+## 五、使用设置即插件安装
+
+### 1、自动补全扩展
+
+同理，通过
+
+```powershell
+notepad $PROFILE
+```
+
+打开power shell配置文件，在下面添加一行：
+
+```
+Set-PSReadlineKeyHandler -Key Tab -Function MenuComplete
+```
+
+这样当使用Tab补全时，会可视化的列出补全选项，且可以直接通过光标选择
+
+
+
 ## 参考文献：
 
 [^1]: [chocolatey官方文档](https://chocolatey.org/install#individual)
