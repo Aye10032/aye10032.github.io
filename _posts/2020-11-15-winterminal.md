@@ -133,6 +133,44 @@ oh-my-posh官方文档中推荐的是[Meslo LG M Regular for Powerline Nerd Font
 
 当然，你也可以前往这个字体所在的GitHub项目[^4]选择其他自己喜欢的字体下载。
 
+右键power shell标题栏，选择默认项，将字体改为刚刚安装的MesloLGM Nerd Font Mono
+
+![](/images/posts/winterminal/tem7.jpg)
+
+![](/images/posts/winterminal/tem8.jpg)
+
+重新打开power shell，可以看到主题已经成功加载出来了
+
+![](/images/posts/winterminal/tem9.jpg)
+
+
+
+## 四、编辑Windows terminal配置文件
+
+刚刚仅仅是修改了power shell的配置，但是打开Windows terminal可以看到字体仍然没有加载，且默认的终端也不是刚刚安装的power shell7，而是旧版的power shell，此时就需要修改Windows terminal配置文件。
+
+点击标签栏的剪头，选择设置，自动打开配置文件
+
+![](/images/posts/winterminal/tem10.jpg)
+
+此时在你的"profiles"的列表中应该有默认的四个配置，从上到下分别为默认power shell、CMD、Azure Cloud Shell、和刚刚安装的power shell7
+
+![](/images/posts/winterminal/tem11.jpg)
+
+选择PowerShell，为其添加字体和字号颜色等配置[^5]：
+
+```
+"colorScheme": "Campbell",
+"useAcrylic": true,
+"closeOnExit": false,
+"acrylicOpacity": 0.8,
+"fontFace": "MesloLGM Nerd Font Mono"
+```
+
+<font color=red>**记得不是最后一行的要加逗号**</font>
+
+> 这里如果不清楚字体名字，可以参考上一步power shell配置中选择的那个名字
+
 
 
 ## 参考文献：
@@ -141,3 +179,4 @@ oh-my-posh官方文档中推荐的是[Meslo LG M Regular for Powerline Nerd Font
 [^2]:[oh-my-posh](https://github.com/JanDeDobbeleer/oh-my-posh)
 [^3]:[oh-my-posh 主题样例](https://github.com/JanDeDobbeleer/oh-my-posh#themes)
 [^4]: [nerd-fonts项目仓库](https://github.com/ryanoasis/nerd-fonts)
+[^5]:[Windows terminal配置文档](https://aka.ms/terminal-profile-settings)
