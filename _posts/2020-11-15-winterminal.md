@@ -289,7 +289,7 @@ Remove-PSReadlineKeyHandler 'Ctrl+r'
 Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/lextm/windowsterminal-shell/master/install.ps1'))
 ```
 
-这一步有大概率会因网络原因导致无法从GitHub下载文件，可以考虑采用以下指令来为power shell设置全局代理：
+这一步若因网络原因导致无法从GitHub下载文件，可以考虑采用以下指令来为power shell设置全局代理：
 
 ```
 Set-Item Env:http_proxy "http://127.0.0.1:1080"
@@ -303,7 +303,7 @@ Remove-Item Env:http_proxy
 Remove-Item Env:https_proxy
 ```
 
-
+执行之后，可以看到现在的右键菜单中已经有了Windows terminal。
 
 
 
