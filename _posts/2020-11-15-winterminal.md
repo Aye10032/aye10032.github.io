@@ -190,169 +190,30 @@ oh-my-posh官方文档中推荐的是[Meslo LG M Regular for Powerline Nerd Font
 你可以根据官方文档[^6]自己修改，也可以直接参考我给出的这份配置文件：
 
 ```json
-"keybindings": [
-        {
-            "command": "copy",
-            "keys": [
-                "ctrl+c"
-            ]
-        },
-        {
-            "command": "paste",
-            "keys": [
-                "ctrl+v"
-            ]
-        },
-        {
-            "command": "newTab",
-            "keys": [
-                "ctrl+n"
-            ]
-        },
-        {
-            "command": "closeTab",
-            "keys": [
-                "ctrl+shift+w"
-            ]
-        },
-        {
-            "command": { "action": "splitPane", "split": "auto", "splitMode": "duplicate" }, 
-            "keys": [
-                "alt+["
-            ]
-        },
-        {
-            "command": { "action": "moveFocus", "direction": "up" },
-            "keys": [
-                "alt+up"
-            ]
-        },
-        {
-            "command": { "action": "moveFocus", "direction": "down" },
-            "keys": [
-                "alt+down"
-            ]
-        },
-        {
-            "command": { "action": "moveFocus", "direction": "left" },
-            "keys": [
-                "alt+left"
-            ]
-        },
-        {
-            "command": { "action": "moveFocus", "direction": "right" },
-            "keys": [
-                "alt+right"
-            ]
-        },
-        {
-            "command": { "action": "resizePane", "direction": "up" },
-            "keys": [
-                "ctrl+alt+up"
-            ]
-        },
-        {
-            "command": { "action": "resizePane", "direction": "down" },
-            "keys": [
-                "ctrl+alt+down"
-            ]
-        },
-        {
-            "command": { "action": "resizePane", "direction": "left" },
-            "keys": [
-                "ctrl+alt+left"
-            ]
-        },
-        {
-            "command": { "action": "resizePane", "direction": "right" },
-            "keys": [
-                "ctrl+alt+right"
-            ]
-        },
-        {
-            "command": "closePane",
-            "keys": [
-                "ctrl+delete"
-            ]
-        },
-        {
-            "command": { "action": "switchToTab", "index": 0 }, 
-            "keys": [
-                "ctrl+1"
-            ]
-        },
-        {
-            "command": { "action": "switchToTab", "index":  1}, 
-            "keys": [
-                "ctrl+2"
-            ]
-        },
-        {
-            "command": { "action": "switchToTab", "index":  2}, 
-            "keys": [
-                "ctrl+3"
-            ]
-        },
-        {
-            "command": { "action": "switchToTab", "index":  3}, 
-            "keys": [
-                "ctrl+4"
-            ]
-        },
-        {
-            "command": { "action": "switchToTab", "index":  4}, 
-            "keys": [
-                "ctrl+5"
-            ]
-        },
-        {
-            "command": { "action": "switchToTab", "index":  5}, 
-            "keys": [
-                "ctrl+6"
-            ]
-        },
-        {
-            "command": { "action": "switchToTab", "index":  6}, 
-            "keys": [
-                "ctrl+7"
-            ]
-        },
-        {
-            "command": { "action": "switchToTab", "index":  7}, 
-            "keys": [
-                "ctrl+8"
-            ]
-        },
-        {
-            "command": { "action": "switchToTab", "index":  8}, 
-            "keys": [
-                "ctrl+9"
-            ]
-        },
-        {
-            "command": "scrollUp",
-            "keys": [
-                "ctrl+up"
-            ]
-        },
-        {
-            "command": "scrollUpPage",
-            "keys": [
-                "ctrl+shift+up"
-            ]
-        },
-        {
-            "command": "scrollDown",
-            "keys": [
-                "ctrl+down"
-            ]
-        },
-        {
-            "command": "scrollDownPage",
-            "keys": [
-                "ctrl+shift+down"
-            ]
-        }
+"actions":
+    [
+        { "command": {"action": "copy", "singleLine": false }, "keys": "ctrl+c" },
+        { "command": "paste", "keys": "ctrl+v" },
+        { "command": "find", "keys": "ctrl+shift+f" },  
+        
+        { "command": "newTab", "keys": "ctrl+n" },        
+        { "command": "closeTab", "keys": "ctrl+shift+w" },        
+        { "command": "closePane", "keys": "ctrl+delete" },        
+
+        {"command": { "action": "splitPane", "split": "auto", "splitMode": "duplicate" },"keys": "alt+["},        
+        {"command": { "action": "moveFocus", "direction": "up" },"keys": "alt+up"},        
+        {"command": { "action": "moveFocus", "direction": "down" },"keys": "alt+down"},        
+        {"command": { "action": "moveFocus", "direction": "left" },"keys": "alt+left"},        
+        {"command": { "action": "moveFocus", "direction": "right" },"keys": "alt+right"},        
+        {"command": { "action": "resizePane", "direction": "up" },"keys": "ctrl+alt+up"},        
+        {"command": { "action": "resizePane", "direction": "down" },"keys": "ctrl+alt+down"},        
+        {"command": { "action": "resizePane", "direction": "left" },"keys":  "ctrl+alt+left"},        
+        {"command": { "action": "resizePane", "direction": "right" },"keys": "ctrl+alt+right"},    
+        
+        {"command": "scrollUp","keys": "ctrl+up"},        
+        {"command": "scrollUpPage","keys": "ctrl+shift+up"},        
+        {"command": "scrollDown","keys": "ctrl+down"},        
+        {"command": "scrollDownPage","keys": "ctrl+shift+down"}    
     ]
 ```
 
