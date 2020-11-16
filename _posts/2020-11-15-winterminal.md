@@ -277,8 +277,11 @@ Import-Module PSFzf
 Remove-PSReadlineKeyHandler 'Ctrl+r'
 ```
 
+此时可以通过在需要查询的文件夹中按 Ctrl+t 打开搜索功能
 
 
+
+------
 ## 参考文献：
 
 [^1]: [chocolatey官方文档](https://chocolatey.org/install#individual)
