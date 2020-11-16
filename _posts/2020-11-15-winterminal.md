@@ -147,7 +147,7 @@ oh-my-posh官方文档中推荐的是[Meslo LG M Regular for Powerline Nerd Font
 
 ## 四、编辑Windows terminal配置文件
 
-刚刚仅仅是修改了power shell的配置，但是打开Windows terminal可以看到字体仍然没有加载，且默认的终端也不是刚刚安装的power shell7，而是旧版的power shell，此时就需要修改Windows terminal配置文件。
+刚刚仅仅是修改了power shell的配置，但是打开Windows terminal可以看到字体仍然没有加载，且默认的终端也不是刚刚安装的power shell7，而是旧版的power shell，此时就需要修改Windows terminal配置文件[^5]。
 
 点击标签栏的剪头，选择设置，自动打开配置文件
 
@@ -157,7 +157,9 @@ oh-my-posh官方文档中推荐的是[Meslo LG M Regular for Powerline Nerd Font
 
 ![](/images/posts/winterminal/tem11.jpg)
 
-选择PowerShell，为其添加字体和字号颜色等配置[^5]：
+### 1、设置power shell字体
+
+选择PowerShell，为其添加字体和字号颜色等配置：
 
 ```
 "colorScheme": "Campbell",
@@ -171,6 +173,195 @@ oh-my-posh官方文档中推荐的是[Meslo LG M Regular for Powerline Nerd Font
 
 > 这里如果不清楚字体名字，可以参考上一步power shell配置中选择的那个名字
 
+### 2、设置默认终端为power shell7
+
+在配置文件的开头处，将`defaultProfile`改为power shell7的guid即可，如下图所示：
+
+![](/images/posts/winterminal/tem12.jpg)
+
+此时载打开Windows terminal，可以看到界面已经焕然一新：
+
+![](/images/posts/winterminal/tem13.jpg)
+
+
+
+### 3、修改（添加）默认快捷键：
+
+你可以根据官方文档[^6]自己修改，也可以直接参考我给出的这份配置文件：
+
+```json
+"keybindings": [
+        {
+            "command": "copy",
+            "keys": [
+                "ctrl+c"
+            ]
+        },
+        {
+            "command": "paste",
+            "keys": [
+                "ctrl+v"
+            ]
+        },
+        {
+            "command": "newTab",
+            "keys": [
+                "ctrl+n"
+            ]
+        },
+        {
+            "command": "closeTab",
+            "keys": [
+                "ctrl+shift+w"
+            ]
+        },
+        {
+            "command": { "action": "splitPane", "split": "auto", "splitMode": "duplicate" }, 
+            "keys": [
+                "alt+["
+            ]
+        },
+        {
+            "command": { "action": "moveFocus", "direction": "up" },
+            "keys": [
+                "alt+up"
+            ]
+        },
+        {
+            "command": { "action": "moveFocus", "direction": "down" },
+            "keys": [
+                "alt+down"
+            ]
+        },
+        {
+            "command": { "action": "moveFocus", "direction": "left" },
+            "keys": [
+                "alt+left"
+            ]
+        },
+        {
+            "command": { "action": "moveFocus", "direction": "right" },
+            "keys": [
+                "alt+right"
+            ]
+        },
+        {
+            "command": { "action": "resizePane", "direction": "up" },
+            "keys": [
+                "ctrl+alt+up"
+            ]
+        },
+        {
+            "command": { "action": "resizePane", "direction": "down" },
+            "keys": [
+                "ctrl+alt+down"
+            ]
+        },
+        {
+            "command": { "action": "resizePane", "direction": "left" },
+            "keys": [
+                "ctrl+alt+left"
+            ]
+        },
+        {
+            "command": { "action": "resizePane", "direction": "right" },
+            "keys": [
+                "ctrl+alt+right"
+            ]
+        },
+        {
+            "command": "closePane",
+            "keys": [
+                "ctrl+delete"
+            ]
+        },
+        {
+            "command": { "action": "switchToTab", "index": 0 }, 
+            "keys": [
+                "ctrl+1"
+            ]
+        },
+        {
+            "command": { "action": "switchToTab", "index":  1}, 
+            "keys": [
+                "ctrl+2"
+            ]
+        },
+        {
+            "command": { "action": "switchToTab", "index":  2}, 
+            "keys": [
+                "ctrl+3"
+            ]
+        },
+        {
+            "command": { "action": "switchToTab", "index":  3}, 
+            "keys": [
+                "ctrl+4"
+            ]
+        },
+        {
+            "command": { "action": "switchToTab", "index":  4}, 
+            "keys": [
+                "ctrl+5"
+            ]
+        },
+        {
+            "command": { "action": "switchToTab", "index":  5}, 
+            "keys": [
+                "ctrl+6"
+            ]
+        },
+        {
+            "command": { "action": "switchToTab", "index":  6}, 
+            "keys": [
+                "ctrl+7"
+            ]
+        },
+        {
+            "command": { "action": "switchToTab", "index":  7}, 
+            "keys": [
+                "ctrl+8"
+            ]
+        },
+        {
+            "command": { "action": "switchToTab", "index":  8}, 
+            "keys": [
+                "ctrl+9"
+            ]
+        },
+        {
+            "command": "scrollUp",
+            "keys": [
+                "ctrl+up"
+            ]
+        },
+        {
+            "command": "scrollUpPage",
+            "keys": [
+                "ctrl+shift+up"
+            ]
+        },
+        {
+            "command": "scrollDown",
+            "keys": [
+                "ctrl+down"
+            ]
+        },
+        {
+            "command": "scrollDownPage",
+            "keys": [
+                "ctrl+shift+down"
+            ]
+        }
+    ]
+```
+
+主要一个要说的就是分割窗口：
+
+- 通过`alt+[`来分割窗口
+- 通过 alt+上下左右 来切换到不同的窗口（也可以直接通过鼠标点击）
+- 在对应的窗口通过 ctrl+alt+上下左右 来调整大小
+
 
 
 ## 参考文献：
@@ -180,3 +371,4 @@ oh-my-posh官方文档中推荐的是[Meslo LG M Regular for Powerline Nerd Font
 [^3]:[oh-my-posh 主题样例](https://github.com/JanDeDobbeleer/oh-my-posh#themes)
 [^4]: [nerd-fonts项目仓库](https://github.com/ryanoasis/nerd-fonts)
 [^5]:[Windows terminal配置文档](https://aka.ms/terminal-profile-settings)
+[^6]:[Windows terminal快捷键指令文档](https://docs.microsoft.com/zh-cn/windows/terminal/customize-settings/actions)
