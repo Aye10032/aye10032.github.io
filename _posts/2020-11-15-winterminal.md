@@ -281,13 +281,29 @@ Remove-PSReadlineKeyHandler 'Ctrl+r'
 
 
 
-## 六、将Windows terminal添加到右键菜单
+## 六、将Windows terminal添加到右键菜单[^7]
 
 直接安装：
 
 ```powershell
 Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/lextm/windowsterminal-shell/master/install.ps1'))
 ```
+
+这一步有大概率会因网络原因导致无法从GitHub下载文件，可以考虑采用以下指令来为power shell设置全局代理：
+
+```
+Set-Item Env:http_proxy "http://127.0.0.1:1080"
+Set-Item Env:https_proxy "http://127.0.0.1:1080"
+```
+
+之后想要取消代理，则执行：
+
+```
+Remove-Item Env:http_proxy
+Remove-Item Env:https_proxy
+```
+
+
 
 
 
@@ -300,3 +316,4 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManage
 [^4]: [nerd-fonts项目仓库](https://github.com/ryanoasis/nerd-fonts)
 [^5]:[Windows terminal配置文档](https://aka.ms/terminal-profile-settings)
 [^6]:[Windows terminal快捷键指令文档](https://docs.microsoft.com/zh-cn/windows/terminal/customize-settings/actions)
+[^7]:[windowsterminal-shell](https://github.com/lextm/windowsterminal-shell)
