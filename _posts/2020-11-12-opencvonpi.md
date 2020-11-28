@@ -14,6 +14,10 @@ typora-root-url: ..
 
 
 
+> 2020-11-28更新：现在，contrib版本已经可以直接通过pipy安装，详见：[五、直接安装](## 五、直接安装)
+
+
+
 ## 一、树莓派配置
 
 ### 1、换源
@@ -290,6 +294,44 @@ sudo cp cv2.cpython-37m-arm-linux-gnueabihf.so /usr/local/lib/python3.7/dist-pac
 
 
 
+## 五、直接安装
+
+若要安装原生opencv，则直接运行：
+
+```bash
+pip install opencv-python
+或
+pip3 install opencv-python
+```
+
+若需要人脸识别、图像识别等额外功能，则运行：
+
+```bash
+pip install opencv-contrib-python
+或
+pip3 install opencv-contrib-python
+```
+
+注意，这两个版本的opencv仅可<font color=red>**同时安装一个**</font>
+
+可以通过
+
+```
+pip list
+或
+pip3 list
+```
+
+来查看已安装的包，若已经安装了另一个版本，可以通过
+
+```bash
+pip|pip3 uninstall [包名]
+```
+
+来卸载已经安装的opencv。
+
+
+
 ------
 
 #### 参考文档：
@@ -302,5 +344,5 @@ sudo cp cv2.cpython-37m-arm-linux-gnueabihf.so /usr/local/lib/python3.7/dist-pac
 
 【4】: [清华大学开源镜像站](https://mirrors.tuna.tsinghua.edu.cn/help/raspbian/)
 
-
+【6】: [pypi说明界面](https://pypi.org/project/opencv-contrib-python/)
 
