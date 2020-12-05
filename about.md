@@ -99,7 +99,8 @@ GitHub：[https://github.com/Aye10032](https://github.com/Aye10032)
 >   - 声豚
 >   - 月球人（魔夜二！魔夜二！）
 >   - JO厨
-> - 其他爱好
+> - 其他
 >   - 辩论（万年二辩，鄙人不善写稿）
 >   - 魔方（速拧老菜鸡，三速勉强SUB20，盲拧纯娱乐）
+>   - <font color=red>左壬</font>
 
