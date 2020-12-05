@@ -1,6 +1,7 @@
 ---
 layout: page
 title: 关于我
+typora-root-url: ./
 ---
 
 萌新一个，现有的知识纯靠自学，越学越是发现~~人类是有极限的~~自己的不足，也是在此过程中继续学习并成长着。		
@@ -21,6 +22,12 @@ GitHub：[https://github.com/Aye10032](https://github.com/Aye10032)
 
 
 
+#### .PS: ~~**↓↓↓我老婆**~~
 
-#### .PS: ~~**诗乃我老婆！！！！**~~ 		
+![](/images/EcURIQNUMAEHa3W.jpg)
+
+#### ..PS：要素列表：
+
+> - 游戏
+>   - 
 
