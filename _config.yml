@@ -24,7 +24,7 @@ social:
     # zhihu: panpanleopard
     # juejin: xxx
     # jianshu: 2ada30d8d0f7
-    # twitter: 
+    twitter: Aye10032
     mail: Aye10032@gmail.com
 
 
@@ -71,8 +71,10 @@ nav:
     
 
 # Pagination
-gems: [jekyll-paginate,jekyll-sitemap,jekyll-spaceship]
+gems: [jekyll-paginate,jekyll-sitemap]
 paginate: 20
 paginate_path: "page/:num/"
+
+markdown: kramdown
 
 
