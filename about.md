@@ -65,6 +65,7 @@ GitHub：[https://github.com/Aye10032](https://github.com/Aye10032)
 >     - MOD作者
 >   - 页游
 >     - 舰队collection
+>     - 雀魂
 > - 计算机技术
 >   - 软件
 >     - 语种
