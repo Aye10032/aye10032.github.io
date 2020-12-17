@@ -12,7 +12,7 @@ typora-root-url: ..
 
 # windows terminal + power shell调教手册
 
-
+<!-- more -->
 
 ## 一、安装 windows terminal 和 power shell 7
 
