@@ -14,8 +14,9 @@ enableToc: true
 # Comment
 comment:
     # livere: MTAyMC8zNzA5MC8xMzYyNg==  # https://www.livere.com
-    disqus: aye10032
+    # disqus: aye10032
     # uyan: 2143225  # 有言id,登录有言官网申请
+    gitalk: eeda953af44e09f78441
 
 # Social
 social:
