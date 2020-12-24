@@ -24,7 +24,9 @@ GitHub：[https://github.com/Aye10032](https://github.com/Aye10032)
 
 #### .PS: ~~**↓↓↓我老婆**~~
 
-![](/images/EcURIQNUMAEHa3W.jpg)
+
+
+<img src="/images/EcURIQNUMAEHa3W.jpg" width = "660px" alt="图片名称" align=center />
 
 #### ..PS：要素列表：
 
