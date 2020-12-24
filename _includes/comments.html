@@ -49,7 +49,9 @@
         repo: 'Aye10032.github.io',
         owner: 'Aye10032',
         admin: ['Aye10032'],
-        id: location.gitalkhref,      // Ensure uniqueness and length less than 50
+        id: location.href,      // Ensure uniqueness and length less than 50
+        title: document.title,
+        body: location.href + header.meta[description],
         distractionFreeMode: false  // Facebook-like distraction free mode
       })
       
