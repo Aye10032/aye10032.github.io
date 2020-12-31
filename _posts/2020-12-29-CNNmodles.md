@@ -114,3 +114,10 @@ typora-root-url: ..
 - 全连接网络，512个神经元，使用relu激活函数，20% dropout
 - 全连接网络，512个神经元，使用relu激活函数，20% dropout
 - 全连接网络，10个神经元，使用softmax激活函数
+
+
+
+![VGGNet](/images/posts/CNNmodels/VGGNet.png)
+
+## 4、InceptionNet
+
