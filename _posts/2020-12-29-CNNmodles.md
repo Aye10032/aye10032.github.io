@@ -156,7 +156,6 @@ typora-root-url: ..
     graph TB
     id1(3*3 conv, filters=16)
     style id1 fill: #3991B620, stroke: #3991B6, stroke-width:2px
-    
     id2_1(Filter concatenation)
     id2_2(1*1 conv)
     id2_3(1*1 conv)
@@ -175,7 +174,6 @@ typora-root-url: ..
     style id2_5 fill: #FFFF6940, stroke: #FFFF69, stroke-width:2px
     style id2_7 fill: #FFFF6940, stroke: #FFFF69, stroke-width:2px
     style id2_8 fill: #CFA3A420, stroke: #CFA3A4, stroke-width:2px
-    
     id3_1(Filter concatenation)
     id3_2(1*1 conv)
     id3_3(1*1 conv)
@@ -194,41 +192,31 @@ typora-root-url: ..
     style id3_5 fill: #FFFF6940, stroke: #FFFF69, stroke-width:2px
     style id3_7 fill: #FFFF6940, stroke: #FFFF69, stroke-width:2px
     style id3_8 fill: #CFA3A420, stroke: #CFA3A4, stroke-width:2px
-    
     subgraph block_0
     id2_9 --> id2_2
     id2_2 --> id2_1
-    
     id2_9 --> id2_3
     id2_3 --> id2_4
     id2_4 --> id2_1
-    
     id2_9 --> id2_5
     id2_5 --> id2_6
     id2_6 --> id2_1
-    
     id2_9 --> id2_8
     id2_8 --> id2_7
     id2_7 --> id2_1
-    
     id3_9 --> id3_2
     id3_2 --> id3_1
-    
     id3_9 --> id3_3
     id3_3 --> id3_4
     id3_4 --> id3_1
-    
     id3_9 --> id3_5
     id3_5 --> id3_6
     id3_6 --> id3_1
-    
     id3_9 --> id3_8
     id3_8 --> id3_7
     id3_7 --> id3_1
-    
     id2_1 --> id3_9
     end
-    
     id4_1(Filter concatenation)
     id4_2(1*1 conv)
     id4_3(1*1 conv)
@@ -247,7 +235,6 @@ typora-root-url: ..
     style id4_5 fill: #FFFF6940, stroke: #FFFF69, stroke-width:2px
     style id4_7 fill: #FFFF6940, stroke: #FFFF69, stroke-width:2px
     style id4_8 fill: #CFA3A420, stroke: #CFA3A4, stroke-width:2px
-    
     id5_1(Filter concatenation)
     id5_2(1*1 conv)
     id5_3(1*1 conv)
@@ -266,50 +253,74 @@ typora-root-url: ..
     style id5_5 fill: #FFFF6940, stroke: #FFFF69, stroke-width:2px
     style id5_7 fill: #FFFF6940, stroke: #FFFF69, stroke-width:2px
     style id5_8 fill: #CFA3A420, stroke: #CFA3A4, stroke-width:2px
-    
     subgraph block_1
     id4_9 --> id4_2
     id4_2 --> id4_1
-    
     id4_9 --> id4_3
     id4_3 --> id4_4
     id4_4 --> id4_1
-    
     id4_9 --> id4_5
     id4_5 --> id4_6
     id4_6 --> id4_1
-    
     id4_9 --> id4_8
     id4_8 --> id4_7
     id4_7 --> id4_1
-    
     id5_9 --> id5_2
     id5_2 --> id5_1
-    
     id5_9 --> id5_3
     id5_3 --> id5_4
     id5_4 --> id5_1
-    
     id5_9 --> id5_5
     id5_5 --> id5_6
     id5_6 --> id5_1
-    
     id5_9 --> id5_8
     id5_8 --> id5_7
     id5_7 --> id5_1
-    
     id4_1 --> id5_9
     end
     id1 --> id2_9
     id3_1 --> id4_9
-    
     id6(global avgpool)
     style id6 fill: #CFA3A420, stroke: #CFA3A4, stroke-width:2px
     id7(Dense 10)
     style id7 fill: #B9CF9320, stroke: #B9CF93, stroke-width:2px
-    
     id5_1 --> id6
     id6 --> id7
 </div>
 
 ![InceptionNet](/images/posts/CNNmodels/InceptionNet.png)
+
+## 5、ResNet
+
+将前面的输出特征结果越过对叠层直接传递到后面，并与堆叠卷积的非线性输出叠加，有效的缓解了神经网络模型堆叠导致的退化
+
+<div class="mermaid">
+    graph TB
+        id0(( ))
+        id1(3X3conv, filters=512<br/>strides=2)
+        id2(3X3conv, filters=512)
+        id3(("H(x)"))
+        id4(3X3conv, filters=512)
+        id5(3X3conv, filters=512)
+        id6(("H(x)"))
+        subgraph  
+        id0 --> id1
+        id1 --> id2
+        id2 -->|"F(x)"| id3
+        end
+        subgraph  
+        id3 --> id4
+        id4 --> id5
+        id5 -->|"F(x)"| id6
+        id0 -."W(x)".-> id3
+        id3 -->|x| id6
+        end
+</div>
+
+
+其中，虚线表示维度不同时，此时H(x)=F(x)+W(x)，其中W(x)是1*1卷积操作，用于调整x的维度
+
+实线表示维度相同时，此时H(x)=F(x)+x
+
+![ResNet](/images/posts/CNNmodels/ResNet.png)
+
