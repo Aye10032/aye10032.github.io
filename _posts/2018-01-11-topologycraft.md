@@ -56,3 +56,25 @@ typora-root-url: ..
 效果图：
 
 ![2019-10-17_17.57.34](/images/posts/topologycraft/2019-10-17_17.57.34.png)
+
+
+
+# 2021存档升级
+
+## 基地
+
+![image-20210209162914138](/images/posts/topologycraft/image-20210209162914138.png)
+
+![image-20210209163026199](/images/posts/topologycraft/image-20210209163026199.png)
+
+![image-20210209163132593](/images/posts/topologycraft/image-20210209163132593.png)
+
+![image-20210209163211480](/images/posts/topologycraft/image-20210209163211480.png)
+
+## 设施
+
+![image-20210209163301426](/images/posts/topologycraft/image-20210209163301426.png)
+
+![image-20210209163322260](/images/posts/topologycraft/image-20210209163322260.png)
+
+![image-20210209163455762](/images/posts/topologycraft/image-20210209163455762.png)
