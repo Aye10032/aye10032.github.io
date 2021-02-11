@@ -72,10 +72,11 @@ nav:
     
 
 # Pagination
-gems: [jekyll-paginate,jekyll-sitemap]
+gems: [jekyll-paginate,jekyll-sitemap,jekyll-mermaid]
 paginate: 20
 paginate_path: "page/:num/"
 
 markdown: kramdown
 
-
+mermaid:
+  src: 'path/to/mermaid.js'
