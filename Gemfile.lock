@@ -64,6 +64,7 @@ DEPENDENCIES
   jekyll
   jekyll-paginate
   jekyll-sitemap
+  jekyll-mermaid
   redcarpet
 
 BUNDLED WITH
