@@ -8,6 +8,7 @@ branches:
     - source # build master branch only
 script:
   - hexo generate
+  - echo "www.aye10032.com" > public/CNAME
 deploy:
   provider: pages
   skip-cleanup: true
