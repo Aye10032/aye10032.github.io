@@ -8,7 +8,8 @@ date: 2020-12-29
 
 tag: 笔记
 
-mermaid:true
+mermaid: true
+typora-root-url: ..
 ---
 
 # 几种经典的CNN模型
@@ -124,22 +125,24 @@ mermaid:true
 
 主体结构为Inception结构块，结构如下图所示：
 
-<div class="mermaid">
-    classDiagram
-    卷积连接器 <-- 1X1卷积核a
-    卷积连接器 <-- 3X3卷积核b
-    3X3卷积核b <-- 1X1卷积核b : 降维
-    卷积连接器 <-- 5X5卷积核c
-    5X5卷积核c <-- 1X1卷积核c : 降维
-    卷积连接器 <-- 1X1卷积核d : 降维
-    1X1卷积核d <-- 3X3最大池化核
-    1X1卷积核a <-- 输入层
-    1X1卷积核b <-- 输入层
-    1X1卷积核c <-- 输入层
-    3X3最大池化核 <-- 输入层
-    卷积连接器 : 将收到的四路特征
-    卷积连接器 : 按照深度拼接
-</div>
+
+```mermaid
+classDiagram
+卷积连接器 <-- 1X1卷积核a
+卷积连接器 <-- 3X3卷积核b
+3X3卷积核b <-- 1X1卷积核b : 降维
+卷积连接器 <-- 5X5卷积核c
+5X5卷积核c <-- 1X1卷积核c : 降维
+卷积连接器 <-- 1X1卷积核d : 降维
+1X1卷积核d <-- 3X3最大池化核
+1X1卷积核a <-- 输入层
+1X1卷积核b <-- 输入层
+1X1卷积核c <-- 输入层
+3X3最大池化核 <-- 输入层
+卷积连接器 : 将收到的四路特征
+卷积连接器 : 按照深度拼接
+```
+
 
 |    卷积核     |                    卷积层                     | 批标准化 | 激活层 |                       池化层                        | dropout |
 | :-----------: | :-------------------------------------------: | :------: | :----: | :-------------------------------------------------: | :-----: |
@@ -297,28 +300,29 @@ id6 --> id7
 
 将前面的输出特征结果越过对叠层直接传递到后面，并与堆叠卷积的非线性输出叠加，有效的缓解了神经网络模型堆叠导致的退化
 
-<div class="mermaid">
-    graph TB
-        id0(( ))
-        id1(3X3conv, filters=512<br/>strides=2)
-        id2(3X3conv, filters=512)
-        id3(("H(x)"))
-        id4(3X3conv, filters=512)
-        id5(3X3conv, filters=512)
-        id6(("H(x)"))
-        subgraph  
-        id0 --> id1
-        id1 --> id2
-        id2 -->|"F(x)"| id3
-        end
-        subgraph  
-        id3 --> id4
-        id4 --> id5
-        id5 -->|"F(x)"| id6
-        id0 -."W(x)".-> id3
-        id3 -->|x| id6
-        end
-</div>
+```mermaid
+graph TB
+    id0(( ))
+    id1(3X3conv, filters=512<br/>strides=2)
+    id2(3X3conv, filters=512)
+    id3(("H(x)"))
+    id4(3X3conv, filters=512)
+    id5(3X3conv, filters=512)
+    id6(("H(x)"))
+    subgraph  
+    id0 --> id1
+    id1 --> id2
+    id2 -->|"F(x)"| id3
+    end
+    subgraph  
+    id3 --> id4
+    id4 --> id5
+    id5 -->|"F(x)"| id6
+    id0 -."W(x)".-> id3
+    id3 -->|x| id6
+    end
+```
+
 
 
 其中，虚线表示维度不同时，此时H(x)=F(x)+W(x)，其中W(x)是1*1卷积操作，用于调整x的维度
