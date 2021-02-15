@@ -29,7 +29,7 @@
     
     
       
-      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.4.0/styles/github-gist.min.css" />
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.4.0/styles/idea.min.css" />
     
   
 
@@ -55,7 +55,7 @@
 
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
-    var CONFIG = {"hostname":"www.aye10032.com","root":"/","version":"1.8.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"onlypost":false},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+    var CONFIG = {"hostname":"www.aye10032.com","root":"/","version":"1.8.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"onlypost":false},"web_analytics":{"enable":false,"baidu":null,"google":"UA-181041967-1","gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
   </script>
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
@@ -67,7 +67,7 @@
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand"
-       href="/">&nbsp;<strong>Fluid</strong>&nbsp;</a>
+       href="/">&nbsp;<strong>鸽子窝</strong>&nbsp;</a>
 
     <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
             data-target="#navbarSupportedContent"
@@ -232,37 +232,37 @@
             <h1 style="display: none">git常用指令</h1>
             
             <div class="markdown-body">
-              <h3 id="安装后配置时"><a href="#安装后配置时" class="headerlink" title="安装后配置时"></a>安装后配置时</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ git config --global user.name <span class="hljs-string">&quot;Your Name&quot;</span>     <br>$ git config --global user.email <span class="hljs-string">&quot;email@example.com&quot;</span>        <br></code></pre></td></tr></table></figure>
+              <h3 id="安装后配置时"><a href="#安装后配置时" class="headerlink" title="安装后配置时"></a>安装后配置时</h3><figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">$ git config --global user.name <span class="hljs-string">&quot;Your Name&quot;</span>     <br>$ git config --global user.email <span class="hljs-string">&quot;email@example.com&quot;</span>        <br></code></pre></div></td></tr></table></figure>
 <p>这一步是设置用户，表示是谁在对这个仓库进行操作     </p>
 <h3 id="新建版本库"><a href="#新建版本库" class="headerlink" title="新建版本库"></a>新建版本库</h3><p>首先还是新建一个空目录用来作为版本仓库     </p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> mkdir <span class="hljs-built_in">test</span> //新建文件夹<span class="hljs-built_in">test</span></span>        <br><span class="hljs-meta">$</span><span class="bash"> <span class="hljs-built_in">cd</span> <span class="hljs-built_in">test</span></span>       <br><span class="hljs-meta">$</span><span class="bash"> <span class="hljs-built_in">pwd</span> //显示当前目录</span>      <br></code></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> mkdir <span class="hljs-built_in">test</span> //新建文件夹<span class="hljs-built_in">test</span></span>        <br><span class="hljs-meta">$</span><span class="bash"> <span class="hljs-built_in">cd</span> <span class="hljs-built_in">test</span></span>       <br><span class="hljs-meta">$</span><span class="bash"> <span class="hljs-built_in">pwd</span> //显示当前目录</span>      <br></code></pre></div></td></tr></table></figure>
 <p>接下来把这个目录变成Git可以管理的仓库        </p>
-<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs csharp">$ git <span class="hljs-keyword">init</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight csharp"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs csharp">$ git <span class="hljs-keyword">init</span><br></code></pre></div></td></tr></table></figure>
 <p>版本仓库就建好啦        </p>
 <h3 id="添加新文件"><a href="#添加新文件" class="headerlink" title="添加新文件"></a>添加新文件</h3><p>注意，所有的操作都应该在刚才建立的目录下进行操作哦<br>这里是两个最常用的指令     </p>
-<figure class="highlight gams"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs gams"><span class="hljs-symbol">$</span> git add &lt;<span class="hljs-keyword">file</span>&gt; <span class="hljs-comment">//将工作区的文件添加到暂存区      </span><br><span class="hljs-symbol">$</span> git commit -m <span class="hljs-string">&quot;...&quot;</span><span class="hljs-comment">//将暂存区的修改提交到分支     </span><br></code></pre></td></tr></table></figure>
+<figure class="highlight gams"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs gams"><span class="hljs-symbol">$</span> git add &lt;<span class="hljs-keyword">file</span>&gt; <span class="hljs-comment">//将工作区的文件添加到暂存区      </span><br><span class="hljs-symbol">$</span> git commit -m <span class="hljs-string">&quot;...&quot;</span><span class="hljs-comment">//将暂存区的修改提交到分支     </span><br></code></pre></div></td></tr></table></figure>
 <p>另外，查看工作区状态可以用到以下两条指令:       </p>
-<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs awk">$ git status <span class="hljs-regexp">//</span>查看工作区状态        <br>$ git diff <span class="hljs-regexp">//</span>查看具体修改的内容        <br></code></pre></td></tr></table></figure>
+<figure class="highlight awk"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs awk">$ git status <span class="hljs-regexp">//</span>查看工作区状态        <br>$ git diff <span class="hljs-regexp">//</span>查看具体修改的内容        <br></code></pre></div></td></tr></table></figure>
 <h3 id="版本回退"><a href="#版本回退" class="headerlink" title="版本回退"></a>版本回退</h3><p>查看已有的提交历史:      </p>
-<figure class="highlight gams"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs gams"><span class="hljs-symbol">$</span> git <span class="hljs-built_in">log</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight gams"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs gams"><span class="hljs-symbol">$</span> git <span class="hljs-built_in">log</span><br></code></pre></div></td></tr></table></figure>
 <p>回退版本:       </p>
-<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs awk">$ git reset --hard HEAD^ <span class="hljs-regexp">//</span>回退到上一个版本     <br>$ git reset --hard HEAD^^ <span class="hljs-regexp">//</span>回退到上上个版本       <br>$ git reset --hard commit_id <span class="hljs-regexp">//</span>回退到指定版本      <br></code></pre></td></tr></table></figure>
+<figure class="highlight awk"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs awk">$ git reset --hard HEAD^ <span class="hljs-regexp">//</span>回退到上一个版本     <br>$ git reset --hard HEAD^^ <span class="hljs-regexp">//</span>回退到上上个版本       <br>$ git reset --hard commit_id <span class="hljs-regexp">//</span>回退到指定版本      <br></code></pre></div></td></tr></table></figure>
 <p><strong>HEAD指的就是当前版本</strong><br>查看历史指令:</p>
-<figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs angelscript">$ git <span class="hljs-built_in">ref</span>log<br></code></pre></td></tr></table></figure>
+<figure class="highlight angelscript"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs angelscript">$ git <span class="hljs-built_in">ref</span>log<br></code></pre></div></td></tr></table></figure>
 <h3 id="修改与撤销"><a href="#修改与撤销" class="headerlink" title="修改与撤销"></a>修改与撤销</h3><p>撤销工作区在上一次提交之后的改动:       </p>
-<figure class="highlight gams"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs gams"><span class="hljs-symbol">$</span> git checkout -- &lt;<span class="hljs-keyword">file</span>&gt;<br></code></pre></td></tr></table></figure>
+<figure class="highlight gams"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs gams"><span class="hljs-symbol">$</span> git checkout -- &lt;<span class="hljs-keyword">file</span>&gt;<br></code></pre></div></td></tr></table></figure>
 <p>撤销提交到暂存库的修改：        </p>
-<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs awk">git reset HEAD file     <br><span class="hljs-regexp">//</span>在这一步后再进行对工作区修改的撤销     <br></code></pre></td></tr></table></figure>
+<figure class="highlight awk"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs awk">git reset HEAD file     <br><span class="hljs-regexp">//</span>在这一步后再进行对工作区修改的撤销     <br></code></pre></div></td></tr></table></figure>
 <p>删除文件：       </p>
-<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs stata">git <span class="hljs-keyword">rm</span> &lt;<span class="hljs-keyword">file</span>&gt;<br></code></pre></td></tr></table></figure>
-<h3 id="对分支的操作"><a href="#对分支的操作" class="headerlink" title="对分支的操作"></a>对分支的操作</h3><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs awk">&amp; git branch <span class="hljs-regexp">//</span>查看分支     <br>&amp; git branch &lt;name&gt; <span class="hljs-regexp">//</span>创建分支      <br>$ git checkout &lt;name&gt; <span class="hljs-regexp">//</span>切换分支        <br>&amp; git checkout -b &lt;name&gt; <span class="hljs-regexp">//</span>创建+切换分支      <br>$ git merge &lt;name&gt; <span class="hljs-regexp">//</span>合并某分支到当前分支     <br>$ git merge --no-ff -m <span class="hljs-string">&quot;...&quot;</span> &lt;name&gt; <span class="hljs-regexp">//</span>使用普通模式合并分支，可以显示合并历史       <br>$ git branch (-m | -M) &lt;oldbranch&gt; &lt;newbranch&gt; <span class="hljs-regexp">//</span>重命名分支      <br>$ git branch -d &lt;name&gt; <span class="hljs-regexp">//</span>删除分支       <br>$ git branch -D &lt;name&gt; <span class="hljs-regexp">//</span>强行删除未合并分支<br>$ git log --graph <span class="hljs-regexp">//</span>查看分支合并图     <br>$ git log --graph --pretty=oneline --abbrev-commit <span class="hljs-regexp">//</span>也可以查看分支合并图     <br></code></pre></td></tr></table></figure>
+<figure class="highlight stata"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs stata">git <span class="hljs-keyword">rm</span> &lt;<span class="hljs-keyword">file</span>&gt;<br></code></pre></div></td></tr></table></figure>
+<h3 id="对分支的操作"><a href="#对分支的操作" class="headerlink" title="对分支的操作"></a>对分支的操作</h3><figure class="highlight awk"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs awk">&amp; git branch <span class="hljs-regexp">//</span>查看分支     <br>&amp; git branch &lt;name&gt; <span class="hljs-regexp">//</span>创建分支      <br>$ git checkout &lt;name&gt; <span class="hljs-regexp">//</span>切换分支        <br>&amp; git checkout -b &lt;name&gt; <span class="hljs-regexp">//</span>创建+切换分支      <br>$ git merge &lt;name&gt; <span class="hljs-regexp">//</span>合并某分支到当前分支     <br>$ git merge --no-ff -m <span class="hljs-string">&quot;...&quot;</span> &lt;name&gt; <span class="hljs-regexp">//</span>使用普通模式合并分支，可以显示合并历史       <br>$ git branch (-m | -M) &lt;oldbranch&gt; &lt;newbranch&gt; <span class="hljs-regexp">//</span>重命名分支      <br>$ git branch -d &lt;name&gt; <span class="hljs-regexp">//</span>删除分支       <br>$ git branch -D &lt;name&gt; <span class="hljs-regexp">//</span>强行删除未合并分支<br>$ git log --graph <span class="hljs-regexp">//</span>查看分支合并图     <br>$ git log --graph --pretty=oneline --abbrev-commit <span class="hljs-regexp">//</span>也可以查看分支合并图     <br></code></pre></div></td></tr></table></figure>
 <p>当要合并的分支与主分支之间有冲突时会提示无法合并，需要手工修改冲突文件后进行      </p>
 <h3 id="与远程仓库有关的操作"><a href="#与远程仓库有关的操作" class="headerlink" title="与远程仓库有关的操作"></a>与远程仓库有关的操作</h3><p>要将远程仓库与本地仓库关联起来首先需要创建SSH Key：       </p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ ssh-keygen -t rsa -C <span class="hljs-string">&quot;youremail@example.com&quot;</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">$ ssh-keygen -t rsa -C <span class="hljs-string">&quot;youremail@example.com&quot;</span><br></code></pre></div></td></tr></table></figure>
 <p>之后可以在用户主目录下找到.ssh文件夹，将其中<em>id_rsa.pub</em>文件中的全部内容复制，登录自己的github账号，在设置里面的SSH and GPG keys中添加SSH key，标题任意，将<strong>刚才复制的内容</strong>黏贴在下面，完成。<br>将自己的github仓库与本地仓库关联：</p>
-<figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs armasm">$ git remote <span class="hljs-keyword">add</span> origin git<span class="hljs-comment">@github.com:&lt;your git&gt;</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight armasm"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs armasm">$ git remote <span class="hljs-keyword">add</span> origin git<span class="hljs-comment">@github.com:&lt;your git&gt;</span><br></code></pre></div></td></tr></table></figure>
 <p>将本地仓库推送到远程仓库：</p>
-<figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs maxima">$ git <span class="hljs-built_in">push</span> -u <span class="hljs-built_in">origin</span> master<br></code></pre></td></tr></table></figure>
+<figure class="highlight maxima"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs maxima">$ git <span class="hljs-built_in">push</span> -u <span class="hljs-built_in">origin</span> master<br></code></pre></div></td></tr></table></figure>
             </div>
             <hr>
             <div>
@@ -363,35 +363,42 @@
 
   <footer class="text-center mt-5 py-3">
   <div class="footer-content">
-     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <iframe style="margin-left: 2px; margin-bottom:-5px;" frameborder="0" scrolling="0" width="91px" height="20px" src="https://ghbtns.com/github-btn.html?user=fluid-dev&repo=hexo-theme-fluid&type=star&count=true" > </iframe> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
   </div>
   
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- 不蒜子统计PV -->
+        <span id="busuanzi_container_site_pv" style="display: none">
+            总访问量 
+            <span id="busuanzi_value_site_pv"></span>
+             次
+          </span>
+      
+      
+        <!-- 不蒜子统计UV -->
+        <span id="busuanzi_container_site_uv" style="display: none">
+            总访客数 
+            <span id="busuanzi_value_site_uv"></span>
+             人
+          </span>
+      
+    
+  </div>
+
 
   
   <!-- 备案信息 -->
   <div class="beian">
     <span>
       <a href="http://beian.miit.gov.cn/" target="_blank" rel="nofollow noopener">
-        京ICP证123456号
+        苏ICP备19040408号-2
       </a>
     </span>
-    
-      
-        <span>
-          <a
-            href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=12345678"
-            rel="nofollow noopener"
-            class="beian-police"
-            target="_blank"
-          >
-            
-              <span style="visibility: hidden; width: 0">|</span>
-              <img src="/img/police_beian.png" srcset="/img/loading.gif" alt="police-icon"/>
-            
-            <span>京公网安备12345678号</span>
-          </a>
-        </span>
-      
     
   </div>
 
@@ -447,6 +454,8 @@
   <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js" ></script>
 
 
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
 
 
 

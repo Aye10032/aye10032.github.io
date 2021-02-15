@@ -29,7 +29,7 @@
     
     
       
-      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.4.0/styles/github-gist.min.css" />
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.4.0/styles/idea.min.css" />
     
   
 
@@ -55,7 +55,7 @@
 
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
-    var CONFIG = {"hostname":"www.aye10032.com","root":"/","version":"1.8.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"onlypost":false},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+    var CONFIG = {"hostname":"www.aye10032.com","root":"/","version":"1.8.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"onlypost":false},"web_analytics":{"enable":false,"baidu":null,"google":"UA-181041967-1","gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
   </script>
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
@@ -67,7 +67,7 @@
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand"
-       href="/">&nbsp;<strong>Fluid</strong>&nbsp;</a>
+       href="/">&nbsp;<strong>鸽子窝</strong>&nbsp;</a>
 
     <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
             data-target="#navbarSupportedContent"
@@ -236,67 +236,67 @@
 <p>2020-11-28更新：现在，contrib版本已经可以直接通过pipy安装，详见：[五、直接安装](## 五、直接安装)</p>
 <p>本教程特指通过源码编译安装</p>
 </blockquote>
-<h2 id="一、树莓派配置"><a href="#一、树莓派配置" class="headerlink" title="一、树莓派配置"></a>一、树莓派配置</h2><h3 id="1、换源"><a href="#1、换源" class="headerlink" title="1、换源"></a>1、换源</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 编辑 `/etc/apt/sources.list` 文件，删除原文件所有内容，用以下内容取代：</span><br>deb http://mirrors.tuna.tsinghua.edu.cn/raspbian/raspbian/ buster main non-free contrib rpi<br>deb-src http://mirrors.tuna.tsinghua.edu.cn/raspbian/raspbian/ buster main non-free contrib rpi<br><br><span class="hljs-comment"># 编辑 `/etc/apt/sources.list.d/raspi.list` 文件，删除原文件所有内容，用以下内容取代：</span><br>deb http://mirrors.tuna.tsinghua.edu.cn/raspberrypi/ buster main ui<br></code></pre></td></tr></table></figure>
+<h2 id="一、树莓派配置"><a href="#一、树莓派配置" class="headerlink" title="一、树莓派配置"></a>一、树莓派配置</h2><h3 id="1、换源"><a href="#1、换源" class="headerlink" title="1、换源"></a>1、换源</h3><figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash"><span class="hljs-comment"># 编辑 `/etc/apt/sources.list` 文件，删除原文件所有内容，用以下内容取代：</span><br>deb http://mirrors.tuna.tsinghua.edu.cn/raspbian/raspbian/ buster main non-free contrib rpi<br>deb-src http://mirrors.tuna.tsinghua.edu.cn/raspbian/raspbian/ buster main non-free contrib rpi<br><br><span class="hljs-comment"># 编辑 `/etc/apt/sources.list.d/raspi.list` 文件，删除原文件所有内容，用以下内容取代：</span><br>deb http://mirrors.tuna.tsinghua.edu.cn/raspberrypi/ buster main ui<br></code></pre></div></td></tr></table></figure>
 <p>编辑器推荐使用nano，例如：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo nano /etc/apt/sources.list<br></code></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">sudo nano /etc/apt/sources.list<br></code></pre></div></td></tr></table></figure>
 <p>编辑完毕后 CTRL+O 保存、CTRL+X 退出。</p>
 <p>更新源列表：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo apt-get update<br>sudo apt-get -y dist-upgrade<br></code></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">sudo apt-get update<br>sudo apt-get -y dist-upgrade<br></code></pre></div></td></tr></table></figure>
 
 
-<h3 id="2、安装screen"><a href="#2、安装screen" class="headerlink" title="2、安装screen"></a>2、安装screen</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo apt-get install screen<br></code></pre></td></tr></table></figure>
+<h3 id="2、安装screen"><a href="#2、安装screen" class="headerlink" title="2、安装screen"></a>2、安装screen</h3><figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">sudo apt-get install screen<br></code></pre></div></td></tr></table></figure>
 <p>screen可以让进程在<strong>后台挂起</strong>，方便后面编译时脱机编译</p>
-<h3 id="3、修改交换分区及显存"><a href="#3、修改交换分区及显存" class="headerlink" title="3、修改交换分区及显存"></a>3、修改交换分区及显存</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo nano /etc/dphys-swapfile<br></code></pre></td></tr></table></figure>
+<h3 id="3、修改交换分区及显存"><a href="#3、修改交换分区及显存" class="headerlink" title="3、修改交换分区及显存"></a>3、修改交换分区及显存</h3><figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">sudo nano /etc/dphys-swapfile<br></code></pre></div></td></tr></table></figure>
 <p>选择将交换分区大小设为内存的两倍，即：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># set size to computed value, this times RAM size, dynamically adapts,</span><br><span class="hljs-comment">#   guarantees that there is enough swap without wasting disk space on excess</span><br>CONF_SWAPFACTOR=2<br></code></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash"><span class="hljs-comment"># set size to computed value, this times RAM size, dynamically adapts,</span><br><span class="hljs-comment">#   guarantees that there is enough swap without wasting disk space on excess</span><br>CONF_SWAPFACTOR=2<br></code></pre></div></td></tr></table></figure>
 <p>并将其他的配置注释掉。</p>
 <p>重启服务：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo /etc/init.d/dphys-swapfile stop<br>sudo /etc/init.d/dphys-swapfile start<br></code></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">sudo /etc/init.d/dphys-swapfile stop<br>sudo /etc/init.d/dphys-swapfile start<br></code></pre></div></td></tr></table></figure>
 <p>之后检查是否修改成功：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">free -m<br></code></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">free -m<br></code></pre></div></td></tr></table></figure>
 <p>若看到类似如下信息，则说明修改成功：</p>
 <p><img src="/images/posts/picv/Screen-Shot-2018-11-21-at-1.16.59-PM.png" srcset="/img/loading.gif"></p>
 <p>修改显存：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo nano /boot/config.txt<br></code></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">sudo nano /boot/config.txt<br></code></pre></div></td></tr></table></figure>
 <p>将 gpu_mem 设为128</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">gpu_mem=128<br></code></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">gpu_mem=128<br></code></pre></div></td></tr></table></figure>
 <p>（可以适当的再改大一点）</p>
 <p>重启树莓派：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo reboot<br></code></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">sudo reboot<br></code></pre></div></td></tr></table></figure>
 
 
 <h2 id="二、安装依赖"><a href="#二、安装依赖" class="headerlink" title="二、安装依赖"></a>二、安装依赖</h2><h3 id="1、OpenCV前置依赖"><a href="#1、OpenCV前置依赖" class="headerlink" title="1、OpenCV前置依赖"></a>1、OpenCV前置依赖</h3><p>git：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo apt-get install git<br></code></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">sudo apt-get install git<br></code></pre></div></td></tr></table></figure>
 <p>编译工具：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo apt-get install cmake<br>sudo apt-get install gcc g++<br></code></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">sudo apt-get install cmake<br>sudo apt-get install gcc g++<br></code></pre></div></td></tr></table></figure>
 <p>图形界面、媒体、编码等依赖：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo apt-get install libavcodec-dev libavformat-dev libswscale-dev<br>sudo apt-get install libgstreamer-plugins-base1.0-dev libgstreamer1.0-dev<br></code></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">sudo apt-get install libavcodec-dev libavformat-dev libswscale-dev<br>sudo apt-get install libgstreamer-plugins-base1.0-dev libgstreamer1.0-dev<br></code></pre></div></td></tr></table></figure>
 <p>GTK支持：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo apt-get install libgtk2.0-dev libgtk-3-dev<br></code></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">sudo apt-get install libgtk2.0-dev libgtk-3-dev<br></code></pre></div></td></tr></table></figure>
 <p>图片解码：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo apt-get install libpng-dev<br>sudo apt-get install libjpeg-dev<br>sudo apt-get install libopenexr-dev<br>sudo apt-get install libtiff-dev<br>sudo apt-get install libwebp-dev<br></code></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">sudo apt-get install libpng-dev<br>sudo apt-get install libjpeg-dev<br>sudo apt-get install libopenexr-dev<br>sudo apt-get install libtiff-dev<br>sudo apt-get install libwebp-dev<br></code></pre></div></td></tr></table></figure>
 
 
 <h3 id="2、python相关"><a href="#2、python相关" class="headerlink" title="2、python相关"></a>2、python相关</h3><p>安装python3：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo apt-get install python3-dev<br></code></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">sudo apt-get install python3-dev<br></code></pre></div></td></tr></table></figure>
 <p>执行以下指令，检查是否有安装pip：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">pip3 -h<br></code></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">pip3 -h<br></code></pre></div></td></tr></table></figure>
 <p>若没有安装，则安装pip3：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo apt-get install python3-pip<br></code></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">sudo apt-get install python3-pip<br></code></pre></div></td></tr></table></figure>
 <p>安装 numpy 和 scipy：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo pip3 install numpy scipy<br></code></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">sudo pip3 install numpy scipy<br></code></pre></div></td></tr></table></figure>
 
 
 <h3 id="3、建立后台进程"><a href="#3、建立后台进程" class="headerlink" title="3、建立后台进程"></a>3、建立后台进程</h3><p>接下来的编译过程会持续较长时间，且几乎吃满树莓派的CPU，建议使用screen专门创建一个后台用于编译：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">screen -S cv<br></code></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">screen -S cv<br></code></pre></div></td></tr></table></figure>
 <p>这里后面的cv可以说任意你喜欢的名字，记住就好。</p>
 <p>之后想要退出此后台，按组合键：<code>CTRL+A+D</code>；</p>
 <p>想要重新切入这个后台，输入：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">screen -r cv<br></code></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">screen -r cv<br></code></pre></div></td></tr></table></figure>
 <p>后面的名字就是之前你输入的那个</p>
 <p>这样，当进行下面耗时较长的步骤时，可以在进程中执行，执行完指令后按CTRL+A+D退出进程，即可关闭SSH链接，不用保持一直打开，编译仍可以在后台运行。</p>
 <h2 id="三、正式编译"><a href="#三、正式编译" class="headerlink" title="三、正式编译"></a>三、正式编译</h2><p>首先分别下载两个源码：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">git <span class="hljs-built_in">clone</span> https://github.com/opencv/opencv.git<br>git <span class="hljs-built_in">clone</span> https://github.com/opencv/opencv_contrib.git<br></code></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">git <span class="hljs-built_in">clone</span> https://github.com/opencv/opencv.git<br>git <span class="hljs-built_in">clone</span> https://github.com/opencv/opencv_contrib.git<br></code></pre></div></td></tr></table></figure>
 <p>若git下载缓慢，可以用gitee进行转载：</p>
 <p><img src="/images/posts/picv/image-20201112202141441.png" srcset="/img/loading.gif" alt="image-20201112202141441"></p>
 <p><img src="/images/posts/picv/image-20201112202225347.png" srcset="/img/loading.gif" alt="image-20201112202225347"></p>
@@ -305,32 +305,32 @@
 <p><img src="/images/posts/picv/image-20201112202546806.png" srcset="/img/loading.gif" alt="image-20201112202546806"></p>
 <p>下载下来后，在应该存在两个文件夹，分别名为opencv和opencv_contrib。</p>
 <p>建立编译文件夹：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">cd</span> ~/opencv/  <span class="hljs-comment"># 这里是opencv本体源码的文件夹，请根据你的实际路径加以调整</span><br>mkdir build<br><span class="hljs-built_in">cd</span> build<br></code></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash"><span class="hljs-built_in">cd</span> ~/opencv/  <span class="hljs-comment"># 这里是opencv本体源码的文件夹，请根据你的实际路径加以调整</span><br>mkdir build<br><span class="hljs-built_in">cd</span> build<br></code></pre></div></td></tr></table></figure>
 <p>添加编译配置信息：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs bash">cmake -D CMAKE_BUILD_TYPE=RELEASE \<br>	 -D CMAKE_INSTALL_PREFIX=/usr/<span class="hljs-built_in">local</span> \<br>	-D INSTALL_C_EXAMPLES=OFF \<br>	-D INSTALL_PYTHON_EXAMPLES=OFF \<br>	-D OPENCV_EXTRA_MODULES_PATH=/home/pi/opencv_contrib/modules \  <span class="hljs-comment"># 这里是contrib文件夹所在路径，请根据你的实际路径加以调整</span><br>	-D BUILD_EXAMPLES=OFF ..<br></code></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">cmake -D CMAKE_BUILD_TYPE=RELEASE \<br>	 -D CMAKE_INSTALL_PREFIX=/usr/<span class="hljs-built_in">local</span> \<br>	-D INSTALL_C_EXAMPLES=OFF \<br>	-D INSTALL_PYTHON_EXAMPLES=OFF \<br>	-D OPENCV_EXTRA_MODULES_PATH=/home/pi/opencv_contrib/modules \  <span class="hljs-comment"># 这里是contrib文件夹所在路径，请根据你的实际路径加以调整</span><br>	-D BUILD_EXAMPLES=OFF ..<br></code></pre></div></td></tr></table></figure>
 
 
 <p>配置完成后，开始编译：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">make -j4<br></code></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">make -j4<br></code></pre></div></td></tr></table></figure>
 <p>这里是使用4个线程进行编译，理论上树莓派4的性能应该是可以支持8线程的，可以将后面参数改为 <code>-j8</code></p>
 <p>编译结束后，开始安装：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo make install<br>sudo ldconfig<br>sudo apt-get update<br></code></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">sudo make install<br>sudo ldconfig<br>sudo apt-get update<br></code></pre></div></td></tr></table></figure>
 <p>之后重启系统：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo reboot<br></code></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">sudo reboot<br></code></pre></div></td></tr></table></figure>
 
 
 <h2 id="四、可能问题"><a href="#四、可能问题" class="headerlink" title="四、可能问题"></a>四、可能问题</h2><p>若安装完成后import cv2仍然报错，可以考虑手动拷贝文件：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">cd</span> ~/opencv/build/lib/python3<br>sudo cp cv2.cpython-37m-arm-linux-gnueabihf.so /usr/<span class="hljs-built_in">local</span>/lib/python3.7/dist-packages/cv2.so<br></code></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash"><span class="hljs-built_in">cd</span> ~/opencv/build/lib/python3<br>sudo cp cv2.cpython-37m-arm-linux-gnueabihf.so /usr/<span class="hljs-built_in">local</span>/lib/python3.7/dist-packages/cv2.so<br></code></pre></div></td></tr></table></figure>
 <p>这里的文件路径及python版本根据实际情况进行相应修改即可。</p>
 <h2 id="五、直接安装"><a href="#五、直接安装" class="headerlink" title="五、直接安装"></a>五、直接安装</h2><p>若要安装原生opencv，则直接运行：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">pip install opencv-python<br>或<br>pip3 install opencv-python<br></code></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">pip install opencv-python<br>或<br>pip3 install opencv-python<br></code></pre></div></td></tr></table></figure>
 <p>若需要人脸识别、图像识别等额外功能，则运行：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">pip install opencv-contrib-python<br>或<br>pip3 install opencv-contrib-python<br></code></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">pip install opencv-contrib-python<br>或<br>pip3 install opencv-contrib-python<br></code></pre></div></td></tr></table></figure>
 <p>注意，这两个版本的opencv仅可<font color=red><strong>同时安装一个</strong></font></p>
 <p>可以通过</p>
-<figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs lsl">pip <span class="hljs-type">list</span><br>或<br>pip3 <span class="hljs-type">list</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight lsl"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs lsl">pip <span class="hljs-type">list</span><br>或<br>pip3 <span class="hljs-type">list</span><br></code></pre></div></td></tr></table></figure>
 <p>来查看已安装的包，若已经安装了另一个版本，可以通过</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">pip|pip3 uninstall [包名]<br></code></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">pip|pip3 uninstall [包名]<br></code></pre></div></td></tr></table></figure>
 <p>来卸载已经安装的opencv。</p>
 <hr>
 <h4 id="参考文档："><a href="#参考文档：" class="headerlink" title="参考文档："></a>参考文档：</h4><p>【1】: <a target="_blank" rel="noopener" href="https://docs.opencv.org/master/d2/de6/tutorial_py_setup_in_ubuntu.html">OpenCV官方文档</a></p>
@@ -439,35 +439,42 @@
 
   <footer class="text-center mt-5 py-3">
   <div class="footer-content">
-     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <iframe style="margin-left: 2px; margin-bottom:-5px;" frameborder="0" scrolling="0" width="91px" height="20px" src="https://ghbtns.com/github-btn.html?user=fluid-dev&repo=hexo-theme-fluid&type=star&count=true" > </iframe> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
   </div>
   
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- 不蒜子统计PV -->
+        <span id="busuanzi_container_site_pv" style="display: none">
+            总访问量 
+            <span id="busuanzi_value_site_pv"></span>
+             次
+          </span>
+      
+      
+        <!-- 不蒜子统计UV -->
+        <span id="busuanzi_container_site_uv" style="display: none">
+            总访客数 
+            <span id="busuanzi_value_site_uv"></span>
+             人
+          </span>
+      
+    
+  </div>
+
 
   
   <!-- 备案信息 -->
   <div class="beian">
     <span>
       <a href="http://beian.miit.gov.cn/" target="_blank" rel="nofollow noopener">
-        京ICP证123456号
+        苏ICP备19040408号-2
       </a>
     </span>
-    
-      
-        <span>
-          <a
-            href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=12345678"
-            rel="nofollow noopener"
-            class="beian-police"
-            target="_blank"
-          >
-            
-              <span style="visibility: hidden; width: 0">|</span>
-              <img src="/img/police_beian.png" srcset="/img/loading.gif" alt="police-icon"/>
-            
-            <span>京公网安备12345678号</span>
-          </a>
-        </span>
-      
     
   </div>
 
@@ -523,6 +530,8 @@
   <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js" ></script>
 
 
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
 
 
 

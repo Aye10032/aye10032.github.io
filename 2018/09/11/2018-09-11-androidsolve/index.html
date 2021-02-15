@@ -29,7 +29,7 @@
     
     
       
-      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.4.0/styles/github-gist.min.css" />
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.4.0/styles/idea.min.css" />
     
   
 
@@ -55,7 +55,7 @@
 
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
-    var CONFIG = {"hostname":"www.aye10032.com","root":"/","version":"1.8.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"onlypost":false},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+    var CONFIG = {"hostname":"www.aye10032.com","root":"/","version":"1.8.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"onlypost":false},"web_analytics":{"enable":false,"baidu":null,"google":"UA-181041967-1","gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
   </script>
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
@@ -67,7 +67,7 @@
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand"
-       href="/">&nbsp;<strong>Fluid</strong>&nbsp;</a>
+       href="/">&nbsp;<strong>鸽子窝</strong>&nbsp;</a>
 
     <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
             data-target="#navbarSupportedContent"
@@ -233,11 +233,11 @@
             
             <div class="markdown-body">
               <p>最近重装了系统，于是AS也重新安装了一下，结果创建项目之后发现不能预览布局文件了，这可不好玩，毕竟我不是脑补大师。<br>于是查了一下资料，对比了一下以往的工程文件和Android的API，解决了之后还是在这里记录一下。<br>作为案例这里新建一个项目。可以看到我添加了一个Button组建，然而preview窗口中并没有渲染：<br><img src="%5Cimages%5Cposts%5CandroidXML%5Can01.PNG" srcset="/img/loading.gif"><br>解决方法就是打开AndroidManifest.xml文件，<br><img src="%5Cimages%5Cposts%5CandroidXML%5Can02.PNG" srcset="/img/loading.gif"><br>注意</p>
-<figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs avrasm"><span class="hljs-symbol">android:</span>theme=<span class="hljs-string">&quot;@style/AppTheme&quot;</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight avrasm"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs avrasm"><span class="hljs-symbol">android:</span>theme=<span class="hljs-string">&quot;@style/AppTheme&quot;</span><br></code></pre></div></td></tr></table></figure>
 <p>这一字段，现在我们要做的就是查看<code>@style/AppTheme</code>这一配置文件，<br>按住CTRL键点击就可以打开，<br><img src="%5Cimages%5Cposts%5CandroidXML%5Can03.PNG" srcset="/img/loading.gif"><br>打开这个styles.xml文件，关注</p>
-<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs routeros">&lt;style <span class="hljs-attribute">name</span>=<span class="hljs-string">&quot;AppTheme&quot;</span> <span class="hljs-attribute">parent</span>=<span class="hljs-string">&quot;Theme.AppCompat.Light.DarkActionBar&quot;</span>&gt;<br></code></pre></td></tr></table></figure>
+<figure class="highlight routeros"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs routeros">&lt;style <span class="hljs-attribute">name</span>=<span class="hljs-string">&quot;AppTheme&quot;</span> <span class="hljs-attribute">parent</span>=<span class="hljs-string">&quot;Theme.AppCompat.Light.DarkActionBar&quot;</span>&gt;<br></code></pre></div></td></tr></table></figure>
 <p><img src="%5Cimages%5Cposts%5CandroidXML%5Can04.PNG" srcset="/img/loading.gif"><br>将其修改为</p>
-<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs routeros">&lt;style <span class="hljs-attribute">name</span>=<span class="hljs-string">&quot;AppTheme&quot;</span> <span class="hljs-attribute">parent</span>=<span class="hljs-string">&quot;Base.Theme.AppCompat.Light.DarkActionBar&quot;</span>&gt;<br></code></pre></td></tr></table></figure>
+<figure class="highlight routeros"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs routeros">&lt;style <span class="hljs-attribute">name</span>=<span class="hljs-string">&quot;AppTheme&quot;</span> <span class="hljs-attribute">parent</span>=<span class="hljs-string">&quot;Base.Theme.AppCompat.Light.DarkActionBar&quot;</span>&gt;<br></code></pre></div></td></tr></table></figure>
 <p>说白了就是在前面加上<code>Base.</code> ：<br><img src="%5Cimages%5Cposts%5CandroidXML%5Can05.PNG" srcset="/img/loading.gif"><br>现在可以看到能成功的渲染布局了：<br><img src="%5Cimages%5Cposts%5CandroidXML%5Can06.PNG" srcset="/img/loading.gif">      </p>
 <blockquote>
 <p><strong>9月18日更新：</strong><br>亲测此问题是由于使用了Android API 28（也就是Android9）造成的，之前的应该没有这个问题。</p>
@@ -343,35 +343,42 @@
 
   <footer class="text-center mt-5 py-3">
   <div class="footer-content">
-     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <iframe style="margin-left: 2px; margin-bottom:-5px;" frameborder="0" scrolling="0" width="91px" height="20px" src="https://ghbtns.com/github-btn.html?user=fluid-dev&repo=hexo-theme-fluid&type=star&count=true" > </iframe> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
   </div>
   
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- 不蒜子统计PV -->
+        <span id="busuanzi_container_site_pv" style="display: none">
+            总访问量 
+            <span id="busuanzi_value_site_pv"></span>
+             次
+          </span>
+      
+      
+        <!-- 不蒜子统计UV -->
+        <span id="busuanzi_container_site_uv" style="display: none">
+            总访客数 
+            <span id="busuanzi_value_site_uv"></span>
+             人
+          </span>
+      
+    
+  </div>
+
 
   
   <!-- 备案信息 -->
   <div class="beian">
     <span>
       <a href="http://beian.miit.gov.cn/" target="_blank" rel="nofollow noopener">
-        京ICP证123456号
+        苏ICP备19040408号-2
       </a>
     </span>
-    
-      
-        <span>
-          <a
-            href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=12345678"
-            rel="nofollow noopener"
-            class="beian-police"
-            target="_blank"
-          >
-            
-              <span style="visibility: hidden; width: 0">|</span>
-              <img src="/img/police_beian.png" srcset="/img/loading.gif" alt="police-icon"/>
-            
-            <span>京公网安备12345678号</span>
-          </a>
-        </span>
-      
     
   </div>
 
@@ -427,6 +434,8 @@
   <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js" ></script>
 
 
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
 
 
 
