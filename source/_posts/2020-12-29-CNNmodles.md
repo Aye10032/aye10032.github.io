@@ -7,6 +7,8 @@ title: "几种经典的CNN模型"
 date: 2020-12-29
 
 tag: 笔记
+
+mermaid:true
 typora-root-url: ..
 ---
 
@@ -152,141 +154,143 @@ typora-root-url: ..
 
 神经网络结构范例如下所示，包括四个Inception结构块，两两一组，分为block_0和block_1
 
-<div class="mermaid">
-    graph TB
-    id1(3*3 conv, filters=16)
-    style id1 fill: #3991B620, stroke: #3991B6, stroke-width:2px
-    id2_1(Filter concatenation)
-    id2_2(1*1 conv)
-    id2_3(1*1 conv)
-    id2_4(3*3 conv)
-    id2_5(1*1 conv)
-    id2_6(5*5 conv)
-    id2_7(1*1 conv)
-    id2_8(3*3 pooling)
-    id2_9(Previous layer)
-    style id2_1 fill: #B9CF9320, stroke: #B9CF93, stroke-width:2px
-    style id2_9 fill: #B9CF9320, stroke: #B9CF93, stroke-width:2px
-    style id2_2 fill: #3991B620, stroke: #3991B6, stroke-width:2px
-    style id2_4 fill: #3991B620, stroke: #3991B6, stroke-width:2px
-    style id2_6 fill: #3991B620, stroke: #3991B6, stroke-width:2px
-    style id2_3 fill: #FFFF6940, stroke: #FFFF69, stroke-width:2px
-    style id2_5 fill: #FFFF6940, stroke: #FFFF69, stroke-width:2px
-    style id2_7 fill: #FFFF6940, stroke: #FFFF69, stroke-width:2px
-    style id2_8 fill: #CFA3A420, stroke: #CFA3A4, stroke-width:2px
-    id3_1(Filter concatenation)
-    id3_2(1*1 conv)
-    id3_3(1*1 conv)
-    id3_4(3*3 conv)
-    id3_5(1*1 conv)
-    id3_6(5*5 conv)
-    id3_7(1*1 conv)
-    id3_8(3*3 pooling)
-    id3_9(Previous layer)
-    style id3_1 fill: #B9CF9320, stroke: #B9CF93, stroke-width:2px
-    style id3_9 fill: #B9CF9320, stroke: #B9CF93, stroke-width:2px
-    style id3_2 fill: #3991B620, stroke: #3991B6, stroke-width:2px
-    style id3_4 fill: #3991B620, stroke: #3991B6, stroke-width:2px
-    style id3_6 fill: #3991B620, stroke: #3991B6, stroke-width:2px
-    style id3_3 fill: #FFFF6940, stroke: #FFFF69, stroke-width:2px
-    style id3_5 fill: #FFFF6940, stroke: #FFFF69, stroke-width:2px
-    style id3_7 fill: #FFFF6940, stroke: #FFFF69, stroke-width:2px
-    style id3_8 fill: #CFA3A420, stroke: #CFA3A4, stroke-width:2px
-    subgraph block_0
-    id2_9 --> id2_2
-    id2_2 --> id2_1
-    id2_9 --> id2_3
-    id2_3 --> id2_4
-    id2_4 --> id2_1
-    id2_9 --> id2_5
-    id2_5 --> id2_6
-    id2_6 --> id2_1
-    id2_9 --> id2_8
-    id2_8 --> id2_7
-    id2_7 --> id2_1
-    id3_9 --> id3_2
-    id3_2 --> id3_1
-    id3_9 --> id3_3
-    id3_3 --> id3_4
-    id3_4 --> id3_1
-    id3_9 --> id3_5
-    id3_5 --> id3_6
-    id3_6 --> id3_1
-    id3_9 --> id3_8
-    id3_8 --> id3_7
-    id3_7 --> id3_1
-    id2_1 --> id3_9
-    end
-    id4_1(Filter concatenation)
-    id4_2(1*1 conv)
-    id4_3(1*1 conv)
-    id4_4(3*3 conv)
-    id4_5(1*1 conv)
-    id4_6(5*5 conv)
-    id4_7(1*1 conv)
-    id4_8(3*3 pooling)
-    id4_9(Previous layer)
-    style id4_1 fill: #B9CF9320, stroke: #B9CF93, stroke-width:2px
-    style id4_9 fill: #B9CF9320, stroke: #B9CF93, stroke-width:2px
-    style id4_2 fill: #3991B620, stroke: #3991B6, stroke-width:2px
-    style id4_4 fill: #3991B620, stroke: #3991B6, stroke-width:2px
-    style id4_6 fill: #3991B620, stroke: #3991B6, stroke-width:2px
-    style id4_3 fill: #FFFF6940, stroke: #FFFF69, stroke-width:2px
-    style id4_5 fill: #FFFF6940, stroke: #FFFF69, stroke-width:2px
-    style id4_7 fill: #FFFF6940, stroke: #FFFF69, stroke-width:2px
-    style id4_8 fill: #CFA3A420, stroke: #CFA3A4, stroke-width:2px
-    id5_1(Filter concatenation)
-    id5_2(1*1 conv)
-    id5_3(1*1 conv)
-    id5_4(3*3 conv)
-    id5_5(1*1 conv)
-    id5_6(5*5 conv)
-    id5_7(1*1 conv)
-    id5_8(3*3 pooling)
-    id5_9(Previous layer)
-    style id5_1 fill: #B9CF9320, stroke: #B9CF93, stroke-width:2px
-    style id5_9 fill: #B9CF9320, stroke: #B9CF93, stroke-width:2px
-    style id5_2 fill: #3991B620, stroke: #3991B6, stroke-width:2px
-    style id5_4 fill: #3991B620, stroke: #3991B6, stroke-width:2px
-    style id5_6 fill: #3991B620, stroke: #3991B6, stroke-width:2px
-    style id5_3 fill: #FFFF6940, stroke: #FFFF69, stroke-width:2px
-    style id5_5 fill: #FFFF6940, stroke: #FFFF69, stroke-width:2px
-    style id5_7 fill: #FFFF6940, stroke: #FFFF69, stroke-width:2px
-    style id5_8 fill: #CFA3A420, stroke: #CFA3A4, stroke-width:2px
-    subgraph block_1
-    id4_9 --> id4_2
-    id4_2 --> id4_1
-    id4_9 --> id4_3
-    id4_3 --> id4_4
-    id4_4 --> id4_1
-    id4_9 --> id4_5
-    id4_5 --> id4_6
-    id4_6 --> id4_1
-    id4_9 --> id4_8
-    id4_8 --> id4_7
-    id4_7 --> id4_1
-    id5_9 --> id5_2
-    id5_2 --> id5_1
-    id5_9 --> id5_3
-    id5_3 --> id5_4
-    id5_4 --> id5_1
-    id5_9 --> id5_5
-    id5_5 --> id5_6
-    id5_6 --> id5_1
-    id5_9 --> id5_8
-    id5_8 --> id5_7
-    id5_7 --> id5_1
-    id4_1 --> id5_9
-    end
-    id1 --> id2_9
-    id3_1 --> id4_9
-    id6(global avgpool)
-    style id6 fill: #CFA3A420, stroke: #CFA3A4, stroke-width:2px
-    id7(Dense 10)
-    style id7 fill: #B9CF9320, stroke: #B9CF93, stroke-width:2px
-    id5_1 --> id6
-    id6 --> id7
-</div>
+
+```mermaid
+graph TB
+id1(3*3 conv, filters=16)
+style id1 fill: #3991B620, stroke: #3991B6, stroke-width:2px
+id2_1(Filter concatenation)
+id2_2(1*1 conv)
+id2_3(1*1 conv)
+id2_4(3*3 conv)
+id2_5(1*1 conv)
+id2_6(5*5 conv)
+id2_7(1*1 conv)
+id2_8(3*3 pooling)
+id2_9(Previous layer)
+style id2_1 fill: #B9CF9320, stroke: #B9CF93, stroke-width:2px
+style id2_9 fill: #B9CF9320, stroke: #B9CF93, stroke-width:2px
+style id2_2 fill: #3991B620, stroke: #3991B6, stroke-width:2px
+style id2_4 fill: #3991B620, stroke: #3991B6, stroke-width:2px
+style id2_6 fill: #3991B620, stroke: #3991B6, stroke-width:2px
+style id2_3 fill: #FFFF6940, stroke: #FFFF69, stroke-width:2px
+style id2_5 fill: #FFFF6940, stroke: #FFFF69, stroke-width:2px
+style id2_7 fill: #FFFF6940, stroke: #FFFF69, stroke-width:2px
+style id2_8 fill: #CFA3A420, stroke: #CFA3A4, stroke-width:2px
+id3_1(Filter concatenation)
+id3_2(1*1 conv)
+id3_3(1*1 conv)
+id3_4(3*3 conv)
+id3_5(1*1 conv)
+id3_6(5*5 conv)
+id3_7(1*1 conv)
+id3_8(3*3 pooling)
+id3_9(Previous layer)
+style id3_1 fill: #B9CF9320, stroke: #B9CF93, stroke-width:2px
+style id3_9 fill: #B9CF9320, stroke: #B9CF93, stroke-width:2px
+style id3_2 fill: #3991B620, stroke: #3991B6, stroke-width:2px
+style id3_4 fill: #3991B620, stroke: #3991B6, stroke-width:2px
+style id3_6 fill: #3991B620, stroke: #3991B6, stroke-width:2px
+style id3_3 fill: #FFFF6940, stroke: #FFFF69, stroke-width:2px
+style id3_5 fill: #FFFF6940, stroke: #FFFF69, stroke-width:2px
+style id3_7 fill: #FFFF6940, stroke: #FFFF69, stroke-width:2px
+style id3_8 fill: #CFA3A420, stroke: #CFA3A4, stroke-width:2px
+subgraph block_0
+id2_9 --> id2_2
+id2_2 --> id2_1
+id2_9 --> id2_3
+id2_3 --> id2_4
+id2_4 --> id2_1
+id2_9 --> id2_5
+id2_5 --> id2_6
+id2_6 --> id2_1
+id2_9 --> id2_8
+id2_8 --> id2_7
+id2_7 --> id2_1
+id3_9 --> id3_2
+id3_2 --> id3_1
+id3_9 --> id3_3
+id3_3 --> id3_4
+id3_4 --> id3_1
+id3_9 --> id3_5
+id3_5 --> id3_6
+id3_6 --> id3_1
+id3_9 --> id3_8
+id3_8 --> id3_7
+id3_7 --> id3_1
+id2_1 --> id3_9
+end
+id4_1(Filter concatenation)
+id4_2(1*1 conv)
+id4_3(1*1 conv)
+id4_4(3*3 conv)
+id4_5(1*1 conv)
+id4_6(5*5 conv)
+id4_7(1*1 conv)
+id4_8(3*3 pooling)
+id4_9(Previous layer)
+style id4_1 fill: #B9CF9320, stroke: #B9CF93, stroke-width:2px
+style id4_9 fill: #B9CF9320, stroke: #B9CF93, stroke-width:2px
+style id4_2 fill: #3991B620, stroke: #3991B6, stroke-width:2px
+style id4_4 fill: #3991B620, stroke: #3991B6, stroke-width:2px
+style id4_6 fill: #3991B620, stroke: #3991B6, stroke-width:2px
+style id4_3 fill: #FFFF6940, stroke: #FFFF69, stroke-width:2px
+style id4_5 fill: #FFFF6940, stroke: #FFFF69, stroke-width:2px
+style id4_7 fill: #FFFF6940, stroke: #FFFF69, stroke-width:2px
+style id4_8 fill: #CFA3A420, stroke: #CFA3A4, stroke-width:2px
+id5_1(Filter concatenation)
+id5_2(1*1 conv)
+id5_3(1*1 conv)
+id5_4(3*3 conv)
+id5_5(1*1 conv)
+id5_6(5*5 conv)
+id5_7(1*1 conv)
+id5_8(3*3 pooling)
+id5_9(Previous layer)
+style id5_1 fill: #B9CF9320, stroke: #B9CF93, stroke-width:2px
+style id5_9 fill: #B9CF9320, stroke: #B9CF93, stroke-width:2px
+style id5_2 fill: #3991B620, stroke: #3991B6, stroke-width:2px
+style id5_4 fill: #3991B620, stroke: #3991B6, stroke-width:2px
+style id5_6 fill: #3991B620, stroke: #3991B6, stroke-width:2px
+style id5_3 fill: #FFFF6940, stroke: #FFFF69, stroke-width:2px
+style id5_5 fill: #FFFF6940, stroke: #FFFF69, stroke-width:2px
+style id5_7 fill: #FFFF6940, stroke: #FFFF69, stroke-width:2px
+style id5_8 fill: #CFA3A420, stroke: #CFA3A4, stroke-width:2px
+subgraph block_1
+id4_9 --> id4_2
+id4_2 --> id4_1
+id4_9 --> id4_3
+id4_3 --> id4_4
+id4_4 --> id4_1
+id4_9 --> id4_5
+id4_5 --> id4_6
+id4_6 --> id4_1
+id4_9 --> id4_8
+id4_8 --> id4_7
+id4_7 --> id4_1
+id5_9 --> id5_2
+id5_2 --> id5_1
+id5_9 --> id5_3
+id5_3 --> id5_4
+id5_4 --> id5_1
+id5_9 --> id5_5
+id5_5 --> id5_6
+id5_6 --> id5_1
+id5_9 --> id5_8
+id5_8 --> id5_7
+id5_7 --> id5_1
+id4_1 --> id5_9
+end
+id1 --> id2_9
+id3_1 --> id4_9
+id6(global avgpool)
+style id6 fill: #CFA3A420, stroke: #CFA3A4, stroke-width:2px
+id7(Dense 10)
+style id7 fill: #B9CF9320, stroke: #B9CF93, stroke-width:2px
+id5_1 --> id6
+id6 --> id7
+```
+
 
 ![InceptionNet](/images/posts/CNNmodels/InceptionNet.png)
 

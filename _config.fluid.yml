@@ -361,11 +361,7 @@ footer:
   # HTML of the first line of the footer, it is recommended to keep the Fluid link to promote this theme to more people
   content: '
     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a>
-    <iframe
-      style="margin-left: 2px; margin-bottom:-5px;"
-        frameborder="0" scrolling="0"
-        src="https://ghbtns.com/github-btn.html?user=fluid-dev&repo=hexo-theme-fluid&type=star&count=true" >
-    </iframe>
+    
     <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a>
   '
 
