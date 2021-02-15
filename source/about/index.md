@@ -2,6 +2,7 @@
 title: about
 date: 2021-02-15 17:41:22
 layout: about
+typora-root-url: ..
 ---
 
 萌新一个，现有的知识纯靠自学，越学越是发现~~人类是有极限的~~自己的不足，也是在此过程中继续学习并成长着。		
@@ -22,11 +23,26 @@ GitHub：[https://github.com/Aye10032](https://github.com/Aye10032)
 
 
 
-#### .PS: ~~**↓↓↓我老婆**~~
+#### .PS: ~~**↓↓↓我老婆们（排名不分先后）**~~
+
+{% gi 8 2-3-3 %}
+  ![EcURIQNUMAEHa3W](/images/EcURIQNUMAEHa3W.jpg)
+
+![70667718_p0](/images/70667718_p0.jpg)
+
+![63471622_p0](/images/63471622_p0.jpg)
+
+![](/images/68390587_p0.jpg)
+
+![](/images/61335672_p0.png)
+
+![](/images/30244857_p0.jpg)
+
+![](/images/81832094_p0.jpg)
+
+![](/images/87535230_p0.jpg)
 
 
-
-<img src="/images/EcURIQNUMAEHa3W.jpg" width = "660px" alt="图片名称" align=center />
 
 #### ..PS：要素列表：
 
