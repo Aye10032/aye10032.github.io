@@ -26,7 +26,8 @@ GitHub：[https://github.com/Aye10032](https://github.com/Aye10032)
 #### .PS: ~~**↓↓↓我老婆们（排名不分先后）**~~
 
 {% gi 8 2-3-3 %}
-  ![EcURIQNUMAEHa3W](/images/EcURIQNUMAEHa3W.jpg)
+
+![EcURIQNUMAEHa3W](/images/EcURIQNUMAEHa3W.jpg)
 
 ![70667718_p0](/images/70667718_p0.jpg)
 
@@ -42,6 +43,7 @@ GitHub：[https://github.com/Aye10032](https://github.com/Aye10032)
 
 ![](/images/87535230_p0.jpg)
 
+{% endgi %}
 
 
 #### ..PS：要素列表：
