@@ -739,7 +739,7 @@ twikoo:
 # Archive Page
 #---------------------------
 archive:
-  banner_img: /images/background-cover.png
+  banner_img: /images/background-cover.jpg
   banner_img_height: 60
   banner_mask_alpha: 0.5
   subtitle:
@@ -751,7 +751,7 @@ archive:
 #---------------------------
 category:
   enable: true
-  banner_img: /images/background-cover.png
+  banner_img: /images/background-cover.jpg
   banner_img_height: 60
   banner_mask_alpha: 0.5
   subtitle:
@@ -776,7 +776,7 @@ category:
 #---------------------------
 tag:
   enable: true
-  banner_img: /images/background-cover.png
+  banner_img: /images/background-cover.jpg
   banner_img_height: 80
   banner_mask_alpha: 0.5
   subtitle:
@@ -819,7 +819,7 @@ about:
 # Custom Page through `hexo new page`
 #---------------------------
 page:
-  banner_img: /images/background-cover.png
+  banner_img: /images/background-cover.jpg
   banner_img_height: 60
   banner_mask_alpha: 0.5
 
@@ -830,7 +830,7 @@ page:
 #---------------------------
 page404:
   enable: true
-  banner_img: /images/background-cover.png
+  banner_img: /images/background-cover.jpg
   banner_img_height: 85
   banner_mask_alpha: 0.3
   subtitle: "Page not found"
@@ -842,7 +842,7 @@ page404:
 #---------------------------
 links:
   enable: true
-  banner_img: /images/background-cover.png
+  banner_img: /images/background-cover.jpg
   banner_img_height: 60
   banner_mask_alpha: 0.3
   subtitle:
