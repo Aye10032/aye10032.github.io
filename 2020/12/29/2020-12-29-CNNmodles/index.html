@@ -1,0 +1,977 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/images/favicon.png">
+  <link rel="icon" type="image/png" href="/images/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="Aye10032">
+  <meta name="keywords" content="">
+  <title>几种经典的CNN模型 - 鸽子窝</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.4.0/styles/idea.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"www.aye10032.com","root":"/","version":"1.8.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"onlypost":false},"web_analytics":{"enable":false,"baidu":null,"google":"UA-181041967-1","gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.3.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>鸽子窝</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/images/background-cover.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="几种经典的CNN模型">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-author" aria-hidden="true"></i>
+      Aye10032
+    </span>
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2020-12-29 00:00" pubdate>
+        2020年12月29日 凌晨
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      2.3k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      33
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">几种经典的CNN模型</h1>
+            
+            <div class="markdown-body">
+              <h1 id="几种经典的CNN模型"><a href="#几种经典的CNN模型" class="headerlink" title="几种经典的CNN模型"></a>几种经典的CNN模型</h1><p>首先，标准的CNN网络结构模型一般包括：</p>
+<ul>
+<li>卷积层</li>
+<li>批标准化</li>
+<li>激活函数</li>
+<li>池化</li>
+<li>dropout，休眠一定比例的神经元</li>
+</ul>
+<h2 id="1、LeNet"><a href="#1、LeNet" class="headerlink" title="1、LeNet"></a>1、LeNet</h2><p>共5层，包括两层卷积计算和三层全连接</p>
+<ul>
+<li>第一层卷积计算<ul>
+<li>6个5*5卷积核，卷积步长为1，不使用全零填充</li>
+<li>无批标准化</li>
+<li>激活函数使用sigmoid</li>
+<li>最大池化，池化核尺寸2*2，步长为2，不使用全零填充</li>
+<li>无dropout</li>
+</ul>
+</li>
+<li>第二层卷积计算<ul>
+<li>16个5*5卷积核，卷积步长为1，不使用全零填充</li>
+<li>无批标准化</li>
+<li>激活函数使用sigmoid</li>
+<li>最大池化，池化核尺寸2*2，步长为2，不使用全零填充</li>
+<li>无dropout</li>
+</ul>
+</li>
+<li>fatten</li>
+<li>全连接网络，120个神经元，使用sigmoid激活函数</li>
+<li>全连接网络，84个神经元，使用sigmoid激活函数</li>
+<li>全连接网络，10个神经元，使用softmax激活函数</li>
+</ul>
+<p><img src="/images/posts/CNNmodels/LeNet.png" srcset="/img/loading.gif" alt="LeNet"></p>
+<h2 id="2、AlexNet"><a href="#2、AlexNet" class="headerlink" title="2、AlexNet"></a>2、AlexNet</h2><p>共8层，包括五层卷积计算和三层全连接</p>
+<ul>
+<li>第一层卷积计算<ul>
+<li>96个3*3卷积核，卷积步长为1，不使用全零填充</li>
+<li>使用局部相应标准化LRN</li>
+<li>激活函数使用relu</li>
+<li>最大池化，池化核尺寸3*3，步长为2</li>
+<li>无dropout</li>
+</ul>
+</li>
+<li>第二层卷积计算<ul>
+<li>256个3*3卷积核，卷积步长为1，不使用全零填充</li>
+<li>使用局部相应标准化LRN</li>
+<li>激活函数使用relu</li>
+<li>最大池化，池化核尺寸3*3，步长为2</li>
+<li>无dropout</li>
+</ul>
+</li>
+<li>第三层卷积计算<ul>
+<li>384个3*3卷积核，卷积步长为1，<strong>使用</strong>全零填充</li>
+<li>无标准化</li>
+<li>激活函数使用relu</li>
+<li>不使用池化</li>
+<li>无dropout</li>
+</ul>
+</li>
+<li>第四层卷积计算与第三层相同<ul>
+<li>384个3*3卷积核，卷积步长为1，<strong>使用</strong>全零填充</li>
+<li>无标准化</li>
+<li>激活函数使用relu</li>
+<li>不使用池化</li>
+<li>无dropout</li>
+</ul>
+</li>
+<li>第五层卷积计算<ul>
+<li>256个3*3卷积核，卷积步长为1，<strong>使用</strong>全零填充</li>
+<li>无标准化</li>
+<li>激活函数使用relu</li>
+<li>最大池化，池化核尺寸3*3，步长为2</li>
+<li>无dropout</li>
+</ul>
+</li>
+<li>fatten</li>
+<li>全连接网络，2048个神经元，使用relu激活函数，50% dropout</li>
+<li>全连接网络，2048个神经元，使用relu激活函数，50% dropout</li>
+<li>全连接网络，10个神经元，使用softmax激活函数</li>
+</ul>
+<p><img src="/images/posts/CNNmodels/AlexNet.png" srcset="/img/loading.gif" alt="image-20201231132729733"></p>
+<h2 id="3、VGGNet"><a href="#3、VGGNet" class="headerlink" title="3、VGGNet"></a>3、VGGNet</h2><p>共16层，包括13层卷积计算及三层全连接</p>
+<h3 id="1、卷积计算层"><a href="#1、卷积计算层" class="headerlink" title="1、卷积计算层"></a>1、卷积计算层</h3><table>
+<thead>
+<tr>
+<th align="center">层数</th>
+<th align="center">卷积层</th>
+<th align="center">批标准化</th>
+<th align="center">激活层</th>
+<th align="center">池化层</th>
+<th align="center">dropout</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">1</td>
+<td align="center">64个卷积核，尺寸为3*3，步长为1，全零填充</td>
+<td align="center">BN操作</td>
+<td align="center">relu</td>
+<td align="center">无</td>
+<td align="center">无</td>
+</tr>
+<tr>
+<td align="center">2</td>
+<td align="center">64个卷积核，尺寸为3*3，步长为1，全零填充</td>
+<td align="center">BN操作</td>
+<td align="center">relu</td>
+<td align="center">最大池化，池化核尺寸2*2，池化步长为2</td>
+<td align="center">0.2</td>
+</tr>
+<tr>
+<td align="center">3</td>
+<td align="center">128个卷积核，尺寸为3*3，步长为1，全零填充</td>
+<td align="center">BN操作</td>
+<td align="center">relu</td>
+<td align="center">无</td>
+<td align="center">无</td>
+</tr>
+<tr>
+<td align="center">4</td>
+<td align="center">128个卷积核，尺寸为3*3，步长为1，全零填充</td>
+<td align="center">BN操作</td>
+<td align="center">relu</td>
+<td align="center">最大池化，池化核尺寸2*2，池化步长为2</td>
+<td align="center">0.2</td>
+</tr>
+<tr>
+<td align="center">5</td>
+<td align="center">256个卷积核，尺寸为3*3，步长为1，全零填充</td>
+<td align="center">BN操作</td>
+<td align="center">relu</td>
+<td align="center">无</td>
+<td align="center">无</td>
+</tr>
+<tr>
+<td align="center">6</td>
+<td align="center">256个卷积核，尺寸为3*3，步长为1，全零填充</td>
+<td align="center">BN操作</td>
+<td align="center">relu</td>
+<td align="center">无</td>
+<td align="center">无</td>
+</tr>
+<tr>
+<td align="center">7</td>
+<td align="center">256个卷积核，尺寸为3*3，步长为1，全零填充</td>
+<td align="center">BN操作</td>
+<td align="center">relu</td>
+<td align="center">最大池化，池化核尺寸2*2，池化步长为2</td>
+<td align="center">0.2</td>
+</tr>
+<tr>
+<td align="center">8</td>
+<td align="center">512个卷积核，尺寸为3*3，步长为1，全零填充</td>
+<td align="center">BN操作</td>
+<td align="center">relu</td>
+<td align="center">无</td>
+<td align="center">无</td>
+</tr>
+<tr>
+<td align="center">9</td>
+<td align="center">512个卷积核，尺寸为3*3，步长为1，全零填充</td>
+<td align="center">BN操作</td>
+<td align="center">relu</td>
+<td align="center">无</td>
+<td align="center">无</td>
+</tr>
+<tr>
+<td align="center">10</td>
+<td align="center">512个卷积核，尺寸为3*3，步长为1，全零填充</td>
+<td align="center">BN操作</td>
+<td align="center">relu</td>
+<td align="center">最大池化，池化核尺寸2*2，池化步长为2</td>
+<td align="center">0.2</td>
+</tr>
+<tr>
+<td align="center">11</td>
+<td align="center">512个卷积核，尺寸为3*3，步长为1，全零填充</td>
+<td align="center">BN操作</td>
+<td align="center">relu</td>
+<td align="center">无</td>
+<td align="center">无</td>
+</tr>
+<tr>
+<td align="center">12</td>
+<td align="center">512个卷积核，尺寸为3*3，步长为1，全零填充</td>
+<td align="center">BN操作</td>
+<td align="center">relu</td>
+<td align="center">无</td>
+<td align="center">无</td>
+</tr>
+<tr>
+<td align="center">13</td>
+<td align="center">512个卷积核，尺寸为3*3，步长为1，全零填充</td>
+<td align="center">BN操作</td>
+<td align="center">relu</td>
+<td align="center">最大池化，池化核尺寸2*2，池化步长为2</td>
+<td align="center">0.2</td>
+</tr>
+</tbody></table>
+<h3 id="2、全连接层"><a href="#2、全连接层" class="headerlink" title="2、全连接层"></a>2、全连接层</h3><ul>
+<li>fatten</li>
+<li>全连接网络，512个神经元，使用relu激活函数，20% dropout</li>
+<li>全连接网络，512个神经元，使用relu激活函数，20% dropout</li>
+<li>全连接网络，10个神经元，使用softmax激活函数</li>
+</ul>
+<p><img src="/images/posts/CNNmodels/VGGNet.png" srcset="/img/loading.gif" alt="VGGNet"></p>
+<h2 id="4、InceptionNet"><a href="#4、InceptionNet" class="headerlink" title="4、InceptionNet"></a>4、InceptionNet</h2><p>主体结构为Inception结构块，结构如下图所示：</p>
+<pre><code class=" mermaid">classDiagram
+卷积连接器 &lt;-- 1X1卷积核a
+卷积连接器 &lt;-- 3X3卷积核b
+3X3卷积核b &lt;-- 1X1卷积核b : 降维
+卷积连接器 &lt;-- 5X5卷积核c
+5X5卷积核c &lt;-- 1X1卷积核c : 降维
+卷积连接器 &lt;-- 1X1卷积核d : 降维
+1X1卷积核d &lt;-- 3X3最大池化核
+1X1卷积核a &lt;-- 输入层
+1X1卷积核b &lt;-- 输入层
+1X1卷积核c &lt;-- 输入层
+3X3最大池化核 &lt;-- 输入层
+卷积连接器 : 将收到的四路特征
+卷积连接器 : 按照深度拼接
+</code></pre>
+
+<table>
+<thead>
+<tr>
+<th align="center">卷积核</th>
+<th align="center">卷积层</th>
+<th align="center">批标准化</th>
+<th align="center">激活层</th>
+<th align="center">池化层</th>
+<th align="center">dropout</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">1X1卷积核a</td>
+<td align="center">16个卷积核，尺寸为1*1，<br/>步长为1，全零填充</td>
+<td align="center">BN操作</td>
+<td align="center">relu</td>
+<td align="center">无</td>
+<td align="center">无</td>
+</tr>
+<tr>
+<td align="center">1X1卷积核b</td>
+<td align="center">16个卷积核，尺寸为1*1，<br/>步长为1，全零填充</td>
+<td align="center">BN操作</td>
+<td align="center">relu</td>
+<td align="center">无</td>
+<td align="center">无</td>
+</tr>
+<tr>
+<td align="center">3X3卷积核b</td>
+<td align="center">16个卷积核，尺寸为3*3，<br/>步长为1，全零填充</td>
+<td align="center">BN操作</td>
+<td align="center">relu</td>
+<td align="center">无</td>
+<td align="center">无</td>
+</tr>
+<tr>
+<td align="center">1X1卷积核c</td>
+<td align="center">16个卷积核，尺寸为1*1，<br/>步长为1，全零填充</td>
+<td align="center">BN操作</td>
+<td align="center">relu</td>
+<td align="center">无</td>
+<td align="center">无</td>
+</tr>
+<tr>
+<td align="center">5X5卷积核c</td>
+<td align="center">16个卷积核，尺寸为5*5，<br/>步长为1，全零填充</td>
+<td align="center">BN操作</td>
+<td align="center">relu</td>
+<td align="center">无</td>
+<td align="center">无</td>
+</tr>
+<tr>
+<td align="center">3X3最大池化核</td>
+<td align="center">无</td>
+<td align="center">无</td>
+<td align="center">无</td>
+<td align="center">最大池化，池化核尺寸3*3，<br/>池化步长为1，全零填充</td>
+<td align="center">无</td>
+</tr>
+<tr>
+<td align="center">1X1卷积核d</td>
+<td align="center">16个卷积核，尺寸为1*1，<br/>步长为1，全零填充</td>
+<td align="center">BN操作</td>
+<td align="center">relu</td>
+<td align="center">无</td>
+<td align="center">无</td>
+</tr>
+</tbody></table>
+<p>神经网络结构范例如下所示，包括四个Inception结构块，两两一组，分为block_0和block_1</p>
+<pre><code class=" mermaid">graph TB
+id1(3*3 conv, filters&#x3D;16)
+style id1 fill: #3991B620, stroke: #3991B6, stroke-width:2px
+id2_1(Filter concatenation)
+id2_2(1*1 conv)
+id2_3(1*1 conv)
+id2_4(3*3 conv)
+id2_5(1*1 conv)
+id2_6(5*5 conv)
+id2_7(1*1 conv)
+id2_8(3*3 pooling)
+id2_9(Previous layer)
+style id2_1 fill: #B9CF9320, stroke: #B9CF93, stroke-width:2px
+style id2_9 fill: #B9CF9320, stroke: #B9CF93, stroke-width:2px
+style id2_2 fill: #3991B620, stroke: #3991B6, stroke-width:2px
+style id2_4 fill: #3991B620, stroke: #3991B6, stroke-width:2px
+style id2_6 fill: #3991B620, stroke: #3991B6, stroke-width:2px
+style id2_3 fill: #FFFF6940, stroke: #FFFF69, stroke-width:2px
+style id2_5 fill: #FFFF6940, stroke: #FFFF69, stroke-width:2px
+style id2_7 fill: #FFFF6940, stroke: #FFFF69, stroke-width:2px
+style id2_8 fill: #CFA3A420, stroke: #CFA3A4, stroke-width:2px
+id3_1(Filter concatenation)
+id3_2(1*1 conv)
+id3_3(1*1 conv)
+id3_4(3*3 conv)
+id3_5(1*1 conv)
+id3_6(5*5 conv)
+id3_7(1*1 conv)
+id3_8(3*3 pooling)
+id3_9(Previous layer)
+style id3_1 fill: #B9CF9320, stroke: #B9CF93, stroke-width:2px
+style id3_9 fill: #B9CF9320, stroke: #B9CF93, stroke-width:2px
+style id3_2 fill: #3991B620, stroke: #3991B6, stroke-width:2px
+style id3_4 fill: #3991B620, stroke: #3991B6, stroke-width:2px
+style id3_6 fill: #3991B620, stroke: #3991B6, stroke-width:2px
+style id3_3 fill: #FFFF6940, stroke: #FFFF69, stroke-width:2px
+style id3_5 fill: #FFFF6940, stroke: #FFFF69, stroke-width:2px
+style id3_7 fill: #FFFF6940, stroke: #FFFF69, stroke-width:2px
+style id3_8 fill: #CFA3A420, stroke: #CFA3A4, stroke-width:2px
+subgraph block_0
+id2_9 --&gt; id2_2
+id2_2 --&gt; id2_1
+id2_9 --&gt; id2_3
+id2_3 --&gt; id2_4
+id2_4 --&gt; id2_1
+id2_9 --&gt; id2_5
+id2_5 --&gt; id2_6
+id2_6 --&gt; id2_1
+id2_9 --&gt; id2_8
+id2_8 --&gt; id2_7
+id2_7 --&gt; id2_1
+id3_9 --&gt; id3_2
+id3_2 --&gt; id3_1
+id3_9 --&gt; id3_3
+id3_3 --&gt; id3_4
+id3_4 --&gt; id3_1
+id3_9 --&gt; id3_5
+id3_5 --&gt; id3_6
+id3_6 --&gt; id3_1
+id3_9 --&gt; id3_8
+id3_8 --&gt; id3_7
+id3_7 --&gt; id3_1
+id2_1 --&gt; id3_9
+end
+id4_1(Filter concatenation)
+id4_2(1*1 conv)
+id4_3(1*1 conv)
+id4_4(3*3 conv)
+id4_5(1*1 conv)
+id4_6(5*5 conv)
+id4_7(1*1 conv)
+id4_8(3*3 pooling)
+id4_9(Previous layer)
+style id4_1 fill: #B9CF9320, stroke: #B9CF93, stroke-width:2px
+style id4_9 fill: #B9CF9320, stroke: #B9CF93, stroke-width:2px
+style id4_2 fill: #3991B620, stroke: #3991B6, stroke-width:2px
+style id4_4 fill: #3991B620, stroke: #3991B6, stroke-width:2px
+style id4_6 fill: #3991B620, stroke: #3991B6, stroke-width:2px
+style id4_3 fill: #FFFF6940, stroke: #FFFF69, stroke-width:2px
+style id4_5 fill: #FFFF6940, stroke: #FFFF69, stroke-width:2px
+style id4_7 fill: #FFFF6940, stroke: #FFFF69, stroke-width:2px
+style id4_8 fill: #CFA3A420, stroke: #CFA3A4, stroke-width:2px
+id5_1(Filter concatenation)
+id5_2(1*1 conv)
+id5_3(1*1 conv)
+id5_4(3*3 conv)
+id5_5(1*1 conv)
+id5_6(5*5 conv)
+id5_7(1*1 conv)
+id5_8(3*3 pooling)
+id5_9(Previous layer)
+style id5_1 fill: #B9CF9320, stroke: #B9CF93, stroke-width:2px
+style id5_9 fill: #B9CF9320, stroke: #B9CF93, stroke-width:2px
+style id5_2 fill: #3991B620, stroke: #3991B6, stroke-width:2px
+style id5_4 fill: #3991B620, stroke: #3991B6, stroke-width:2px
+style id5_6 fill: #3991B620, stroke: #3991B6, stroke-width:2px
+style id5_3 fill: #FFFF6940, stroke: #FFFF69, stroke-width:2px
+style id5_5 fill: #FFFF6940, stroke: #FFFF69, stroke-width:2px
+style id5_7 fill: #FFFF6940, stroke: #FFFF69, stroke-width:2px
+style id5_8 fill: #CFA3A420, stroke: #CFA3A4, stroke-width:2px
+subgraph block_1
+id4_9 --&gt; id4_2
+id4_2 --&gt; id4_1
+id4_9 --&gt; id4_3
+id4_3 --&gt; id4_4
+id4_4 --&gt; id4_1
+id4_9 --&gt; id4_5
+id4_5 --&gt; id4_6
+id4_6 --&gt; id4_1
+id4_9 --&gt; id4_8
+id4_8 --&gt; id4_7
+id4_7 --&gt; id4_1
+id5_9 --&gt; id5_2
+id5_2 --&gt; id5_1
+id5_9 --&gt; id5_3
+id5_3 --&gt; id5_4
+id5_4 --&gt; id5_1
+id5_9 --&gt; id5_5
+id5_5 --&gt; id5_6
+id5_6 --&gt; id5_1
+id5_9 --&gt; id5_8
+id5_8 --&gt; id5_7
+id5_7 --&gt; id5_1
+id4_1 --&gt; id5_9
+end
+id1 --&gt; id2_9
+id3_1 --&gt; id4_9
+id6(global avgpool)
+style id6 fill: #CFA3A420, stroke: #CFA3A4, stroke-width:2px
+id7(Dense 10)
+style id7 fill: #B9CF9320, stroke: #B9CF93, stroke-width:2px
+id5_1 --&gt; id6
+id6 --&gt; id7
+</code></pre>
+
+<p><img src="/images/posts/CNNmodels/InceptionNet.png" srcset="/img/loading.gif" alt="InceptionNet"></p>
+<h2 id="5、ResNet"><a href="#5、ResNet" class="headerlink" title="5、ResNet"></a>5、ResNet</h2><p>将前面的输出特征结果越过对叠层直接传递到后面，并与堆叠卷积的非线性输出叠加，有效的缓解了神经网络模型堆叠导致的退化</p>
+<pre><code class=" mermaid">graph TB
+    id0(( ))
+    id1(3X3conv, filters&#x3D;512&lt;br&#x2F;&gt;strides&#x3D;2)
+    id2(3X3conv, filters&#x3D;512)
+    id3((&quot;H(x)&quot;))
+    id4(3X3conv, filters&#x3D;512)
+    id5(3X3conv, filters&#x3D;512)
+    id6((&quot;H(x)&quot;))
+    subgraph  
+    id0 --&gt; id1
+    id1 --&gt; id2
+    id2 --&gt;|&quot;F(x)&quot;| id3
+    end
+    subgraph  
+    id3 --&gt; id4
+    id4 --&gt; id5
+    id5 --&gt;|&quot;F(x)&quot;| id6
+    id0 -.&quot;W(x)&quot;.-&gt; id3
+    id3 --&gt;|x| id6
+    end
+</code></pre>
+
+
+<p>其中，虚线表示维度不同时，此时H(x)=F(x)+W(x)，其中W(x)是1*1卷积操作，用于调整x的维度</p>
+<p>实线表示维度相同时，此时H(x)=F(x)+x</p>
+<p><img src="/images/posts/CNNmodels/ResNet.png" srcset="/img/loading.gif" alt="ResNet"></p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/%E7%AC%94%E8%AE%B0/">笔记</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2020/12/21/2020-12-21-BLEearphone/">
+                        <span class="hidden-mobile">WIN10关闭蓝牙耳机绝对音量功能</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments">
+                
+                
+  <div id="gitalk-container"></div>
+  <script type="text/javascript">
+    Fluid.utils.waitElementVisible('gitalk-container', function() {
+      Fluid.utils.createCssLink('/css/gitalk.css')
+      Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/gitalk@1.7.0/dist/gitalk.min.js', function () {
+        var gitalk = new Gitalk({
+          clientID: 'eeda953af44e09f78441',
+          clientSecret: 'cb84da4697fdc74e72451e5b9618297b1667988b',
+          repo: 'Aye10032.github.io',
+          owner: 'Aye10032',
+          admin: ["Aye10032"],
+          id: '864e1f28cb500b4916fc92561cdde66b',
+          language: 'zh-CN',
+          labels: ["Gitalk"],
+          perPage: 10,
+          pagerDirection: 'last',
+          createIssueManually: true,
+          distractionFreeMode: false
+        });
+        gitalk.render('gitalk-container');
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a>
+<a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- 不蒜子统计PV -->
+        <span id="busuanzi_container_site_pv" style="display: none">
+            总访问量 
+            <span id="busuanzi_value_site_pv"></span>
+             次
+          </span>
+      
+      
+        <!-- 不蒜子统计UV -->
+        <span id="busuanzi_container_site_uv" style="display: none">
+            总访客数 
+            <span id="busuanzi_value_site_uv"></span>
+             人
+          </span>
+      
+    
+  </div>
+
+
+  
+  <!-- 备案信息 -->
+  <div class="beian">
+    <span>
+      <a href="http://beian.miit.gov.cn/" target="_blank" rel="nofollow noopener">
+        苏ICP备19040408号-2
+      </a>
+    </span>
+    
+  </div>
+
+
+  
+</footer>
+
+<!-- SCRIPTS -->
+
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.0/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.0/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js" ></script>
+
+
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    (function () {
+      var path = "/local-search.xml";
+      var inputArea = document.querySelector("#local-search-input");
+      inputArea.onclick = function () {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+        this.onclick = null
+      }
+    })()
+  </script>
+
+
+
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/mermaid@8.8.3/dist/mermaid.min.js" ></script>
+  <script>
+    if (window.mermaid) {
+      mermaid.initialize({"theme":"default"});
+    }
+  </script>
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+
+</body>
+</html>
