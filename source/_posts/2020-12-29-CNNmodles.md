@@ -9,7 +9,6 @@ date: 2020-12-29
 tag: 笔记
 
 mermaid:true
-typora-root-url: ..
 ---
 
 # 几种经典的CNN模型
