@@ -850,22 +850,36 @@ links:
   # Member item of page
   items:
     - {
-      title: "Fluid Blog",
-      intro: "主题博客",
-      link: "https://hexo.fluid-dev.com/",
-      image: "/img/favicon.png"
+      title: "ccp101",
+      intro: "老二次元",
+      link: "https://ccp101.com/",
+      image: "https://ccp101.com/img/avatar.jpg"
     }
     - {
-      title: "Fluid Docs",
-      intro: "主题使用指南",
-      link: "https://hexo.fluid-dev.com/docs/",
-      image: "/img/favicon.png"
+      title: "doublezhuang",
+      intro: "gal大师",
+      link: "https://www.doublezhuang.com/",
+      image: "/images/zhuang.jpg"
     }
     - {
-      title: "Fluid Repo",
-      intro: "主题 GitHub 仓库",
-      link: "https://github.com/fluid-dev/hexo-theme-fluid",
-      image: "/img/favicon.png"
+      title: "Kiko",
+      intro: "老二次元2号",
+      link: "https://kiko612.com/",
+      image: "/images/kiko.jpg"
+    }
+
+    - {
+      title: "Lab107",
+      intro: "实验室官网",
+      link: "https://www.nuaajc-lab107.com",
+      image: "/images/lab_logo.jpg"
+    }
+
+    - {
+      title: "TopologyCraft",
+      intro: "拓扑服官网",
+      link: "https://www.topo.site/",
+      image: "https://www.topo.site/img/logo_large.png"
     }
 
 
