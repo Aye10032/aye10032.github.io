@@ -872,14 +872,28 @@ links:
       title: "Lab107",
       intro: "实验室官网",
       link: "https://www.nuaajc-lab107.com",
-      image: "/images/lab_logo.jpg"
+      image: "/images/lab_logo.png"
     }
 
     - {
       title: "TopologyCraft",
       intro: "拓扑服官网",
       link: "https://www.topo.site/",
-      image: "https://www.topo.site/img/logo_large.png"
+      image: "/images/topo_logo.jpg"
+    }
+
+    - {
+      title: "TIS Trinity Union",
+      intro: "Tis服官网",
+      link: "https://tis.world/",
+      image: "/images/TIS_logo.png"
+    }
+
+    - {
+      title: "Dazo66",
+      intro: "大中",
+      link: "https://blog.dazo66.com/",
+      image: "https://avatars.githubusercontent.com/u/30711471"
     }
 
 
