@@ -201,7 +201,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      575 字
+      585 字
     </span>
   
 
@@ -244,18 +244,29 @@
             <h1 style="display: none">DataGrip连接远程数据库的心得</h1>
             
             <div class="markdown-body">
-              <p>首先介绍一下DataGrip这个软件，这也是一个用于数据库操作的软件，由JetBrains出品，UI和JetBrains全家桶的其他成员很相似，使用起来也很舒服。DataGrip的界面大体就是下图这样的：<br><img src="%5Cimages%5Cposts%5CDataGrip%5CdataGrip.PNG" srcset="/img/loading.gif"><br>言归正传，最近正好做一个比赛项目需要连接远程数据库，然而翻遍了网上的教程基本上全都是连接本地数据库进行操作的，虽然自己之前试了试修改IP地址等等手段，然而结果并不成功，后来在经过尝试之后终于成功的连接上了我部署在百度云的数据库，在这里记录一下。<br>首先是database列表窗口，可以看到现在只有一个我电脑本地的数据库连接。<br><img src="%5Cimages%5Cposts%5CDataGrip%5CdataGrip01.PNG" srcset="/img/loading.gif"><br>此使我想要连接远程的数据库，首先需要新建一个连接对象：<br>点击database窗口左上角的”+”按钮，在弹出菜单中选择<code>Data Source</code>,选择你的数据库类型。我这里就是最简单的MySQL数据库，因此就以此为例：<br><img src="%5Cimages%5Cposts%5CDataGrip%5CdataGrip02.PNG" srcset="/img/loading.gif"><br>这时就会弹出 <em>Data Sources and Drivers</em> 对话框:<br><img src="%5Cimages%5Cposts%5CDataGrip%5CdataGrip03.PNG" srcset="/img/loading.gif"><br>接下来就可以开始设置你新的连接的参数了。<br>首先配置General选项卡，这里的配置和连接本地数据库的配置一毛一样，不用改动。Host直接填默认的localhost就行。Database填写你的数据库名称，不过如果你使用的是默认数据库则可以不填。User和Password是你的<strong>数据库的用户名和密码</strong>，填好了之后就像下图展示的这样：<br><img src="%5Cimages%5Cposts%5CDataGrip%5CdataGrip04.PNG" srcset="/img/loading.gif"><br>此使先不要着急点<code>Test Connection</code>按钮，先切换到 SSH/SSL 选项卡，配置你的远程服务器信息：<br>首先勾选 <code>Use SSH tunnel</code> 复选框，接下来填写你的服务器信息。Proxy host 填写你的服务器的IP地址（记得在后面的 port 里填上端口号22），Proxy user 和 Proxy password 填写服务器的登陆用户和密码，如下所示：<br><img src="%5Cimages%5Cposts%5CDataGrip%5CdataGrip05.PNG" srcset="/img/loading.gif"><br>服务器连接参数配置好了之后，再回到 General 选项卡，点击 <code>Test Connection</code> 按钮，连接成功：<br><img src="%5Cimages%5Cposts%5CDataGrip%5CdataGrip06.PNG" srcset="/img/loading.gif"><br>点击OK保存退出，可以看到已经连接上了我部署在百度云的MySQL数据库<br><img src="%5Cimages%5Cposts%5CDataGrip%5Cdone.PNG" srcset="/img/loading.gif"></p>
+              <h1 id="DataGrip连接远程数据库的心得"><a href="#DataGrip连接远程数据库的心得" class="headerlink" title="DataGrip连接远程数据库的心得"></a>DataGrip连接远程数据库的心得</h1><p>首先介绍一下DataGrip这个软件，这也是一个用于数据库操作的软件，由JetBrains出品，UI和JetBrains全家桶的其他成员很相似，使用起来也很舒服。DataGrip的界面大体就是下图这样的：<br><img src="/images/posts/DataGrip/dataGrip.PNG" srcset="/img/loading.gif"><br>言归正传，最近正好做一个比赛项目需要连接远程数据库，然而翻遍了网上的教程基本上全都是连接本地数据库进行操作的，虽然自己之前试了试修改IP地址等等手段，然而结果并不成功，后来在经过尝试之后终于成功的连接上了我部署在百度云的数据库，在这里记录一下。<br>首先是database列表窗口，可以看到现在只有一个我电脑本地的数据库连接。<br><img src="/images%5Cposts%5CDataGrip%5CdataGrip01.PNG" srcset="/img/loading.gif"><br>此使我想要连接远程的数据库，首先需要新建一个连接对象：<br>点击database窗口左上角的”+”按钮，在弹出菜单中选择<code>Data Source</code>,选择你的数据库类型。我这里就是最简单的MySQL数据库，因此就以此为例：<br><img src="/images%5Cposts%5CDataGrip%5CdataGrip02.PNG" srcset="/img/loading.gif"><br>这时就会弹出 <em>Data Sources and Drivers</em> 对话框:<br><img src="/images%5Cposts%5CDataGrip%5CdataGrip03.PNG" srcset="/img/loading.gif"><br>接下来就可以开始设置你新的连接的参数了。<br>首先配置General选项卡，这里的配置和连接本地数据库的配置一毛一样，不用改动。Host直接填默认的localhost就行。Database填写你的数据库名称，不过如果你使用的是默认数据库则可以不填。User和Password是你的<strong>数据库的用户名和密码</strong>，填好了之后就像下图展示的这样：<br><img src="/images%5Cposts%5CDataGrip%5CdataGrip04.PNG" srcset="/img/loading.gif"><br>此使先不要着急点<code>Test Connection</code>按钮，先切换到 SSH/SSL 选项卡，配置你的远程服务器信息：<br>首先勾选 <code>Use SSH tunnel</code> 复选框，接下来填写你的服务器信息。Proxy host 填写你的服务器的IP地址（记得在后面的 port 里填上端口号22），Proxy user 和 Proxy password 填写服务器的登陆用户和密码，如下所示：<br><img src="/images%5Cposts%5CDataGrip%5CdataGrip05.PNG" srcset="/img/loading.gif"><br>服务器连接参数配置好了之后，再回到 General 选项卡，点击 <code>Test Connection</code> 按钮，连接成功：<br><img src="/images%5Cposts%5CDataGrip%5CdataGrip06.PNG" srcset="/img/loading.gif"><br>点击OK保存退出，可以看到已经连接上了我部署在百度云的MySQL数据库<br><img src="/images%5Cposts%5CDataGrip%5Cdone.PNG" srcset="/img/loading.gif"></p>
 
             </div>
             <hr>
             <div>
               <div class="post-metas mb-3">
                 
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E6%95%99%E7%A8%8B/">教程</a>
+                    
+                      <a class="hover-with-bg" href="/categories/%E6%95%99%E7%A8%8B/JetBrains/">JetBrains</a>
+                    
+                  </div>
+                
                 
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
                       <a class="hover-with-bg" href="/tags/%E6%95%99%E7%A8%8B/">教程</a>
+                    
+                      <a class="hover-with-bg" href="/tags/JetBrains/">JetBrains</a>
                     
                   </div>
                 

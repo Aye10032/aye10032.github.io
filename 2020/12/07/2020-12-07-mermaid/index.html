@@ -201,7 +201,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      453 字
+      459 字
     </span>
   
 
@@ -211,7 +211,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      8
+      9
        分钟
     </span>
   
@@ -247,16 +247,9 @@
               <h1 id="mermaid常用公式"><a href="#mermaid常用公式" class="headerlink" title="mermaid常用公式"></a>mermaid常用公式</h1><p>摘自官方文档</p>
 <a id="more"></a>
 
-<h2 id="Flowchart"><a href="#Flowchart" class="headerlink" title="Flowchart"></a><a target="_blank" rel="noopener" href="https://mermaid-js.github.io/mermaid/#/flowchart?id=flowcharts-basic-syntax">Flowchart</a></h2><div class="mermaid">
-graph TD;
-    A-->B;
-    A-->C;
-    B-->D;
-    C-->D;
-</div>
-
-
-
+<h2 id="Flowchart"><a href="#Flowchart" class="headerlink" title="Flowchart"></a><a target="_blank" rel="noopener" href="https://mermaid-js.github.io/mermaid/#/flowchart?id=flowcharts-basic-syntax">Flowchart</a></h2><blockquote>
+<p>graph TD;<br>    A–&gt;B;<br>    A–&gt;C;<br>    B–&gt;D;<br>    C–&gt;D;</p>
+</blockquote>
 <pre><code class=" mermaid">graph TD;
     A--&gt;B;
     A--&gt;C;
@@ -265,22 +258,9 @@ graph TD;
 </code></pre>
 
 
-<h2 id="Sequence-diagram"><a href="#Sequence-diagram" class="headerlink" title="Sequence diagram"></a><a target="_blank" rel="noopener" href="https://mermaid-js.github.io/mermaid/#/sequenceDiagram">Sequence diagram</a></h2><div class="mermaid">
-    sequenceDiagram
-    participant Alice
-    participant Bob
-    Alice->>John: Hello John, how are you?
-    loop Healthcheck
-        John->>John: Fight against hypochondria
-    end
-    Note right of John: Rational thoughts <br/>prevail!
-    John-->>Alice: Great!
-    John->>Bob: How about you?
-    Bob-->>John: Jolly good!
-</div>
-
-
-
+<h2 id="Sequence-diagram"><a href="#Sequence-diagram" class="headerlink" title="Sequence diagram"></a><a target="_blank" rel="noopener" href="https://mermaid-js.github.io/mermaid/#/sequenceDiagram">Sequence diagram</a></h2><blockquote>
+<p>sequenceDiagram<br>    participant Alice<br>    participant Bob<br>    Alice-&gt;&gt;John: Hello John, how are you?<br>    loop Healthcheck<br>        John-&gt;&gt;John: Fight against hypochondria<br>    end<br>    Note right of John: Rational thoughts <code>&lt;br/&gt;</code>prevail!<br>    John–&gt;&gt;Alice: Great!<br>    John-&gt;&gt;Bob: How about you?<br>    Bob–&gt;&gt;John: Jolly good!</p>
+</blockquote>
 <pre><code class=" mermaid">sequenceDiagram
     participant Alice
     participant Bob
@@ -295,22 +275,10 @@ graph TD;
 </code></pre>
 
 
-<h2 id="Gantt-diagram"><a href="#Gantt-diagram" class="headerlink" title="Gantt diagram"></a><a target="_blank" rel="noopener" href="https://mermaid-js.github.io/mermaid/#/gantt">Gantt diagram</a></h2><div class="mermaid">
-    gantt
-    dateFormat  YYYY-MM-DD
-    title Adding GANTT diagram to mermaid
-    excludes weekdays 2014-01-10
-
-<div class="hljs code-wrapper"><pre><code>section A section
-Completed task            :done,    des1, 2014-01-06,2014-01-08
-Active task               :active,  des2, 2014-01-09, 3d
-Future task               :         des3, after des2, 5d
-Future task2               :         des4, after des3, 5d
-</code></pre></div>
-</div>
-
-
-
+<h2 id="Gantt-diagram"><a href="#Gantt-diagram" class="headerlink" title="Gantt diagram"></a><a target="_blank" rel="noopener" href="https://mermaid-js.github.io/mermaid/#/gantt">Gantt diagram</a></h2><blockquote>
+<p>gantt<br>dateFormat  YYYY-MM-DD<br>title Adding GANTT diagram to mermaid<br>excludes weekdays 2014-01-10</p>
+<p>section A section<br>Completed task            :done,    des1, 2014-01-06,2014-01-08<br>Active task               :active,  des2, 2014-01-09, 3d<br>Future task               :         des3, after des2, 5d<br>Future task2               :         des4, after des3, 5d</p>
+</blockquote>
 <pre><code class=" mermaid">gantt
 dateFormat  YYYY-MM-DD
 title Adding GANTT diagram to mermaid
@@ -324,25 +292,9 @@ Future task2               :         des4, after des3, 5d
 </code></pre>
 
 
-<h2 id="Class-diagram"><a href="#Class-diagram" class="headerlink" title="Class diagram"></a><a target="_blank" rel="noopener" href="https://mermaid-js.github.io/mermaid/#/classDiagram">Class diagram</a></h2><div class="mermaid">
-    classDiagram
-    Class01 <|-- AveryLongClass : Cool
-    Class03 *-- Class04
-    Class05 o-- Class06
-    Class07 .. Class08
-    Class09 --> C2 : Where am i?
-    Class09 --* C3
-    Class09 --|> Class07
-    Class07 : equals()
-    Class07 : Object[] elementData
-    Class01 : size()
-    Class01 : int chimp
-    Class01 : int gorilla
-    Class08 <--> C2: Cool label
-</div>
-
-
-
+<h2 id="Class-diagram"><a href="#Class-diagram" class="headerlink" title="Class diagram"></a><a target="_blank" rel="noopener" href="https://mermaid-js.github.io/mermaid/#/classDiagram">Class diagram</a></h2><blockquote>
+<p>classDiagram<br>Class01 &lt;|– AveryLongClass : Cool<br>Class03 *– Class04<br>Class05 o– Class06<br>Class07 .. Class08<br>Class09 –&gt; C2 : Where am i?<br>Class09 –* C3<br>Class09 –|&gt; Class07<br>Class07 : equals()<br>Class07 : Object[] elementData<br>Class01 : size()<br>Class01 : int chimp<br>Class01 : int gorilla<br>Class08 &lt;–&gt; C2: Cool label</p>
+</blockquote>
 <pre><code class=" mermaid">classDiagram
 Class01 &lt;|-- AveryLongClass : Cool
 Class03 *-- Class04
@@ -360,27 +312,9 @@ Class08 &lt;--&gt; C2: Cool label
 </code></pre>
 
 
-<h2 id="Git-graph-experimental"><a href="#Git-graph-experimental" class="headerlink" title="Git graph - experimental"></a><a target="_blank" rel="noopener" href="https://mermaid-js.github.io/mermaid/#/?id=git-graph-exclamation-experimental">Git graph - experimental</a></h2><div class="mermaid">
-    gitGraph:
-    options
-    {
-        "nodeSpacing": 150,
-        "nodeRadius": 10
-    }
-    end
-    commit
-    branch newbranch
-    checkout newbranch
-    commit
-    commit
-    checkout master
-    commit
-    commit
-    merge newbranch
-</div>
-
-
-
+<h2 id="Git-graph-experimental"><a href="#Git-graph-experimental" class="headerlink" title="Git graph - experimental"></a><a target="_blank" rel="noopener" href="https://mermaid-js.github.io/mermaid/#/?id=git-graph-exclamation-experimental">Git graph - experimental</a></h2><blockquote>
+<p>gitGraph:<br>options<br>{<br>    “nodeSpacing”: 150,<br>    “nodeRadius”: 10<br>}<br>end<br>commit<br>branch newbranch<br>checkout newbranch<br>commit<br>commit<br>checkout master<br>commit<br>commit<br>merge newbranch</p>
+</blockquote>
 <pre><code class=" mermaid">gitGraph:
 options
 &#123;
@@ -400,15 +334,9 @@ merge newbranch
 </code></pre>
 
 
-<h2 id="Entity-Relationship-Diagram-experimental"><a href="#Entity-Relationship-Diagram-experimental" class="headerlink" title="Entity Relationship Diagram -  experimental"></a><a target="_blank" rel="noopener" href="https://mermaid-js.github.io/mermaid/#/entityRelationshipDiagram">Entity Relationship Diagram -  experimental</a></h2><div class="mermaid">
-    erDiagram
-    CUSTOMER ||--o{ ORDER : places
-    ORDER ||--|{ LINE-ITEM : contains
-    CUSTOMER }|..|{ DELIVERY-ADDRESS : uses
-</div>
-
-
-
+<h2 id="Entity-Relationship-Diagram-experimental"><a href="#Entity-Relationship-Diagram-experimental" class="headerlink" title="Entity Relationship Diagram -  experimental"></a><a target="_blank" rel="noopener" href="https://mermaid-js.github.io/mermaid/#/entityRelationshipDiagram">Entity Relationship Diagram -  experimental</a></h2><blockquote>
+<p>erDiagram<br>    CUSTOMER ||–o{ ORDER : places<br>    ORDER ||–|{ LINE-ITEM : contains<br>    CUSTOMER }|..|{ DELIVERY-ADDRESS : uses</p>
+</blockquote>
 <pre><code class=" mermaid">erDiagram
     CUSTOMER ||--o&#123; ORDER : places
     ORDER ||--|&#123; LINE-ITEM : contains
@@ -416,22 +344,9 @@ merge newbranch
 </code></pre>
 
 
-<h2 id="User-Journey-Diagram"><a href="#User-Journey-Diagram" class="headerlink" title="User Journey Diagram"></a><a target="_blank" rel="noopener" href="https://mermaid-js.github.io/mermaid/#/user-journey">User Journey Diagram</a></h2><div class="mermaid">
-journey
-    title My working day
-    section Go to work
-      Make tea: 5: Me
-      Go upstairs: 3: Me
-      Do work: 1: Me, Cat
-    section Go home
-      Go downstairs: 5: Me
-      Sit down: 5: Me
-</div>
-
-
-
-
-
+<h2 id="User-Journey-Diagram"><a href="#User-Journey-Diagram" class="headerlink" title="User Journey Diagram"></a><a target="_blank" rel="noopener" href="https://mermaid-js.github.io/mermaid/#/user-journey">User Journey Diagram</a></h2><blockquote>
+<p>journey<br>    title My working day<br>    section Go to work<br>      Make tea: 5: Me<br>      Go upstairs: 3: Me<br>      Do work: 1: Me, Cat<br>    section Go home<br>      Go downstairs: 5: Me<br>      Sit down: 5: Me</p>
+</blockquote>
 <pre><code class=" mermaid">journey
     title My working day
     section Go to work
@@ -449,11 +364,22 @@ journey
             <div>
               <div class="post-metas mb-3">
                 
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E6%95%99%E7%A8%8B/">教程</a>
+                    
+                      <a class="hover-with-bg" href="/categories/%E6%95%99%E7%A8%8B/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</a>
+                    
+                  </div>
+                
                 
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
                       <a class="hover-with-bg" href="/tags/%E6%95%99%E7%A8%8B/">教程</a>
+                    
+                      <a class="hover-with-bg" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</a>
                     
                   </div>
                 

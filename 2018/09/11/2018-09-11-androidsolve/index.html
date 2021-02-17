@@ -201,7 +201,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      287 字
+      300 字
     </span>
   
 
@@ -244,13 +244,13 @@
             <h1 style="display: none">Android studio无法渲染xml布局的解决办法</h1>
             
             <div class="markdown-body">
-              <p>最近重装了系统，于是AS也重新安装了一下，结果创建项目之后发现不能预览布局文件了，这可不好玩，毕竟我不是脑补大师。<br>于是查了一下资料，对比了一下以往的工程文件和Android的API，解决了之后还是在这里记录一下。<br>作为案例这里新建一个项目。可以看到我添加了一个Button组建，然而preview窗口中并没有渲染：<br><img src="%5Cimages%5Cposts%5CandroidXML%5Can01.PNG" srcset="/img/loading.gif"><br>解决方法就是打开AndroidManifest.xml文件，<br><img src="%5Cimages%5Cposts%5CandroidXML%5Can02.PNG" srcset="/img/loading.gif"><br>注意</p>
+              <h1 id="Android-studio无法渲染xml布局的解决办法"><a href="#Android-studio无法渲染xml布局的解决办法" class="headerlink" title="Android studio无法渲染xml布局的解决办法"></a>Android studio无法渲染xml布局的解决办法</h1><p>最近重装了系统，于是AS也重新安装了一下，结果创建项目之后发现不能预览布局文件了，这可不好玩，毕竟我不是脑补大师。<br>于是查了一下资料，对比了一下以往的工程文件和Android的API，解决了之后还是在这里记录一下。<br>作为案例这里新建一个项目。可以看到我添加了一个Button组建，然而preview窗口中并没有渲染：<br><img src="/images%5Cposts%5CandroidXML%5Can01.PNG" srcset="/img/loading.gif"><br>解决方法就是打开AndroidManifest.xml文件，<br><img src="/images%5Cposts%5CandroidXML%5Can02.PNG" srcset="/img/loading.gif"><br>注意</p>
 <figure class="highlight avrasm"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs avrasm"><span class="hljs-symbol">android:</span>theme=<span class="hljs-string">&quot;@style/AppTheme&quot;</span><br></code></pre></div></td></tr></table></figure>
-<p>这一字段，现在我们要做的就是查看<code>@style/AppTheme</code>这一配置文件，<br>按住CTRL键点击就可以打开，<br><img src="%5Cimages%5Cposts%5CandroidXML%5Can03.PNG" srcset="/img/loading.gif"><br>打开这个styles.xml文件，关注</p>
+<p>这一字段，现在我们要做的就是查看<code>@style/AppTheme</code>这一配置文件，<br>按住CTRL键点击就可以打开，<br><img src="/images%5Cposts%5CandroidXML%5Can03.PNG" srcset="/img/loading.gif"><br>打开这个styles.xml文件，关注</p>
 <figure class="highlight routeros"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs routeros">&lt;style <span class="hljs-attribute">name</span>=<span class="hljs-string">&quot;AppTheme&quot;</span> <span class="hljs-attribute">parent</span>=<span class="hljs-string">&quot;Theme.AppCompat.Light.DarkActionBar&quot;</span>&gt;<br></code></pre></div></td></tr></table></figure>
-<p><img src="%5Cimages%5Cposts%5CandroidXML%5Can04.PNG" srcset="/img/loading.gif"><br>将其修改为</p>
+<p><img src="/images%5Cposts%5CandroidXML%5Can04.PNG" srcset="/img/loading.gif"><br>将其修改为</p>
 <figure class="highlight routeros"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs routeros">&lt;style <span class="hljs-attribute">name</span>=<span class="hljs-string">&quot;AppTheme&quot;</span> <span class="hljs-attribute">parent</span>=<span class="hljs-string">&quot;Base.Theme.AppCompat.Light.DarkActionBar&quot;</span>&gt;<br></code></pre></div></td></tr></table></figure>
-<p>说白了就是在前面加上<code>Base.</code> ：<br><img src="%5Cimages%5Cposts%5CandroidXML%5Can05.PNG" srcset="/img/loading.gif"><br>现在可以看到能成功的渲染布局了：<br><img src="%5Cimages%5Cposts%5CandroidXML%5Can06.PNG" srcset="/img/loading.gif">      </p>
+<p>说白了就是在前面加上<code>Base.</code> ：<br><img src="/images%5Cposts%5CandroidXML%5Can05.PNG" srcset="/img/loading.gif"><br>现在可以看到能成功的渲染布局了：<br><img src="/images%5Cposts%5CandroidXML%5Can06.PNG" srcset="/img/loading.gif">      </p>
 <blockquote>
 <p><strong>9月18日更新：</strong><br>亲测此问题是由于使用了Android API 28（也就是Android9）造成的，之前的应该没有这个问题。</p>
 </blockquote>
@@ -260,11 +260,22 @@
             <div>
               <div class="post-metas mb-3">
                 
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E6%95%99%E7%A8%8B/">教程</a>
+                    
+                      <a class="hover-with-bg" href="/categories/%E6%95%99%E7%A8%8B/JetBrains/">JetBrains</a>
+                    
+                  </div>
+                
                 
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
                       <a class="hover-with-bg" href="/tags/%E6%95%99%E7%A8%8B/">教程</a>
+                    
+                      <a class="hover-with-bg" href="/tags/JetBrains/">JetBrains</a>
                     
                   </div>
                 
