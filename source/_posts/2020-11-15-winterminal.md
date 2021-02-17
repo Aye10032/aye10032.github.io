@@ -40,9 +40,9 @@ windows terminal直接在应用商店里搜索安装即可：
 
 
 
-## 二、安装Chocolatey[^1]
+## 二、安装Chocolatey
 
-Chocolatey是一个Windows下的包管理系统，我们下面的很多插件等都需要使用他来进行安装，安装非常简单，只需要在power shell中执行：
+Chocolatey是一个Windows下的包管理系统，我们下面的很多插件等都需要使用他来进行安装，安装非常简单，只需要在power shell中执行[^1]：
 
 ```powershell
 Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
@@ -60,9 +60,9 @@ choco config set proxy http://127.0.0.1:1080
 
 ![](/images/posts/winterminal/tem3.jpg)
 
-## 三、安装oh-my-posh[^2]
+## 三、安装oh-my-posh
 
-目前，只要安装了Windows terminal就可以直接安装oh-my-posh了。
+目前，只要安装了Windows terminal就可以直接安装oh-my-posh[^2]了。
 
 注意，下面的操作一定是在<font color=red>**以管理员身份运行的power shell中**</font>进行！
 
@@ -289,9 +289,9 @@ Remove-PSReadlineKeyHandler 'Ctrl+r'
 
 
 
-## 六、将Windows terminal添加到右键菜单[^7]
+## 六、将Windows terminal添加到右键菜单
 
-直接安装：
+直接安装[^7]：
 
 ```powershell
 Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/lextm/windowsterminal-shell/master/install.ps1'))
