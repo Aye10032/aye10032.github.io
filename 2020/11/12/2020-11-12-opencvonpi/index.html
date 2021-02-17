@@ -244,11 +244,12 @@
             <h1 style="display: none">树莓派安装python3+OpenCV4.0</h1>
             
             <div class="markdown-body">
-              <h1 id="树莓派安装python3-OpenCV4-0"><a href="#树莓派安装python3-OpenCV4-0" class="headerlink" title="树莓派安装python3+OpenCV4.0"></a>树莓派安装python3+OpenCV4.0</h1><blockquote>
-<p>2020-11-28更新：现在，contrib版本已经可以直接通过pipy安装，详见：[五、直接安装](## 五、直接安装)</p>
-<p>本教程特指通过源码编译安装</p>
-</blockquote>
+              <h1 id="树莓派安装python3-OpenCV4-0"><a href="#树莓派安装python3-OpenCV4-0" class="headerlink" title="树莓派安装python3+OpenCV4.0"></a>树莓派安装python3+OpenCV4.0</h1><p>本教程特指通过源码编译安装</p>
 <a id="more"></a>
+
+<div class="note note-info">
+            <p>2020-11-28更新：现在，contrib版本已经可以直接通过pipy安装，详见：[五、直接安装](## 五、直接安装)</p>
+          </div>
 
 <h2 id="一、树莓派配置"><a href="#一、树莓派配置" class="headerlink" title="一、树莓派配置"></a>一、树莓派配置</h2><h3 id="1、换源"><a href="#1、换源" class="headerlink" title="1、换源"></a>1、换源</h3><figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash"><span class="hljs-comment"># 编辑 `/etc/apt/sources.list` 文件，删除原文件所有内容，用以下内容取代：</span><br>deb http://mirrors.tuna.tsinghua.edu.cn/raspbian/raspbian/ buster main non-free contrib rpi<br>deb-src http://mirrors.tuna.tsinghua.edu.cn/raspbian/raspbian/ buster main non-free contrib rpi<br><br><span class="hljs-comment"># 编辑 `/etc/apt/sources.list.d/raspi.list` 文件，删除原文件所有内容，用以下内容取代：</span><br>deb http://mirrors.tuna.tsinghua.edu.cn/raspberrypi/ buster main ui<br></code></pre></div></td></tr></table></figure>
 <p>编辑器推荐使用nano，例如：</p>
