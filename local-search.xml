@@ -711,8 +711,16 @@
     <link href="/2017/10/28/2017-10-28-myFirstBlog/"/>
     <url>/2017/10/28/2017-10-28-myFirstBlog/</url>
     
-    <content type="html"><![CDATA[<p>最近闲着无聊，搭个个人博客玩玩。正好以后有一些东西也可以发在这里。<br>嘛，看我明天发个教程啥的吧。</p>]]></content>
+    <content type="html"><![CDATA[<h1 id="第一篇日志"><a href="#第一篇日志" class="headerlink" title="第一篇日志"></a>第一篇日志</h1><p>最近闲着无聊，搭个个人博客玩玩。正好以后有一些东西也可以发在这里。<br>嘛，看我明天发个教程啥的吧。</p>]]></content>
     
+    
+    <categories>
+      
+      <category>日志</category>
+      
+      <category>日常</category>
+      
+    </categories>
     
     
     <tags>
