@@ -201,7 +201,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      1.9k 字
+      1.8k 字
     </span>
   
 
@@ -211,7 +211,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      27
+      26
        分钟
     </span>
   
@@ -251,16 +251,16 @@
 <p>全部安装好之后，从开始菜单打开power shell7，以管理员身份启动：</p>
 <p><img src="/images/posts/winterminal/image-20201115174738972.png" srcset="/img/loading.gif" alt="image-20201115174738972"></p>
 <p>下面的操作，除非特殊说明，记得<strong>都要以管理员身份运行</strong>。</p>
-<h2 id="二、安装Chocolatey-lt-span-class-”hint–top-hint–rounded”-aria-label-”chocolatey官方文档"><a href="#二、安装Chocolatey-lt-span-class-”hint–top-hint–rounded”-aria-label-”chocolatey官方文档" class="headerlink" title="二、安装Chocolatey&lt;span class=”hint–top hint–rounded” aria-label=”chocolatey官方文档"></a>二、安装Chocolatey<sup id="fnref:1" class="footnote-ref"><a href="#fn:1" rel="footnote">&lt;span class=”hint–top hint–rounded” aria-label=”chocolatey官方文档</h2><p>“&gt;[1]</span></a></sup></p>
-<p>Chocolatey是一个Windows下的包管理系统，我们下面的很多插件等都需要使用他来进行安装，安装非常简单，只需要在power shell中执行：</p>
+<h2 id="二、安装Chocolatey"><a href="#二、安装Chocolatey" class="headerlink" title="二、安装Chocolatey"></a>二、安装Chocolatey</h2><p>Chocolatey是一个Windows下的包管理系统，我们下面的很多插件等都需要使用他来进行安装，安装非常简单，只需要在power shell中执行<sup id="fnref:1" class="footnote-ref"><a href="#fn:1" rel="footnote"><span class="hint--top hint--rounded" aria-label="chocolatey官方文档
+">[1]</span></a></sup>：</p>
 <figure class="highlight powershell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs powershell"><span class="hljs-built_in">Set-ExecutionPolicy</span> Bypass <span class="hljs-literal">-Scope</span> <span class="hljs-keyword">Process</span> <span class="hljs-literal">-Force</span>; [<span class="hljs-type">System.Net.ServicePointManager</span>]::SecurityProtocol = [<span class="hljs-type">System.Net.ServicePointManager</span>]::SecurityProtocol <span class="hljs-operator">-bor</span> <span class="hljs-number">3072</span>; <span class="hljs-built_in">iex</span> ((<span class="hljs-built_in">New-Object</span> System.Net.WebClient).DownloadString(<span class="hljs-string">&#x27;https://chocolatey.org/install.ps1&#x27;</span>))<br></code></pre></div></td></tr></table></figure>
 <p>即可完成安装：</p>
 <p><img src="/images/posts/winterminal/tem2.jpg" srcset="/img/loading.gif" alt="tem2"></p>
 <p>在下面的过程中，若碰到使用Choco命令安装软件包时出现超时报错的，可以考虑为Choco设置代理：</p>
 <figure class="highlight powershell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs powershell">choco config <span class="hljs-built_in">set</span> proxy http://<span class="hljs-number">127.0</span>.<span class="hljs-number">0.1</span>:<span class="hljs-number">1080</span><br></code></pre></div></td></tr></table></figure>
 <p><img src="/images/posts/winterminal/tem3.jpg" srcset="/img/loading.gif"></p>
-<h2 id="三、安装oh-my-posh-lt-span-class-”hint–top-hint–rounded”-aria-label-”oh-my-posh"><a href="#三、安装oh-my-posh-lt-span-class-”hint–top-hint–rounded”-aria-label-”oh-my-posh" class="headerlink" title="三、安装oh-my-posh&lt;span class=”hint–top hint–rounded” aria-label=”oh-my-posh"></a>三、安装oh-my-posh<sup id="fnref:2" class="footnote-ref"><a href="#fn:2" rel="footnote">&lt;span class=”hint–top hint–rounded” aria-label=”oh-my-posh</h2><p>“&gt;[2]</span></a></sup></p>
-<p>目前，只要安装了Windows terminal就可以直接安装oh-my-posh了。</p>
+<h2 id="三、安装oh-my-posh"><a href="#三、安装oh-my-posh" class="headerlink" title="三、安装oh-my-posh"></a>三、安装oh-my-posh</h2><p>目前，只要安装了Windows terminal就可以直接安装oh-my-posh<sup id="fnref:2" class="footnote-ref"><a href="#fn:2" rel="footnote"><span class="hint--top hint--rounded" aria-label="oh-my-posh
+">[2]</span></a></sup>了。</p>
 <p>注意，下面的操作一定是在<font color=red><strong>以管理员身份运行的power shell中</strong></font>进行！</p>
 <h3 id="1、安装microsoft-windows-terminal包："><a href="#1、安装microsoft-windows-terminal包：" class="headerlink" title="1、安装microsoft-windows-terminal包："></a>1、安装microsoft-windows-terminal包：</h3><figure class="highlight powershell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs powershell">choco install microsoft<span class="hljs-literal">-windows</span><span class="hljs-literal">-terminal</span><br></code></pre></div></td></tr></table></figure>
 <p>之中会碰到询问是否运行安装脚本，输入A（<em>意为全部同意</em>），回车</p>
@@ -334,8 +334,8 @@
 <p>添加：</p>
 <figure class="highlight coq"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs coq"><span class="hljs-keyword">Import</span>-<span class="hljs-keyword">Module</span> PSFzf<br><br><span class="hljs-keyword">Remove</span>-PSReadlineKeyHandler &#x27;Ctrl+r&#x27;<br></code></pre></div></td></tr></table></figure>
 <p>此时可以通过在需要查询的文件夹中按 Ctrl+t 打开搜索功能</p>
-<h2 id="六、将Windows-terminal添加到右键菜单-lt-span-class-”hint–top-hint–rounded”-aria-label-”windowsterminal-shell"><a href="#六、将Windows-terminal添加到右键菜单-lt-span-class-”hint–top-hint–rounded”-aria-label-”windowsterminal-shell" class="headerlink" title="六、将Windows terminal添加到右键菜单&lt;span class=”hint–top hint–rounded” aria-label=”windowsterminal-shell"></a>六、将Windows terminal添加到右键菜单<sup id="fnref:7" class="footnote-ref"><a href="#fn:7" rel="footnote">&lt;span class=”hint–top hint–rounded” aria-label=”windowsterminal-shell</h2><p>“&gt;[7]</span></a></sup></p>
-<p>直接安装：</p>
+<h2 id="六、将Windows-terminal添加到右键菜单"><a href="#六、将Windows-terminal添加到右键菜单" class="headerlink" title="六、将Windows terminal添加到右键菜单"></a>六、将Windows terminal添加到右键菜单</h2><p>直接安装<sup id="fnref:7" class="footnote-ref"><a href="#fn:7" rel="footnote"><span class="hint--top hint--rounded" aria-label="windowsterminal-shell
+">[7]</span></a></sup>：</p>
 <figure class="highlight powershell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs powershell"><span class="hljs-built_in">Set-ExecutionPolicy</span> Bypass <span class="hljs-literal">-Scope</span> <span class="hljs-keyword">Process</span> <span class="hljs-literal">-Force</span>; [<span class="hljs-type">System.Net.ServicePointManager</span>]::SecurityProtocol = [<span class="hljs-type">System.Net.ServicePointManager</span>]::SecurityProtocol <span class="hljs-operator">-bor</span> <span class="hljs-number">3072</span>; <span class="hljs-built_in">iex</span> ((<span class="hljs-built_in">New-Object</span> System.Net.WebClient).DownloadString(<span class="hljs-string">&#x27;https://raw.githubusercontent.com/lextm/windowsterminal-shell/master/install.ps1&#x27;</span>))<br></code></pre></div></td></tr></table></figure>
 <p>这一步若因网络原因导致无法从GitHub下载文件，可以考虑采用以下指令来为power shell设置全局代理：</p>
 <figure class="highlight gams"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs gams"><span class="hljs-keyword">Set</span>-Item <span class="hljs-comment">Env:http_proxy</span> <span class="hljs-comment">&quot;http://127.0.0.1:1080&quot;</span><br><span class="hljs-keyword">Set</span>-Item <span class="hljs-comment">Env:https_proxy</span> <span class="hljs-comment">&quot;http://127.0.0.1:1080&quot;</span><br></code></pre></div></td></tr></table></figure>
