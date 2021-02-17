@@ -6,7 +6,13 @@ title: "树莓派安装python3+OpenCV4.0"
 
 date: 2020-11-12
 
-tag: 教程
+categories: 
+	- 教程
+	- 计算机
+
+tag: 
+	- 教程
+	- 计算机
 typora-root-url: ..
 ---
 
@@ -20,7 +26,7 @@ typora-root-url: ..
 >
 > 本教程特指通过源码编译安装
 
-
+<!-- more -->
 
 ## 一、树莓派配置
 

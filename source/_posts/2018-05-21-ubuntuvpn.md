@@ -6,7 +6,15 @@ title: "Ubuntu16.04环境下的科学上网"
 
 date: 2018-05-21
 
-tag: 教程
+excerpt: "Linux系统下的科学上网配置"
+
+categories: 
+	- 教程
+	- 网络
+
+tag: 
+	- 教程
+	- 网络
 
 ---
 

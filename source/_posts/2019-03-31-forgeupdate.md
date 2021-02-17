@@ -7,7 +7,17 @@ title: "Minecraft Forge 1.13.2修改后的部分函数名"
 
 date: 2019-03-31
 
-tag: 日常
+excerpt: "1.13forge大改，也是forge最后一个仍然辉煌的版本，本文记述了1.13forge的一些代码改动"
+
+categories: 
+	- 日常
+	- 游戏
+	- Minecraft
+
+tag: 
+	- 日常
+	- 游戏
+	- Minecraft
 
 ---
 

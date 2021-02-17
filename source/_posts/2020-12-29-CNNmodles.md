@@ -6,7 +6,15 @@ title: "几种经典的CNN模型"
 
 date: 2020-12-29
 
-tag: 笔记
+excerpt: "自用笔记，几种经典CNN模型的分析"
+
+categories: 
+	- 学习
+	- ML
+
+tag: 
+	- 学习
+	- ML
 
 mermaid: true
 typora-root-url: ..

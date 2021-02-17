@@ -7,7 +7,18 @@ title: "topologycraft工作手记"
 
 date: 2018-01-11
 
-tag: 日志
+excerpt: "TCES相关笔记、日程等"
+
+categories: 
+	- 日常
+	- 游戏
+	- Minecraft
+
+tag: 
+	- 日常
+	- 游戏
+	- Minecraft
+
 typora-root-url: ..
 ---
 

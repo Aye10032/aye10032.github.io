@@ -6,13 +6,21 @@ title: "windows terminal + power shell调教手册"
 
 date: 2020-11-15
 
-tag: 教程
+excerpt: "好看又好用的Windows系统的terminal，不来试试么？"
+
+categories: 
+	- 教程
+	- 计算机
+
+tag: 
+	- 教程
+	- 计算机
 typora-root-url: ..
 ---
 
 # windows terminal + power shell调教手册
 
-<!-- more -->
+
 
 ## 一、安装 windows terminal 和 power shell 7
 
