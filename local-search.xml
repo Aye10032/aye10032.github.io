@@ -4,6 +4,35 @@
   
   
   <entry>
+    <title>安装自己的网盘--nextcloud服务端搭建手册</title>
+    <link href="/2021/02/28/2021-02-28-nextcloud/"/>
+    <url>/2021/02/28/2021-02-28-nextcloud/</url>
+    
+    <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>本教程参考官方文档<sup id="fnref:1" class="footnote-ref"><a href="#fn:1" rel="footnote"><span class="hint--top hint--rounded" aria-label="https://docs.nextcloud.com/server/21/admin_manual/installation/source_installation.html#">[1]</span></a></sup>编写，加以一些补充说明。</p><div class="note note-warning">            <p>本文系统为Debain10，实际操作时请以你的系统为准</p>          </div><h1 id="一、安装依赖"><a href="#一、安装依赖" class="headerlink" title="一、安装依赖"></a>一、安装依赖</h1><h1 id="参考文档"><a href="#参考文档" class="headerlink" title="参考文档"></a>参考文档</h1><section class="footnotes"><div class="footnote-list"><ol><li><span id="fn:1" class="footnote-text"><span><a href="https://docs.nextcloud.com/server/21/admin_manual/installation/source_installation.html#">https://docs.nextcloud.com/server/21/admin_manual/installation/source_installation.html#</a><a href="#fnref:1" rev="footnote" class="footnote-backref"> ↩</a></span></span></li></ol></div></section>]]></content>
+    
+    
+    <categories>
+      
+      <category>教程</category>
+      
+      <category>计算机</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>教程</tag>
+      
+      <tag>计算机</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>群星舰船搭配</title>
     <link href="/2021/02/19/2021-02-19-stellaris-ship/"/>
     <url>/2021/02/19/2021-02-19-stellaris-ship/</url>
