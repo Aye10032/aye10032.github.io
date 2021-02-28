@@ -201,7 +201,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      699 字
+      931 字
     </span>
   
 
@@ -211,7 +211,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      9
+      12
        分钟
     </span>
   
@@ -282,8 +282,21 @@
 
 <p>重启apache：</p>
 <figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">systemctl restart apache2<br></code></pre></div></td></tr></table></figure>
+<h2 id="三、配置apache"><a href="#三、配置apache" class="headerlink" title="三、配置apache"></a>三、配置apache</h2><p>编辑apache的配置文件：</p>
+<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">nano /etc/apache2/sites-available/nextcloud.conf<br></code></pre></div></td></tr></table></figure>
+<p>将其内容写为：</p>
+<figure class="highlight apache"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs apache"><span class="hljs-attribute">Alias</span> /nextcloud <span class="hljs-string">&quot;/var/www/nextcloud/&quot;</span><br><br><span class="hljs-section">&lt;Directory /var/www/nextcloud/&gt;</span><br>  <span class="hljs-attribute">Require</span> <span class="hljs-literal">all</span> granted<br>  <span class="hljs-attribute">AllowOverride</span> <span class="hljs-literal">All</span><br>  <span class="hljs-attribute"><span class="hljs-nomarkup">Options</span></span> FollowSymLinks MultiViews<br><br>  <span class="hljs-section">&lt;IfModule mod_dav.c&gt;</span><br>    <span class="hljs-attribute">Dav</span> <span class="hljs-literal">off</span><br>  <span class="hljs-section">&lt;/IfModule&gt;</span><br><span class="hljs-section">&lt;/Directory&gt;</span><br></code></pre></div></td></tr></table></figure>
+<p>按CTRL+O保存，CTRL+X退出。</p>
+<p>之后使配置文件生效：</p>
+<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">a2ensite nextcloud.conf<br>systemctl reload apache2<br></code></pre></div></td></tr></table></figure>
+<p>接下来，设置启用一些模块：</p>
+<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">a2enmod rewrite<br>a2enmod headers<br>a2enmod env<br>a2enmod dir<br>a2enmod mime<br>a2enmod ssl<br>a2ensite default-ssl<br>systemctl reload apache2<br></code></pre></div></td></tr></table></figure>
 
 
+<h2 id="四、从网页端完成安装"><a href="#四、从网页端完成安装" class="headerlink" title="四、从网页端完成安装"></a>四、从网页端完成安装</h2><p>当上面所有信息配置完毕之后，访问 serverIP/nextcloud 即可看到网盘的初始化界面：</p>
+<p><img src="/images/posts/nextcloud/image-20210228160855466.png" srcset="/img/loading.gif" alt="填写相关信息"></p>
+<p>等待安装完成之后，即可看到相应的界面：</p>
+<p><img src="/images/posts/nextcloud/image-20210228161853337.png" srcset="/img/loading.gif" alt="登录界面"></p>
 <h1 id="额外说明"><a href="#额外说明" class="headerlink" title="额外说明"></a>额外说明</h1><h2 id="一、关于数据库"><a href="#一、关于数据库" class="headerlink" title="一、关于数据库"></a>一、关于数据库</h2><p>可以不安装mariadb而换用SQLite，但是当网盘文件存放较多，使用者也较多时，还是建议安装mariadb。</p>
 <h2 id="二、使用phpMyAdmin图形化管理数据库"><a href="#二、使用phpMyAdmin图形化管理数据库" class="headerlink" title="二、使用phpMyAdmin图形化管理数据库"></a>二、使用phpMyAdmin图形化管理数据库</h2><p>首先进入apache的web根目录，一般为：</p>
 <figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash"><span class="hljs-built_in">cd</span> /var/www/html<br></code></pre></div></td></tr></table></figure>
@@ -293,7 +306,14 @@
 <p>然后重启apache：</p>
 <figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">systemctl restart apache2<br></code></pre></div></td></tr></table></figure>
 <p>之后前往 serverIP/phpMyAdmin 即可访问管理界面：</p>
-<p><img src="/images/posts/nextcloud/image-20210228125301455.png" srcset="/img/loading.gif" alt="image-20210228125301455"></p>
+<p><img src="/images/posts/nextcloud/image-20210228125301455.png" srcset="/img/loading.gif"></p>
+<p>若发现无法通过root用户登录数据库，可以先从命令行登录数据库后，执行：</p>
+<figure class="highlight sql"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs sql"><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">USER</span> <span class="hljs-string">&#x27;root&#x27;</span>@<span class="hljs-string">&#x27;localhost&#x27;</span> IDENTIFIED <span class="hljs-keyword">BY</span> <span class="hljs-string">&#x27;password&#x27;</span>;<br>FLUSH PRIVILEGES;<br></code></pre></div></td></tr></table></figure>
+<div class="note note-info">
+            <p>将上述命令中的<code>password</code>替换为你自己的密码</p>
+          </div>
+
+<p>之后就可以通过密码登录了。</p>
 <h1 id="参考文档"><a href="#参考文档" class="headerlink" title="参考文档"></a>参考文档</h1><section class="footnotes"><div class="footnote-list"><ol><li><span id="fn:1" class="footnote-text"><span><a target="_blank" rel="noopener" href="https://docs.nextcloud.com/server/21/admin_manual/installation/source_installation.html#">https://docs.nextcloud.com/server/21/admin_manual/installation/source_installation.html#</a>
 <a href="#fnref:1" rev="footnote" class="footnote-backref"> ↩</a></span></span></li></ol></div></section>
             </div>
