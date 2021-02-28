@@ -201,7 +201,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      60 字
+      216 字
     </span>
   
 
@@ -211,7 +211,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      1
+      3
        分钟
     </span>
   
@@ -250,7 +250,12 @@
             <p>本文系统为Debain10，实际操作时请以你的系统为准</p>
           </div>
 
-<h1 id="一、安装依赖"><a href="#一、安装依赖" class="headerlink" title="一、安装依赖"></a>一、安装依赖</h1><h1 id="参考文档"><a href="#参考文档" class="headerlink" title="参考文档"></a>参考文档</h1><section class="footnotes"><div class="footnote-list"><ol><li><span id="fn:1" class="footnote-text"><span><a target="_blank" rel="noopener" href="https://docs.nextcloud.com/server/21/admin_manual/installation/source_installation.html#">https://docs.nextcloud.com/server/21/admin_manual/installation/source_installation.html#</a>
+<p>对于一些操作过程中可能遇到的问题，写在了[额外说明](# 额外说明)一章中，可供参考。</p>
+<h1 id="安装过程"><a href="#安装过程" class="headerlink" title="安装过程"></a>安装过程</h1><h2 id="一、安装依赖"><a href="#一、安装依赖" class="headerlink" title="一、安装依赖"></a>一、安装依赖</h2><h3 id="安装PHP4-7"><a href="#安装PHP4-7" class="headerlink" title="安装PHP4.7"></a>安装PHP4.7</h3><figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">sudo apt -y install lsb-release apt-transport-https ca-certificates <br>sudo wget -O /etc/apt/trusted.gpg.d/php.gpg https://packages.sury.org/php/apt.gpg<br><span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;deb https://packages.sury.org/php/ <span class="hljs-subst">$(lsb_release -sc)</span> main&quot;</span> | tee /etc/apt/sources.list.d/php.list<br>sudo apt update<br>sudo apt -y install php7.4<br></code></pre></div></td></tr></table></figure>
+<h3 id="安装apache、mariadb及依赖的PHP模块"><a href="#安装apache、mariadb及依赖的PHP模块" class="headerlink" title="安装apache、mariadb及依赖的PHP模块"></a>安装apache、mariadb及依赖的PHP模块</h3><figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">sudo apt update<br>sudo apt -y install apache2 mariadb-server libapache2-mod-php7.4<br>sudo apt -y install php7.4-gd php7.4-mysql php7.4-curl php7.4-mbstring php7.4-intl<br>sudo apt -y install php7.4-gmp php7.4-bcmath php-imagick php7.4-xml php7.4-zip<br></code></pre></div></td></tr></table></figure>
+
+
+<h1 id="额外说明"><a href="#额外说明" class="headerlink" title="额外说明"></a>额外说明</h1><h1 id="参考文档"><a href="#参考文档" class="headerlink" title="参考文档"></a>参考文档</h1><section class="footnotes"><div class="footnote-list"><ol><li><span id="fn:1" class="footnote-text"><span><a target="_blank" rel="noopener" href="https://docs.nextcloud.com/server/21/admin_manual/installation/source_installation.html#">https://docs.nextcloud.com/server/21/admin_manual/installation/source_installation.html#</a>
 <a href="#fnref:1" rev="footnote" class="footnote-backref"> ↩</a></span></span></li></ol></div></section>
             </div>
             <hr>
