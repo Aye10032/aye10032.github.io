@@ -135,6 +135,64 @@ sudo unzip nextcloud-21.0.0.zip
 systemctl restart apache2
 ```
 
+## 三、配置apache
+
+编辑apache的配置文件：
+
+```bash
+nano /etc/apache2/sites-available/nextcloud.conf
+```
+
+将其内容写为：
+
+```
+Alias /nextcloud "/var/www/nextcloud/"
+
+<Directory /var/www/nextcloud/>
+  Require all granted
+  AllowOverride All
+  Options FollowSymLinks MultiViews
+
+  <IfModule mod_dav.c>
+    Dav off
+  </IfModule>
+</Directory>
+```
+
+按CTRL+O保存，CTRL+X退出。
+
+之后使配置文件生效：
+
+```bash
+a2ensite nextcloud.conf
+systemctl reload apache2
+```
+
+接下来，设置启用一些模块：
+
+```bash
+a2enmod rewrite
+a2enmod headers
+a2enmod env
+a2enmod dir
+a2enmod mime
+a2enmod ssl
+a2ensite default-ssl
+systemctl reload apache2
+```
+
+
+
+## 四、从网页端完成安装
+
+当上面所有信息配置完毕之后，访问 serverIP/nextcloud 即可看到网盘的初始化界面：
+
+![填写相关信息](/images/posts/nextcloud/image-20210228160855466.png)
+
+等待安装完成之后，即可看到相应的界面：
+
+![登录界面](/images/posts/nextcloud/image-20210228161853337.png)
+
 
 
 # 额外说明
@@ -170,7 +228,22 @@ systemctl restart apache2
 
 之后前往 serverIP/phpMyAdmin 即可访问管理界面：
 
-![image-20210228125301455](/images/posts/nextcloud/image-20210228125301455.png)
+![](/images/posts/nextcloud/image-20210228125301455.png)
+
+若发现无法通过root用户登录数据库，可以先从命令行登录数据库后，执行：
+
+```sql
+ALTER USER 'root'@'localhost' IDENTIFIED BY 'password';
+FLUSH PRIVILEGES;
+```
+
+{% note info%}
+
+将上述命令中的`password`替换为你自己的密码
+
+{% endnote %}
+
+之后就可以通过密码登录了。
 
 # 参考文档
 
