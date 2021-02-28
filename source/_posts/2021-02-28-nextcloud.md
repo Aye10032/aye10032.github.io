@@ -28,6 +28,10 @@ typora-root-url: ..
 
 本文系统为Debain10，实际操作时请以你的系统为准
 
+在debain10系统中，以root用户登陆时输入所有命令均无需sudo
+
+为了适合一般情况，本文在所有命令前添加了sudo
+
 {% endnote %}
 
 对于一些操作过程中可能遇到的问题，写在了[额外说明](# 额外说明)一章中，可供参考。
@@ -55,11 +59,118 @@ sudo apt -y install php7.4-gd php7.4-mysql php7.4-curl php7.4-mbstring php7.4-in
 sudo apt -y install php7.4-gmp php7.4-bcmath php-imagick php7.4-xml php7.4-zip
 ```
 
+### 配置数据库
+
+首先创建root用户：
+
+```bash
+sudo /etc/init.d/mysql start
+sudo mysql -u root -p
+```
+
+回车之后会要求为root账户设定密码，输入之后回车，即可看见类似如下的字样：
+
+![](/images/posts/nextcloud/image-20210228113414161.png)
+
+接下来为nextcloud创建用户名：
+
+```sql
+CREATE USER 'username'@'localhost' IDENTIFIED BY 'password';
+CREATE DATABASE IF NOT EXISTS nextcloud CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+GRANT ALL PRIVILEGES ON nextcloud.* TO 'username'@'localhost';
+FLUSH PRIVILEGES;
+```
+
+{% note info%}
+
+将上述命令中的`username`替换为你自己的用户名，`password`替换为你自己的密码
+
+{% endnote %}
+
+![](/images/posts/nextcloud/image-20210228114126688.png)
+
+之后，可以输入
+
+```sql
+quit;
+```
+
+退出数据库命令行。
+
+## 二、安装nextcloud
+
+首先，进入apache的web目录：
+
+```bash
+cd /var/www/html
+```
+
+接下来前往[https://nextcloud.com/install/](https://nextcloud.com/install/)下载服务端安装包，选择Download for server：
+
+![下载界面](/images/posts/nextcloud/image-20210228131212430.png)
+
+之后，可以点击download按钮将压缩包下载到本地，再用FTP传到服务端，也可以右键复制下载链接之后用命令行下载：
+
+```bash
+wget https://download.nextcloud.com/server/releases/nextcloud-21.0.0.zip
+```
+
+![下载服务端](/C:/Users/yeyu6/AppData/Roaming/Typora/typora-user-images/image-20210228131258395.png)
+
+解压：
+
+```bash
+sudo unzip nextcloud-21.0.0.zip
+```
+
+{% note info%}
+
+如果你不是21.0.0，记得换成相应的版本，反正tab一打就补全了
+
+{% endnote %}
+
+重启apache：
+
+```bash
+systemctl restart apache2
+```
+
 
 
 # 额外说明
 
+## 一、关于数据库
 
+可以不安装mariadb而换用SQLite，但是当网盘文件存放较多，使用者也较多时，还是建议安装mariadb。
+
+## 二、使用phpMyAdmin图形化管理数据库
+
+首先进入apache的web根目录，一般为：
+
+```bash
+cd /var/www/html
+```
+
+之后在根目录下载：
+
+```bash
+sudo wget https://files.phpmyadmin.net/phpMyAdmin/5.1.0/phpMyAdmin-5.1.0-all-languages.zip
+sudo unzip phpMyAdmin-5.1.0-all-languages.zip
+sudo cp -R phpMyAdmin-5.1.0-all-languages phpMyAdmin
+sudo rm -rf phpMyAdmin-5.1.0-all-languages
+```
+
+有点蠢（~~其实就是我忘了剪切的指令又懒得去搜罢了~~）
+
+然后重启apache：
+
+```bash
+systemctl restart apache2
+```
+
+之后前往 serverIP/phpMyAdmin 即可访问管理界面：
+
+![image-20210228125301455](/images/posts/nextcloud/image-20210228125301455.png)
 
 # 参考文档
 
