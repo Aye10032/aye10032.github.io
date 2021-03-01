@@ -115,7 +115,7 @@ cd /var/www/html
 wget https://download.nextcloud.com/server/releases/nextcloud-21.0.0.zip
 ```
 
-![下载服务端](/C:/Users/yeyu6/AppData/Roaming/Typora/typora-user-images/image-20210228131258395.png)
+![下载服务端](/images/posts/nextcloud/image-20210228131258395.png)
 
 解压：
 
