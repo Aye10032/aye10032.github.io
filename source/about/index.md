@@ -25,7 +25,7 @@ GitHub：[https://github.com/Aye10032](https://github.com/Aye10032)
 
 #### .PS: ~~**↓↓↓我老婆们（排名不分先后）**~~
 
-{% gi 8 2-3-3 %}
+{% gi 9 3-3-3 %}
 
 ![EcURIQNUMAEHa3W](/images/EcURIQNUMAEHa3W.jpg)
 
