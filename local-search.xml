@@ -993,6 +993,35 @@
   
   
   <entry>
+    <title>大学物理上复习笔记</title>
+    <link href="/2018/05/18/2018-05-18-dawu/"/>
+    <url>/2018/05/18/2018-05-18-dawu/</url>
+    
+    <content type="html"><![CDATA[<h1 id="质点运动学"><a href="#质点运动学" class="headerlink" title="质点运动学"></a>质点运动学</h1><h2 id="运动方程"><a href="#运动方程" class="headerlink" title="运动方程"></a>运动方程</h2><p>已知运动方程x(t)，则：</p><p>速度： $ V=\frac{d x}{d t} $</p><p>加速度：$a=\frac{d v}{d t}=\frac{d^{2} x}{d t^{2}}$</p><h2 id="匀加速直线运动"><a href="#匀加速直线运动" class="headerlink" title="匀加速直线运动"></a>匀加速直线运动</h2><p>初始位置$ x_{0} $，初始速度$ v_{0} $，加速度a ，则：</p><p>$v=v_{0}+at$,</p><p>$x=x_{0}+v_{0}t+\frac{1}{2}at^{2}$，</p><p>$v^{2}-v_{0}^{2}=2a(x-x_{0})$</p><h2 id="抛体运动"><a href="#抛体运动" class="headerlink" title="抛体运动"></a>抛体运动</h2><p>水平方向：$a_{x}=0,v=v_{0}$；</p><p>竖直方向：$a_{y}=-g,v=v_{0y}-gt$</p><h2 id="圆周运动"><a href="#圆周运动" class="headerlink" title="圆周运动"></a>圆周运动</h2><p>已知运动方程$\theta(t)$，则：</p><p>角速度：$\omega=\frac{d\theta}{dt}$</p><p>角加速度：$\alpha=\frac{d\omega}{dt}=\frac{d^{2}\theta}{dt^{2}}$</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>学习</category>
+      
+      <category>期末复习</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>学习</tag>
+      
+      <tag>期末复习</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>工程材料学复习笔记</title>
     <link href="/2018/05/05/2018-05-05-feC/"/>
     <url>/2018/05/05/2018-05-05-feC/</url>
