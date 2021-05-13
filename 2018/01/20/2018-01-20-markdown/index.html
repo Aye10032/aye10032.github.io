@@ -8,15 +8,16 @@
 <head>
   <meta charset="UTF-8">
   <link rel="apple-touch-icon" sizes="76x76" href="/images/favicon.png">
-  <link rel="icon" type="image/png" href="/images/favicon.png">
+  <link rel="icon" href="/images/favicon.png">
   <meta name="viewport"
         content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
   <meta name="theme-color" content="#2f4154">
-  <meta name="description" content="">
+  <meta name="description" content="Markdown常用语法简介">
   <meta name="author" content="Aye10032">
   <meta name="keywords" content="">
+  
   <title>Markdown闲谈 - 鸽子窝</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
@@ -55,11 +56,11 @@
 
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
-    var CONFIG = {"hostname":"www.aye10032.com","root":"/","version":"1.8.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"onlypost":false},"web_analytics":{"enable":true,"baidu":null,"google":"UA-181041967-1","gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+    var CONFIG = {"hostname":"www.aye10032.com","root":"/","version":"1.8.10","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":null,"google":"UA-181041967-1","gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
   </script>
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
-<meta name="generator" content="Hexo 5.3.0"></head>
+<meta name="generator" content="Hexo 5.4.0"></head>
 
 
 <body>
@@ -153,13 +154,13 @@
         
         
           <li class="nav-item" id="search-btn">
-            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
                 class="iconfont icon-search"></i>&nbsp;</a>
           </li>
         
         
           <li class="nav-item" id="color-toggle-btn">
-            <a class="nav-link" href="javascript:">&nbsp;<i
+            <a class="nav-link" target="_self">&nbsp;<i
                 class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
           </li>
         
@@ -244,7 +245,7 @@
             <h1 style="display: none">Markdown闲谈</h1>
             
             <div class="markdown-body">
-              <h1 id="Markdown是什么，我为什么要选择Markdown"><a href="#Markdown是什么，我为什么要选择Markdown" class="headerlink" title="Markdown是什么，我为什么要选择Markdown"></a>Markdown是什么，我为什么要选择Markdown</h1><p><del>蠢货，自己百度去。</del><br> Markdown是一种可以使用普通文本编辑器编写的<strong>标记语言</strong>，通过简单的标记语法，它可以使普通文本内容具有一定的格式。<br>所谓的标记语言，指的是讲文本的<strong>内容</strong>和<strong>格式</strong>一起记录在文本信息中的编码格式，比较有名的标记语言有HTML，XML(office中的docx、xlsx、pptx都是基于XML)，以及我们几天要讲的Markdown。<br>只说概念是没有用的，那么我们为什么要选择Markdown呢？在这之前，先来看一下Markdown的写作效果吧。下面是我之前一篇博客的截图，左边是我实际写的东西，右边是预览：<br><img src="http://m.qpic.cn/psb?/V117MGIn3dBRDw/WikvZvRJmDNgLLSw0n0tUsdpUqLFGx7Px9Ixf9OAsY8!/b/dPMAAAAAAAAA&bo=VQXZAlUF2QIDCSw!&rf=viewer_4" srcset="/img/loading.gif"><br>嗯，可以看出来一些Markdown的特点了吧(<del>看不出来的都叉出去</del>),是的，与常用的word文档不同，文本的格式，甚至包括段落都是直接以特定的字符串来表现出来的，有点类似<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E8%BD%AC%E4%B9%89%E5%AD%97%E7%AC%A6">转义字符</a>，但是还是有一定区别的。这个以后再讲。而这也正是markdown的比较方便的所在。它既可以表现出文字、段落格式，又是一个轻量化的文本编辑格式，打开读取都非常的迅速，几乎不占内存。好了，废话一堆，讲了这么多还是直接进入正题吧。  </p>
+              <h1 id="Markdown是什么，我为什么要选择Markdown"><a href="#Markdown是什么，我为什么要选择Markdown" class="headerlink" title="Markdown是什么，我为什么要选择Markdown"></a>Markdown是什么，我为什么要选择Markdown</h1><p><del>蠢货，自己百度去。</del><br> Markdown是一种可以使用普通文本编辑器编写的<strong>标记语言</strong>，通过简单的标记语法，它可以使普通文本内容具有一定的格式。<br>所谓的标记语言，指的是讲文本的<strong>内容</strong>和<strong>格式</strong>一起记录在文本信息中的编码格式，比较有名的标记语言有HTML，XML(office中的docx、xlsx、pptx都是基于XML)，以及我们几天要讲的Markdown。<br>只说概念是没有用的，那么我们为什么要选择Markdown呢？在这之前，先来看一下Markdown的写作效果吧。下面是我之前一篇博客的截图，左边是我实际写的东西，右边是预览：<br><img src="http://m.qpic.cn/psb?/V117MGIn3dBRDw/WikvZvRJmDNgLLSw0n0tUsdpUqLFGx7Px9Ixf9OAsY8!/b/dPMAAAAAAAAA&bo=VQXZAlUF2QIDCSw!&rf=viewer_4" srcset="/img/loading.gif" lazyload><br>嗯，可以看出来一些Markdown的特点了吧(<del>看不出来的都叉出去</del>),是的，与常用的word文档不同，文本的格式，甚至包括段落都是直接以特定的字符串来表现出来的，有点类似<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E8%BD%AC%E4%B9%89%E5%AD%97%E7%AC%A6">转义字符</a>，但是还是有一定区别的。这个以后再讲。而这也正是markdown的比较方便的所在。它既可以表现出文字、段落格式，又是一个轻量化的文本编辑格式，打开读取都非常的迅速，几乎不占内存。好了，废话一堆，讲了这么多还是直接进入正题吧。  </p>
 <hr>
 <h1 id="用什么来编辑Markdown"><a href="#用什么来编辑Markdown" class="headerlink" title="用什么来编辑Markdown"></a>用什么来编辑Markdown</h1><p>我这里推荐<a target="_blank" rel="noopener" href="https://code.visualstudio.com/Download">vscode</a>和<a target="_blank" rel="noopener" href="https://typora.io/">typora</a> </p>
 <p>其中前者是一个经典的非常好用的轻量级编辑器，支持各种代码的编辑。而后者是一个Markdown专用编辑器，免费，轻量级，而且功能非常之全面，炒鸡好用。<br>那么对于vscode来讲，也许添加几个插件能够帮助你更加方便的编辑。按下Ctrl+shift+k打开扩展商店，我这里建议添加下面几个插件：<br>Markdown shortcuts(添加了一些md语言中常用的快捷键<br>Auto-Open Markdown Preview(能够在界面的左侧实时预览编辑效果)；<br>Markdown All in One(我也不知道具体包含了啥，但装了总没错)。</p>
@@ -260,17 +261,17 @@
 <blockquote>
 <p>a b c d </p>
 </blockquote>
-<p>如下图<br><img src="http://m.qpic.cn/psb?/V117MGIn3dBRDw/dyrXzWZVMYBOCsJ6bLHbNXYjdoF7albqV7OlHUbd*QU!/b/dF4BAAAAAAAA&bo=FAVlABQFZQADCSw!&rf=viewer_4" srcset="/img/loading.gif" alt="虽然敲了很多空格，但最后显示也只有一个"><br>同理，在Markdown中你只按一下Enter是不能做到换行的，即使他看上去像是换了。直接上图：<br><img src="http://m.qpic.cn/psb?/V117MGIn3dBRDw/uGG8XTVmK7zv7YVrtXxvTEwqVEuyljsJJNCNTNkqmgE!/b/dPIAAAAAAAAA&bo=agFxAGoBcQADGTw!&rf=viewer_4" srcset="/img/loading.gif"><em>这里c后面我是敲了一个空格的，但是渲染出来并没有显示</em><br><br><br><br><br>那么，正确的换行姿势是什么呢?  </p>
-<p><strong>正确的姿势是在要换行的两个字符之间先敲两个<em>Space</em>之后再敲<em>Enter</em>就可以了</strong>，就像下图：<br><img src="http://m.qpic.cn/psb?/V117MGIn3dBRDw/cg4JFABkTcofpCKyRA9vli9NonGjYblKsi8RWO36CVg!/b/dGgBAAAAAAAA&bo=dQGjAHUBowADCSw!&rf=viewer_4" srcset="/img/loading.gif" alt="正确的换行姿势"><br><em>可以看到我在c后面加上了两个空格，就完成了换行</em><br><br><br><br><br>上面我们讲过，一般来说无论你敲多少个空格，最终渲染出来的也只有一个，同理,换行也是这样的，无论你打多少个回车，最终渲染出来的还是只有一个换行:<img src="http://r.photo.store.qq.com/psb?/V117MGIn3dBRDw/6.4UUUVs9Vc5UZv2ihz.Oi9Jp*13UCl9yINO9E5LcTQ!/r/dF4BAAAAAAAA" srcset="/img/loading.gif" alt="多个回车不能生效"><br>不过这里同时也显示了另外一种换行方式，即<strong>当两行之间有一个或多个<em>空行</em>时，无论上一行末尾有没有两个空格，渲染均会进行换行操作</strong></p>
-<h3 id="空格和换行的非一般操作"><a href="#空格和换行的非一般操作" class="headerlink" title="空格和换行的非一般操作"></a>空格和换行的非一般操作</h3><p>那么有人可能要问了，难道我就没有办法去输出多个空格或者换行吗？当然有。我们前面说过Markdown是一种跟HTML相似的标记语言，这里我们就可以运用”<code>&amp;nbsp;</code>“和”<code>&lt;br&gt;</code>“来达成多个空格和换行的效果:<img src="http://r.photo.store.qq.com/psb?/V117MGIn3dBRDw/C*0EpFdfCf5yrXoRzKjwodAac.BN8pJzv6LhBdZsxxo!/r/dPMAAAAAAAAA" srcset="/img/loading.gif" alt="多个换行"><br>这个学过HTML就应该知道了，我就不在另外论述。  </p>
-<h3 id="空行和段落"><a href="#空行和段落" class="headerlink" title="空行和段落"></a>空行和段落</h3><p>讲完了空白符，就该讲一下什么是段落了。<br>我们在上面讲了两种换行方式，一种是在句末加上两个空格之后回车，一种是在两行之间加上一个<strong>空行</strong>。那么什么是空行呢？在Markdown当中，只要这一行看上去没有东西，它就算一个空行。哪怕在这一行当中我打了几个空格或者Tab，他也算是一个空行。而段落的标志就是空行。段落与段落之间用空行进行间隔，如下图：<br><img src="http://r.photo.store.qq.com/psb?/V117MGIn3dBRDw/0hk016A*MHCWscTRXlLAoJS20G4EeAtENVDJcY3V2aA!/r/dF4BAAAAAAAA" srcset="/img/loading.gif" alt="段落"><br>知道了什么是段落之后，我们就可以正式的来讲一讲Markdown语法了。  </p>
+<p>如下图<br><img src="http://m.qpic.cn/psb?/V117MGIn3dBRDw/dyrXzWZVMYBOCsJ6bLHbNXYjdoF7albqV7OlHUbd*QU!/b/dF4BAAAAAAAA&bo=FAVlABQFZQADCSw!&rf=viewer_4" srcset="/img/loading.gif" lazyload alt="虽然敲了很多空格，但最后显示也只有一个"><br>同理，在Markdown中你只按一下Enter是不能做到换行的，即使他看上去像是换了。直接上图：<br><img src="http://m.qpic.cn/psb?/V117MGIn3dBRDw/uGG8XTVmK7zv7YVrtXxvTEwqVEuyljsJJNCNTNkqmgE!/b/dPIAAAAAAAAA&bo=agFxAGoBcQADGTw!&rf=viewer_4" srcset="/img/loading.gif" lazyload><em>这里c后面我是敲了一个空格的，但是渲染出来并没有显示</em><br><br><br><br><br>那么，正确的换行姿势是什么呢?  </p>
+<p><strong>正确的姿势是在要换行的两个字符之间先敲两个<em>Space</em>之后再敲<em>Enter</em>就可以了</strong>，就像下图：<br><img src="http://m.qpic.cn/psb?/V117MGIn3dBRDw/cg4JFABkTcofpCKyRA9vli9NonGjYblKsi8RWO36CVg!/b/dGgBAAAAAAAA&bo=dQGjAHUBowADCSw!&rf=viewer_4" srcset="/img/loading.gif" lazyload alt="正确的换行姿势"><br><em>可以看到我在c后面加上了两个空格，就完成了换行</em><br><br><br><br><br>上面我们讲过，一般来说无论你敲多少个空格，最终渲染出来的也只有一个，同理,换行也是这样的，无论你打多少个回车，最终渲染出来的还是只有一个换行:<img src="http://r.photo.store.qq.com/psb?/V117MGIn3dBRDw/6.4UUUVs9Vc5UZv2ihz.Oi9Jp*13UCl9yINO9E5LcTQ!/r/dF4BAAAAAAAA" srcset="/img/loading.gif" lazyload alt="多个回车不能生效"><br>不过这里同时也显示了另外一种换行方式，即<strong>当两行之间有一个或多个<em>空行</em>时，无论上一行末尾有没有两个空格，渲染均会进行换行操作</strong></p>
+<h3 id="空格和换行的非一般操作"><a href="#空格和换行的非一般操作" class="headerlink" title="空格和换行的非一般操作"></a>空格和换行的非一般操作</h3><p>那么有人可能要问了，难道我就没有办法去输出多个空格或者换行吗？当然有。我们前面说过Markdown是一种跟HTML相似的标记语言，这里我们就可以运用”<code>&amp;nbsp;</code>“和”<code>&lt;br&gt;</code>“来达成多个空格和换行的效果:<img src="http://r.photo.store.qq.com/psb?/V117MGIn3dBRDw/C*0EpFdfCf5yrXoRzKjwodAac.BN8pJzv6LhBdZsxxo!/r/dPMAAAAAAAAA" srcset="/img/loading.gif" lazyload alt="多个换行"><br>这个学过HTML就应该知道了，我就不在另外论述。  </p>
+<h3 id="空行和段落"><a href="#空行和段落" class="headerlink" title="空行和段落"></a>空行和段落</h3><p>讲完了空白符，就该讲一下什么是段落了。<br>我们在上面讲了两种换行方式，一种是在句末加上两个空格之后回车，一种是在两行之间加上一个<strong>空行</strong>。那么什么是空行呢？在Markdown当中，只要这一行看上去没有东西，它就算一个空行。哪怕在这一行当中我打了几个空格或者Tab，他也算是一个空行。而段落的标志就是空行。段落与段落之间用空行进行间隔，如下图：<br><img src="http://r.photo.store.qq.com/psb?/V117MGIn3dBRDw/0hk016A*MHCWscTRXlLAoJS20G4EeAtENVDJcY3V2aA!/r/dF4BAAAAAAAA" srcset="/img/loading.gif" lazyload alt="段落"><br>知道了什么是段落之后，我们就可以正式的来讲一讲Markdown语法了。  </p>
 <h2 id="段落格式"><a href="#段落格式" class="headerlink" title="段落格式"></a>段落格式</h2><p>段落格式，顾名思义就是针对段落的文本格式，这些格式在使用时需要用空行与上下段落分割，否则编辑器检测不到段落就会直接把这个效果一路延伸下去啦。</p>
 <h3 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h3><p>Markdown中的标题一般有两种，一种是类Setext格式的标题，另一种是类atx格式，其中我个人比较常用的是后者。那么下面就来具体讲一下这两者。      </p>
 <ul>
 <li><p><strong>类Setext格式</strong>是由在文本下一行输入不少于2个的-或=所构成的，其中=表示最高级标题，而-表示二级标题。虽然这两个符号的数量可以少于两个，但是小于等于两个的话可能会造成无法触发下文的语法高亮，所以我个人一般建议使用4个进行描写。       </p>
 <blockquote>
 <p>输入：        </p>
-<figure class="highlight asciidoc"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs asciidoc">一级标题      <br>=====<br></code></pre></div></td></tr></table></figure>
+<figure class="highlight asciidoc"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs asciidoc"><span class="hljs-section">一级标题      </span><br><span class="hljs-section">=====</span><br></code></pre></div></td></tr></table></figure>
 <p>显示为:<br>​      </p>
 <h1 id="一级标题"><a href="#一级标题" class="headerlink" title="一级标题      "></a>一级标题      </h1><p>输入：       </p>
 <figure class="highlight ada"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs ada">二级标题      <br><span class="hljs-comment">-----     </span><br></code></pre></div></td></tr></table></figure>
@@ -296,7 +297,7 @@
 <p>引用        </p>
 </blockquote>
 <p>  在引用块内部的换行和分段遵循Markdown语法，也就是说如果需要进行硬换行则需要在上一行的末尾输入两个tab再进行回车，否则就不会进行换行，如下所示：        </p>
-  <figure class="highlight plain"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs plain">&gt; 第一行<br>&gt; 上一行末尾没有输入tab      <br>&gt; 上一行末尾输入了两个tab<br>&gt;<br>&gt; 上面是一个空行       <br></code></pre></div></td></tr></table></figure>
+  <figure class="highlight node-repl"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs node-repl"><span class="hljs-meta">&gt;</span> <span class="javascript">第一行</span><br><span class="hljs-meta">&gt;</span> <span class="javascript">上一行末尾没有输入tab      </span><br><span class="hljs-meta">&gt;</span> <span class="javascript">上一行末尾输入了两个tab</span><br><span class="hljs-meta">&gt;</span><br><span class="hljs-meta">&gt;</span> <span class="javascript">上面是一个空行       </span><br></code></pre></div></td></tr></table></figure>
 <p>  那么渲染出来的就是这样的：       </p>
 <blockquote>
 <p>第一行<br>上一行末尾没有输入tab<br>上一行末尾输入了两个tab</p>
@@ -310,7 +311,7 @@
 </li>
 <li><p>对于一整段的代码，可以在段落前后分别用三个 ` 来进行标记，如下：<br>  ```<br>  第一行<br>  还是第一行<br>  第二行     </p>
 <p>  第二段<br>  ```<br>  那么渲染出来的效果就是这样的：     </p>
-  <figure class="highlight plain"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs plain">第一行 还是第一行       <br>第二行     <br><br>第二段     <br></code></pre></div></td></tr></table></figure>
+  <figure class="highlight"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs">第一行 还是第一行       <br>第二行     <br><br>第二段     <br></code></pre></div></td></tr></table></figure>
 <p>  可以看到代码块的分段也是遵循我之前讲到的规则的。</p>
 </li>
 </ul>
@@ -415,10 +416,10 @@
 </blockquote>
 <p>  这乱七八糟的缩进是什么玩意啊！     </p>
 <p>  所以呢，这里给出一个对于列表中的硬换行与级别切换的比较不容易使人迷糊的方式：<strong>缩进</strong>，每一个级别的列表都与上一级差一个tab键的缩进。<br>  在不同等级之间的切换比较简单，只需要在本行的标识符前面按一下tab即可进入低一级的列表。而要回到上一级的列表，一般来说只需要按backspace即可默认删除tab键所造成的缩进，不过有时可能并没有办法能一次性删除按一次tab键所带来的缩进，所以我们这里也可以采用一种比较暴力的方法，直接将标识符前的缩进删除到本行标识符与上一级的标识符对其就可以了。如下图：      </p>
-<p>  <img src="http://r.photo.store.qq.com/psb?/V117MGIn3dBRDw/70Yf*5r7692f8afbi0Fis16wQTuQOHK993l1KL6pX4o!/r/dFYBAAAAAAAA" srcset="/img/loading.gif" alt="new">     </p>
-<p>  而对于列表内的硬换行，则需要删除行前的标识符，此时本行的缩进会被全部删除，如下图：<br>  <img src="http://r.photo.store.qq.com/psb?/V117MGIn3dBRDw/8WDXlBwMD4wlGqxb8s*Bwn0tDGiAowIcGpLdfCLx.JU!/r/dPMAAAAAAAAA" srcset="/img/loading.gif" alt="new"><br>  此时继续使用tab将光标缩进到文本所需要的级别的位置，如下图：<br>  <img src="http://r.photo.store.qq.com/psb?/V117MGIn3dBRDw/epdpTZo2YJHEPJGvYoHwwkIwKE5ngDVsUO86DQOaL24!/r/dGEBAAAAAAAA" srcset="/img/loading.gif" alt="new"><em>截图没有截到光标，我就在光标的位置输入了一个l来代替光标</em><br>  此时输入即可达到文本内的硬换行：        </p>
+<p>  <img src="http://r.photo.store.qq.com/psb?/V117MGIn3dBRDw/70Yf*5r7692f8afbi0Fis16wQTuQOHK993l1KL6pX4o!/r/dFYBAAAAAAAA" srcset="/img/loading.gif" lazyload alt="new">     </p>
+<p>  而对于列表内的硬换行，则需要删除行前的标识符，此时本行的缩进会被全部删除，如下图：<br>  <img src="http://r.photo.store.qq.com/psb?/V117MGIn3dBRDw/8WDXlBwMD4wlGqxb8s*Bwn0tDGiAowIcGpLdfCLx.JU!/r/dPMAAAAAAAAA" srcset="/img/loading.gif" lazyload alt="new"><br>  此时继续使用tab将光标缩进到文本所需要的级别的位置，如下图：<br>  <img src="http://r.photo.store.qq.com/psb?/V117MGIn3dBRDw/epdpTZo2YJHEPJGvYoHwwkIwKE5ngDVsUO86DQOaL24!/r/dGEBAAAAAAAA" srcset="/img/loading.gif" lazyload alt="new"><em>截图没有截到光标，我就在光标的位置输入了一个l来代替光标</em><br>  此时输入即可达到文本内的硬换行：        </p>
 <blockquote>
-<figure class="highlight haxe"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs haxe">- one      <br>  + <span class="hljs-keyword">new</span>        <span class="hljs-type"></span><br><span class="hljs-type"></span>  继续<span class="hljs-keyword">new</span>       <span class="hljs-type"></span><br></code></pre></div></td></tr></table></figure>
+<figure class="highlight haxe"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs haxe">- one      <br>  + <span class="hljs-keyword">new</span>        <span class="hljs-type"></span><br>  继续<span class="hljs-keyword">new</span>       <span class="hljs-type"></span><br></code></pre></div></td></tr></table></figure>
 <p>输出如下:</p>
 <ul>
 <li>one<ul>
@@ -431,7 +432,7 @@
 </li>
 <li><p><strong>有序列表</strong><br>  刚才说过,列表除了无序列表以外还包括了有序列表。有序列表的嵌套和换行等等都是和无序列表一样的，我这里仅举例一下有序列表的表达方式：       </p>
 <blockquote>
-<figure class="highlight haxe"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs haxe"><span class="hljs-number">1.</span> <span class="hljs-keyword">new</span><span class="hljs-type"></span><br><span class="hljs-type">2</span>. <span class="hljs-keyword">new</span><span class="hljs-type"></span><br></code></pre></div></td></tr></table></figure>
+<figure class="highlight haxe"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs haxe"><span class="hljs-number">1.</span> <span class="hljs-keyword">new</span><span class="hljs-type"></span><br><span class="hljs-number">2.</span> <span class="hljs-keyword">new</span><span class="hljs-type"></span><br></code></pre></div></td></tr></table></figure>
 <p>渲染结果如下：</p>
 <ol>
 <li>new        </li>
@@ -481,11 +482,13 @@
 <p>嘛，就是这样。具体选择哪一种就看大家各自的书写习惯和文本的具体情况而定了。</p>
 <h3 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h3><p>图片的格式和链接大体一样，从外观上来看仅仅是在前面加上了一个!而已，同样图片的格式也是分为行内式和参考式，具体的表现方式如下：     </p>
 <figure class="highlight taggerscript"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs taggerscript">![02](<span class="hljs-symbol">\i</span>mages<span class="hljs-symbol">\p</span>osts<span class="hljs-symbol">\m</span>arkdown<span class="hljs-symbol">\0</span>16.PNG)<br></code></pre></div></td></tr></table></figure>
+
 <p>那么就会输出一张图片……        </p>
-<p><img src="%5Cimages%5Cposts%5Cmarkdown%5C016.PNG" srcset="/img/loading.gif" alt="02"> <em>对不起，不要打死我</em>       </p>
+<p><img src="%5Cimages%5Cposts%5Cmarkdown%5C016.PNG" srcset="/img/loading.gif" lazyload alt="02"> <em>对不起，不要打死我</em>       </p>
 <p>当然，我这里的图片地址使用的是本地化地址，你也可以选择使用链接，至于怎么生成图片的链接嘛…..最简单的方法：打开QQ相册，上传，然后显示图片链接，完事。<br>当然一般来说我还是推荐使用上面这种方法了，毕竟文件就在本地比较稳定，也不怕丢失了啥的。<br>参考式也是同样:        </p>
 <figure class="highlight taggerscript"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs taggerscript">![02][01]莓良心    <br><br>[01]:<span class="hljs-symbol">\i</span>mages<span class="hljs-symbol">\p</span>osts<span class="hljs-symbol">\m</span>arkdown<span class="hljs-symbol">\0</span>16.PNG<br></code></pre></div></td></tr></table></figure>
-<p><img src="%5Cimages%5Cposts%5Cmarkdown%5C016.PNG" srcset="/img/loading.gif" alt="02">莓良心    </p>
+
+<p><img src="%5Cimages%5Cposts%5Cmarkdown%5C016.PNG" srcset="/img/loading.gif" lazyload alt="02">莓良心    </p>
 <h2 id="特殊符号的输入"><a href="#特殊符号的输入" class="headerlink" title="特殊符号的输入"></a>特殊符号的输入</h2><p>之前我们的教程里面提到了许多的特殊符号，这些特殊符号一般来说会被编译器自动转换为其表达的格式。不过当我们想要输出这些字符本身的时候应该怎样才能保证它们不被编译呢？答案就是使用反斜杠\，在想要输出的特殊字符前面加上反斜杠，就可以原样输出该字符本身了。</p>
 <blockquote>
 <figure class="highlight asciidoc"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs asciidoc">\`int x=1;\`<br></code></pre></div></td></tr></table></figure>
@@ -519,7 +522,11 @@
                 
               </div>
               
-                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
               
               
                 <div class="post-prevnext">
@@ -549,12 +556,14 @@
 
             
               <!-- Comments -->
-              <article class="comments" id="comments">
+              <article class="comments" id="comments" lazyload>
+                
+                  
                 
                 
   <div id="gitalk-container"></div>
   <script type="text/javascript">
-    Fluid.utils.waitElementVisible('gitalk-container', function() {
+    Fluid.utils.loadComments('#gitalk-container', function() {
       Fluid.utils.createCssLink('/css/gitalk.css')
       Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/gitalk@1.7.0/dist/gitalk.min.js', function () {
         var gitalk = new Gitalk({
@@ -569,7 +578,8 @@
           perPage: 10,
           pagerDirection: 'last',
           createIssueManually: true,
-          distractionFreeMode: false
+          distractionFreeMode: false,
+          proxy: '&lt;your own proxy&gt;/https://github.com/login/oauth/access_token'
         });
         gitalk.render('gitalk-container');
       });
@@ -680,8 +690,9 @@
   
 </footer>
 
-<!-- SCRIPTS -->
 
+  <!-- SCRIPTS -->
+  
   <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
 
@@ -696,7 +707,6 @@
 
 <script  src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" ></script>
 <script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" ></script>
-<script  src="/js/debouncer.js" ></script>
 <script  src="/js/events.js" ></script>
 <script  src="/js/plugins.js" ></script>
 
@@ -704,7 +714,7 @@
 
 
   
-    <script  src="/js/lazyload.js" ></script>
+    <script  src="/js/img-lazyload.js" ></script>
   
 
 
@@ -751,11 +761,12 @@
   <script>
     (function () {
       var path = "/local-search.xml";
-      var inputArea = document.querySelector("#local-search-input");
-      inputArea.onclick = function () {
+      $('#local-search-input').on('click', function() {
         searchFunc(path, 'local-search-input', 'local-search-result');
-        this.onclick = null
-      }
+      });
+      $('#modalSearch').on('shown.bs.modal', function() {
+        $('#local-search-input').focus();
+      });
     })()
   </script>
 
@@ -797,7 +808,6 @@
 
 <!-- 主题的启动项 保持在最底部 -->
 <script  src="/js/boot.js" ></script>
-
 
 
 </body>

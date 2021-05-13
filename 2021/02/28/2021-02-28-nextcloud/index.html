@@ -8,15 +8,16 @@
 <head>
   <meta charset="UTF-8">
   <link rel="apple-touch-icon" sizes="76x76" href="/images/favicon.png">
-  <link rel="icon" type="image/png" href="/images/favicon.png">
+  <link rel="icon" href="/images/favicon.png">
   <meta name="viewport"
         content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
   <meta name="theme-color" content="#2f4154">
-  <meta name="description" content="">
+  <meta name="description" content="基于Debain10的nextcloud搭建心得">
   <meta name="author" content="Aye10032">
   <meta name="keywords" content="">
+  
   <title>安装自己的网盘--nextcloud服务端搭建手册 - 鸽子窝</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
@@ -55,11 +56,11 @@
 
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
-    var CONFIG = {"hostname":"www.aye10032.com","root":"/","version":"1.8.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"onlypost":false},"web_analytics":{"enable":true,"baidu":null,"google":"UA-181041967-1","gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+    var CONFIG = {"hostname":"www.aye10032.com","root":"/","version":"1.8.10","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":null,"google":"UA-181041967-1","gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
   </script>
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
-<meta name="generator" content="Hexo 5.3.0"></head>
+<meta name="generator" content="Hexo 5.4.0"></head>
 
 
 <body>
@@ -153,13 +154,13 @@
         
         
           <li class="nav-item" id="search-btn">
-            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
                 class="iconfont icon-search"></i>&nbsp;</a>
           </li>
         
         
           <li class="nav-item" id="color-toggle-btn">
-            <a class="nav-link" href="javascript:">&nbsp;<i
+            <a class="nav-link" target="_self">&nbsp;<i
                 class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
           </li>
         
@@ -252,63 +253,80 @@
 
 <p>对于一些操作过程中可能遇到的问题，写在了[额外说明](# 额外说明)一章中，可供参考。</p>
 <h1 id="安装过程"><a href="#安装过程" class="headerlink" title="安装过程"></a>安装过程</h1><h2 id="一、安装依赖"><a href="#一、安装依赖" class="headerlink" title="一、安装依赖"></a>一、安装依赖</h2><h3 id="安装PHP4-7"><a href="#安装PHP4-7" class="headerlink" title="安装PHP4.7"></a>安装PHP4.7</h3><figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">sudo apt -y install lsb-release apt-transport-https ca-certificates <br>sudo wget -O /etc/apt/trusted.gpg.d/php.gpg https://packages.sury.org/php/apt.gpg<br><span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;deb https://packages.sury.org/php/ <span class="hljs-subst">$(lsb_release -sc)</span> main&quot;</span> | tee /etc/apt/sources.list.d/php.list<br>sudo apt update<br>sudo apt -y install php7.4<br></code></pre></div></td></tr></table></figure>
+
 <h3 id="安装apache、mariadb及依赖的PHP模块"><a href="#安装apache、mariadb及依赖的PHP模块" class="headerlink" title="安装apache、mariadb及依赖的PHP模块"></a>安装apache、mariadb及依赖的PHP模块</h3><figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">sudo apt update<br>sudo apt -y install apache2 mariadb-server libapache2-mod-php7.4<br>sudo apt -y install php7.4-gd php7.4-mysql php7.4-curl php7.4-mbstring php7.4-intl<br>sudo apt -y install php7.4-gmp php7.4-bcmath php-imagick php7.4-xml php7.4-zip<br></code></pre></div></td></tr></table></figure>
+
 <h3 id="配置数据库"><a href="#配置数据库" class="headerlink" title="配置数据库"></a>配置数据库</h3><p>首先创建root用户：</p>
 <figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">sudo /etc/init.d/mysql start<br>sudo mysql -u root -p<br></code></pre></div></td></tr></table></figure>
+
 <p>回车之后会要求为root账户设定密码，输入之后回车，即可看见类似如下的字样：</p>
-<p><img src="/images/posts/nextcloud/image-20210228113414161.png" srcset="/img/loading.gif"></p>
+<p><img src="/images/posts/nextcloud/image-20210228113414161.png" srcset="/img/loading.gif" lazyload></p>
 <p>接下来为nextcloud创建用户名：</p>
 <figure class="highlight sql"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs sql"><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">USER</span> <span class="hljs-string">&#x27;username&#x27;</span>@<span class="hljs-string">&#x27;localhost&#x27;</span> IDENTIFIED <span class="hljs-keyword">BY</span> <span class="hljs-string">&#x27;password&#x27;</span>;<br><span class="hljs-keyword">CREATE</span> DATABASE IF <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">EXISTS</span> nextcloud <span class="hljs-type">CHARACTER</span> <span class="hljs-keyword">SET</span> utf8mb4 <span class="hljs-keyword">COLLATE</span> utf8mb4_general_ci;<br><span class="hljs-keyword">GRANT</span> <span class="hljs-keyword">ALL</span> PRIVILEGES <span class="hljs-keyword">ON</span> nextcloud.<span class="hljs-operator">*</span> <span class="hljs-keyword">TO</span> <span class="hljs-string">&#x27;username&#x27;</span>@<span class="hljs-string">&#x27;localhost&#x27;</span>;<br>FLUSH PRIVILEGES;<br></code></pre></div></td></tr></table></figure>
+
 <div class="note note-info">
             <p>将上述命令中的<code>username</code>替换为你自己的用户名，<code>password</code>替换为你自己的密码</p>
           </div>
 
-<p><img src="/images/posts/nextcloud/image-20210228114126688.png" srcset="/img/loading.gif"></p>
+<p><img src="/images/posts/nextcloud/image-20210228114126688.png" srcset="/img/loading.gif" lazyload></p>
 <p>之后，可以输入</p>
 <figure class="highlight sql"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs sql">quit;<br></code></pre></div></td></tr></table></figure>
+
 <p>退出数据库命令行。</p>
 <h2 id="二、安装nextcloud"><a href="#二、安装nextcloud" class="headerlink" title="二、安装nextcloud"></a>二、安装nextcloud</h2><p>首先，进入apache的web目录：</p>
 <figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash"><span class="hljs-built_in">cd</span> /var/www/html<br></code></pre></div></td></tr></table></figure>
+
 <p>接下来前往<a target="_blank" rel="noopener" href="https://nextcloud.com/install/">https://nextcloud.com/install/</a>下载服务端安装包，选择Download for server：</p>
-<p><img src="/images/posts/nextcloud/image-20210228131212430.png" srcset="/img/loading.gif" alt="下载界面"></p>
+<p><img src="/images/posts/nextcloud/image-20210228131212430.png" srcset="/img/loading.gif" lazyload alt="下载界面"></p>
 <p>之后，可以点击download按钮将压缩包下载到本地，再用FTP传到服务端，也可以右键复制下载链接之后用命令行下载：</p>
 <figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">wget https://download.nextcloud.com/server/releases/nextcloud-21.0.0.zip<br></code></pre></div></td></tr></table></figure>
-<p><img src="/images/posts/nextcloud/image-20210228131258395.png" srcset="/img/loading.gif" alt="下载服务端"></p>
+
+<p><img src="/images/posts/nextcloud/image-20210228131258395.png" srcset="/img/loading.gif" lazyload alt="下载服务端"></p>
 <p>解压：</p>
 <figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">sudo unzip nextcloud-21.0.0.zip<br></code></pre></div></td></tr></table></figure>
+
 <div class="note note-info">
             <p>如果你不是21.0.0，记得换成相应的版本，反正tab一打就补全了</p>
           </div>
 
 <p>重启apache：</p>
 <figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">systemctl restart apache2<br></code></pre></div></td></tr></table></figure>
+
 <h2 id="三、配置apache"><a href="#三、配置apache" class="headerlink" title="三、配置apache"></a>三、配置apache</h2><p>编辑apache的配置文件：</p>
 <figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">nano /etc/apache2/sites-available/nextcloud.conf<br></code></pre></div></td></tr></table></figure>
+
 <p>将其内容写为：</p>
 <figure class="highlight apache"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs apache"><span class="hljs-attribute">Alias</span> /nextcloud <span class="hljs-string">&quot;/var/www/nextcloud/&quot;</span><br><br><span class="hljs-section">&lt;Directory /var/www/nextcloud/&gt;</span><br>  <span class="hljs-attribute">Require</span> <span class="hljs-literal">all</span> granted<br>  <span class="hljs-attribute">AllowOverride</span> <span class="hljs-literal">All</span><br>  <span class="hljs-attribute"><span class="hljs-nomarkup">Options</span></span> FollowSymLinks MultiViews<br><br>  <span class="hljs-section">&lt;IfModule mod_dav.c&gt;</span><br>    <span class="hljs-attribute">Dav</span> <span class="hljs-literal">off</span><br>  <span class="hljs-section">&lt;/IfModule&gt;</span><br><span class="hljs-section">&lt;/Directory&gt;</span><br></code></pre></div></td></tr></table></figure>
+
 <p>按CTRL+O保存，CTRL+X退出。</p>
 <p>之后使配置文件生效：</p>
 <figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">a2ensite nextcloud.conf<br>systemctl reload apache2<br></code></pre></div></td></tr></table></figure>
+
 <p>接下来，设置启用一些模块：</p>
 <figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">a2enmod rewrite<br>a2enmod headers<br>a2enmod env<br>a2enmod dir<br>a2enmod mime<br>a2enmod ssl<br>a2ensite default-ssl<br>systemctl reload apache2<br></code></pre></div></td></tr></table></figure>
 
 
+
 <h2 id="四、从网页端完成安装"><a href="#四、从网页端完成安装" class="headerlink" title="四、从网页端完成安装"></a>四、从网页端完成安装</h2><p>当上面所有信息配置完毕之后，访问 serverIP/nextcloud 即可看到网盘的初始化界面：</p>
-<p><img src="/images/posts/nextcloud/image-20210228160855466.png" srcset="/img/loading.gif" alt="填写相关信息"></p>
+<p><img src="/images/posts/nextcloud/image-20210228160855466.png" srcset="/img/loading.gif" lazyload alt="填写相关信息"></p>
 <p>等待安装完成之后，即可看到相应的界面：</p>
-<p><img src="/images/posts/nextcloud/image-20210228161853337.png" srcset="/img/loading.gif" alt="登录界面"></p>
+<p><img src="/images/posts/nextcloud/image-20210228161853337.png" srcset="/img/loading.gif" lazyload alt="登录界面"></p>
 <h1 id="额外说明"><a href="#额外说明" class="headerlink" title="额外说明"></a>额外说明</h1><h2 id="一、关于数据库"><a href="#一、关于数据库" class="headerlink" title="一、关于数据库"></a>一、关于数据库</h2><p>可以不安装mariadb而换用SQLite，但是当网盘文件存放较多，使用者也较多时，还是建议安装mariadb。</p>
 <h2 id="二、使用phpMyAdmin图形化管理数据库"><a href="#二、使用phpMyAdmin图形化管理数据库" class="headerlink" title="二、使用phpMyAdmin图形化管理数据库"></a>二、使用phpMyAdmin图形化管理数据库</h2><p>首先进入apache的web根目录，一般为：</p>
 <figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash"><span class="hljs-built_in">cd</span> /var/www/html<br></code></pre></div></td></tr></table></figure>
+
 <p>之后在根目录下载：</p>
 <figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">sudo wget https://files.phpmyadmin.net/phpMyAdmin/5.1.0/phpMyAdmin-5.1.0-all-languages.zip<br>sudo unzip phpMyAdmin-5.1.0-all-languages.zip<br>sudo cp -R phpMyAdmin-5.1.0-all-languages phpMyAdmin<br>sudo rm -rf phpMyAdmin-5.1.0-all-languages<br></code></pre></div></td></tr></table></figure>
+
 <p>有点蠢（<del>其实就是我忘了剪切的指令又懒得去搜罢了</del>）</p>
 <p>然后重启apache：</p>
 <figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">systemctl restart apache2<br></code></pre></div></td></tr></table></figure>
+
 <p>之后前往 serverIP/phpMyAdmin 即可访问管理界面：</p>
-<p><img src="/images/posts/nextcloud/image-20210228125301455.png" srcset="/img/loading.gif"></p>
+<p><img src="/images/posts/nextcloud/image-20210228125301455.png" srcset="/img/loading.gif" lazyload></p>
 <p>若发现无法通过root用户登录数据库，可以先从命令行登录数据库后，执行：</p>
 <figure class="highlight sql"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs sql"><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">USER</span> <span class="hljs-string">&#x27;root&#x27;</span>@<span class="hljs-string">&#x27;localhost&#x27;</span> IDENTIFIED <span class="hljs-keyword">BY</span> <span class="hljs-string">&#x27;password&#x27;</span>;<br>FLUSH PRIVILEGES;<br></code></pre></div></td></tr></table></figure>
+
 <div class="note note-info">
             <p>将上述命令中的<code>password</code>替换为你自己的密码</p>
           </div>
@@ -342,7 +360,11 @@
                 
               </div>
               
-                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
               
               
                 <div class="post-prevnext">
@@ -366,12 +388,14 @@
 
             
               <!-- Comments -->
-              <article class="comments" id="comments">
+              <article class="comments" id="comments" lazyload>
+                
+                  
                 
                 
   <div id="gitalk-container"></div>
   <script type="text/javascript">
-    Fluid.utils.waitElementVisible('gitalk-container', function() {
+    Fluid.utils.loadComments('#gitalk-container', function() {
       Fluid.utils.createCssLink('/css/gitalk.css')
       Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/gitalk@1.7.0/dist/gitalk.min.js', function () {
         var gitalk = new Gitalk({
@@ -386,7 +410,8 @@
           perPage: 10,
           pagerDirection: 'last',
           createIssueManually: true,
-          distractionFreeMode: false
+          distractionFreeMode: false,
+          proxy: '&lt;your own proxy&gt;/https://github.com/login/oauth/access_token'
         });
         gitalk.render('gitalk-container');
       });
@@ -497,8 +522,9 @@
   
 </footer>
 
-<!-- SCRIPTS -->
 
+  <!-- SCRIPTS -->
+  
   <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
 
@@ -513,7 +539,6 @@
 
 <script  src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" ></script>
 <script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" ></script>
-<script  src="/js/debouncer.js" ></script>
 <script  src="/js/events.js" ></script>
 <script  src="/js/plugins.js" ></script>
 
@@ -521,7 +546,7 @@
 
 
   
-    <script  src="/js/lazyload.js" ></script>
+    <script  src="/js/img-lazyload.js" ></script>
   
 
 
@@ -568,11 +593,12 @@
   <script>
     (function () {
       var path = "/local-search.xml";
-      var inputArea = document.querySelector("#local-search-input");
-      inputArea.onclick = function () {
+      $('#local-search-input').on('click', function() {
         searchFunc(path, 'local-search-input', 'local-search-result');
-        this.onclick = null
-      }
+      });
+      $('#modalSearch').on('shown.bs.modal', function() {
+        $('#local-search-input').focus();
+      });
     })()
   </script>
 
@@ -614,7 +640,6 @@
 
 <!-- 主题的启动项 保持在最底部 -->
 <script  src="/js/boot.js" ></script>
-
 
 
 </body>

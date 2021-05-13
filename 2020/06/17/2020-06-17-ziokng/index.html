@@ -8,15 +8,16 @@
 <head>
   <meta charset="UTF-8">
   <link rel="apple-touch-icon" sizes="76x76" href="/images/favicon.png">
-  <link rel="icon" type="image/png" href="/images/favicon.png">
+  <link rel="icon" href="/images/favicon.png">
   <meta name="viewport"
         content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
   <meta name="theme-color" content="#2f4154">
-  <meta name="description" content="">
+  <meta name="description" content="自动控制原理期末划题全解析">
   <meta name="author" content="Aye10032">
   <meta name="keywords" content="">
+  
   <title>自动控制复习 - 鸽子窝</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
@@ -55,11 +56,11 @@
 
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
-    var CONFIG = {"hostname":"www.aye10032.com","root":"/","version":"1.8.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"onlypost":false},"web_analytics":{"enable":true,"baidu":null,"google":"UA-181041967-1","gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+    var CONFIG = {"hostname":"www.aye10032.com","root":"/","version":"1.8.10","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":null,"google":"UA-181041967-1","gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
   </script>
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
-<meta name="generator" content="Hexo 5.3.0"></head>
+<meta name="generator" content="Hexo 5.4.0"></head>
 
 
 <body>
@@ -153,13 +154,13 @@
         
         
           <li class="nav-item" id="search-btn">
-            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
                 class="iconfont icon-search"></i>&nbsp;</a>
           </li>
         
         
           <li class="nav-item" id="color-toggle-btn">
-            <a class="nav-link" href="javascript:">&nbsp;<i
+            <a class="nav-link" target="_self">&nbsp;<i
                 class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
           </li>
         
@@ -374,7 +375,7 @@
 </ul>
 </li>
 </ol>
-<h1 id="二、计算题"><a href="#二、计算题" class="headerlink" title="二、计算题"></a>二、计算题</h1><h2 id="1、（2-7）求系统的传递函数C-s-，E-s-。"><a href="#1、（2-7）求系统的传递函数C-s-，E-s-。" class="headerlink" title="1、（2-7）求系统的传递函数C(s)，E(s)。"></a>1、（2-7）求系统的传递函数C(s)，E(s)。</h2><p><img src="/images/posts/zikong/2020-06-20-103108.png" srcset="/img/loading.gif"></p>
+<h1 id="二、计算题"><a href="#二、计算题" class="headerlink" title="二、计算题"></a>二、计算题</h1><h2 id="1、（2-7）求系统的传递函数C-s-，E-s-。"><a href="#1、（2-7）求系统的传递函数C-s-，E-s-。" class="headerlink" title="1、（2-7）求系统的传递函数C(s)，E(s)。"></a>1、（2-7）求系统的传递函数C(s)，E(s)。</h2><p><img src="/images/posts/zikong/2020-06-20-103108.png" srcset="/img/loading.gif" lazyload></p>
 <blockquote>
 <p><strong>解：</strong></p>
 <p>(1)</p>
@@ -392,7 +393,7 @@
 <p>总误差为：</p>
 <p>$E(s)=\frac{1-G_{2} H_{2}}{1+G_{1} G_{2} H_{3}-G_{2} H_{2}} \cdot R(s)+\frac{-G_{2} H_{3}-H_{1}\left(1-G_{2} H_{2}\right)}{1+G_{1} G_{2} H_{3}-G_{2} H_{2}} \cdot D(s)$</p>
 </blockquote>
-<h2 id="2、（2-8）试求图示系统中的-C-s"><a href="#2、（2-8）试求图示系统中的-C-s" class="headerlink" title="2、（2-8）试求图示系统中的 C(s)"></a>2、（2-8）试求图示系统中的 C(s)</h2><p><img src="/images/posts/zikong/2020-06-20-104743.png" srcset="/img/loading.gif"></p>
+<h2 id="2、（2-8）试求图示系统中的-C-s"><a href="#2、（2-8）试求图示系统中的-C-s" class="headerlink" title="2、（2-8）试求图示系统中的 C(s)"></a>2、（2-8）试求图示系统中的 C(s)</h2><p><img src="/images/posts/zikong/2020-06-20-104743.png" srcset="/img/loading.gif" lazyload></p>
 <blockquote>
 <p>解：</p>
 <p>$L_{1}=-G_{1} H_{1}$</p>
@@ -411,7 +412,7 @@
 <li>判断系统的稳定性；</li>
 <li>系统在r(t)=t作用下的稳态误差$e^{*}(\infty)$；</li>
 </ol>
-<p><img src="/images/posts/zikong/2020-06-20-105012.png" srcset="/img/loading.gif"></p>
+<p><img src="/images/posts/zikong/2020-06-20-105012.png" srcset="/img/loading.gif" lazyload></p>
 <blockquote>
 <p>解：</p>
 <p>​    系统的开环脉冲传递函数为：<br>$G(z)=\left(1-z^{-1}\right) Z\left[\frac{1}{s^{2}(s+1)}\right]=\left(1-z^{-1}\right)\left[\frac{T z}{(z-1)^{2}}-\frac{\left(1-e^{-T}\right) z}{(z-1)\left(z-e^{-T}\right)}\right]$</p>
@@ -420,7 +421,7 @@
 <p>$K_{v}=\lim _{z \rightarrow 1}(z-1) G(z)=\lim _{z \rightarrow 1}(z-1) \frac{0.005(z+0.9)}{(z-1)(z-0.905)}=0.1$</p>
 <p>$e(\infty)=\frac{T}{K_{v}}=1$</p>
 </blockquote>
-<h2 id="4、（7-8）设离散系统如图所示，采样周期T-1s，-G-h-s-为零阶保持器，而-G-s-frac-K-s-1-，求："><a href="#4、（7-8）设离散系统如图所示，采样周期T-1s，-G-h-s-为零阶保持器，而-G-s-frac-K-s-1-，求：" class="headerlink" title="4、（7-8）设离散系统如图所示，采样周期T=1s，$G_{h}(s)$为零阶保持器，而$G(s)=\frac{K}{s+1}$，求："></a>4、（7-8）设离散系统如图所示，采样周期T=1s，$G_{h}(s)$为零阶保持器，而$G(s)=\frac{K}{s+1}$，求：</h2><p><img src="/images/posts/zikong/2020-06-20-160940.png" srcset="/img/loading.gif"></p>
+<h2 id="4、（7-8）设离散系统如图所示，采样周期T-1s，-G-h-s-为零阶保持器，而-G-s-frac-K-s-1-，求："><a href="#4、（7-8）设离散系统如图所示，采样周期T-1s，-G-h-s-为零阶保持器，而-G-s-frac-K-s-1-，求：" class="headerlink" title="4、（7-8）设离散系统如图所示，采样周期T=1s，$G_{h}(s)$为零阶保持器，而$G(s)=\frac{K}{s+1}$，求："></a>4、（7-8）设离散系统如图所示，采样周期T=1s，$G_{h}(s)$为零阶保持器，而$G(s)=\frac{K}{s+1}$，求：</h2><p><img src="/images/posts/zikong/2020-06-20-160940.png" srcset="/img/loading.gif" lazyload></p>
 <ol>
 <li>确定使系统稳定的K的范围</li>
 <li>设K=2，求系统在阶跃信号作用下的稳态误差</li>
@@ -546,7 +547,7 @@
 <p>2、求K值范围</p>
 <p>令 z=p-2N=1-2N=0，N 必须为 0.5，由图可见 k&gt;1 即可</p>
 </blockquote>
-<h2 id="8、（5-14）某最小相位系统的开环对数幅频特性如图所示，要求："><a href="#8、（5-14）某最小相位系统的开环对数幅频特性如图所示，要求：" class="headerlink" title="8、（5-14）某最小相位系统的开环对数幅频特性如图所示，要求："></a>8、（5-14）某最小相位系统的开环对数幅频特性如图所示，要求：</h2><p><img src="/images/posts/zikong/2020-06-20-130244.png" srcset="/img/loading.gif"></p>
+<h2 id="8、（5-14）某最小相位系统的开环对数幅频特性如图所示，要求："><a href="#8、（5-14）某最小相位系统的开环对数幅频特性如图所示，要求：" class="headerlink" title="8、（5-14）某最小相位系统的开环对数幅频特性如图所示，要求："></a>8、（5-14）某最小相位系统的开环对数幅频特性如图所示，要求：</h2><p><img src="/images/posts/zikong/2020-06-20-130244.png" srcset="/img/loading.gif" lazyload></p>
 <ol>
 <li>写出系统的开环传递函数</li>
 <li>求截止频率及相位裕量$\gamma$</li>
@@ -559,7 +560,7 @@
 <p>$G(s) \approx \frac{1}{s^{2}},$ 令 $\left\vert\frac{1}{s^{2}}\right\vert=1$ 得 $\omega_{c}=1$</p>
 <p>$\gamma=180^{\circ}-90^{\circ}-\operatorname{tg}^{-1} 10-\operatorname{tg}^{-1} 0.05=2.848^{\circ}$</p>
 </blockquote>
-<h2 id="9、二阶系统的结构框图如下，求"><a href="#9、二阶系统的结构框图如下，求" class="headerlink" title="9、二阶系统的结构框图如下，求"></a>9、二阶系统的结构框图如下，求</h2><p><img src="/images/posts/zikong/IMG_20200621_0001.jpg" srcset="/img/loading.gif"></p>
+<h2 id="9、二阶系统的结构框图如下，求"><a href="#9、二阶系统的结构框图如下，求" class="headerlink" title="9、二阶系统的结构框图如下，求"></a>9、二阶系统的结构框图如下，求</h2><p><img src="/images/posts/zikong/IMG_20200621_0001.jpg" srcset="/img/loading.gif" lazyload></p>
 <ol>
 <li>输入信号 r(t) = 1(t) 时，若超调量为20%，调节时间为1.8，求参数$K_{1}，K_{2}$</li>
 <li>输入信号 r(t) = 2+t 时，求系统的稳态误差</li>
@@ -606,7 +607,11 @@
                 
               </div>
               
-                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
               
               
                 <div class="post-prevnext">
@@ -636,12 +641,14 @@
 
             
               <!-- Comments -->
-              <article class="comments" id="comments">
+              <article class="comments" id="comments" lazyload>
+                
+                  
                 
                 
   <div id="gitalk-container"></div>
   <script type="text/javascript">
-    Fluid.utils.waitElementVisible('gitalk-container', function() {
+    Fluid.utils.loadComments('#gitalk-container', function() {
       Fluid.utils.createCssLink('/css/gitalk.css')
       Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/gitalk@1.7.0/dist/gitalk.min.js', function () {
         var gitalk = new Gitalk({
@@ -656,7 +663,8 @@
           perPage: 10,
           pagerDirection: 'last',
           createIssueManually: true,
-          distractionFreeMode: false
+          distractionFreeMode: false,
+          proxy: '&lt;your own proxy&gt;/https://github.com/login/oauth/access_token'
         });
         gitalk.render('gitalk-container');
       });
@@ -767,8 +775,9 @@
   
 </footer>
 
-<!-- SCRIPTS -->
 
+  <!-- SCRIPTS -->
+  
   <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
 
@@ -783,7 +792,6 @@
 
 <script  src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" ></script>
 <script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" ></script>
-<script  src="/js/debouncer.js" ></script>
 <script  src="/js/events.js" ></script>
 <script  src="/js/plugins.js" ></script>
 
@@ -791,7 +799,7 @@
 
 
   
-    <script  src="/js/lazyload.js" ></script>
+    <script  src="/js/img-lazyload.js" ></script>
   
 
 
@@ -838,11 +846,12 @@
   <script>
     (function () {
       var path = "/local-search.xml";
-      var inputArea = document.querySelector("#local-search-input");
-      inputArea.onclick = function () {
+      $('#local-search-input').on('click', function() {
         searchFunc(path, 'local-search-input', 'local-search-result');
-        this.onclick = null
-      }
+      });
+      $('#modalSearch').on('shown.bs.modal', function() {
+        $('#local-search-input').focus();
+      });
     })()
   </script>
 
@@ -923,7 +932,6 @@
 
 <!-- 主题的启动项 保持在最底部 -->
 <script  src="/js/boot.js" ></script>
-
 
 
 </body>

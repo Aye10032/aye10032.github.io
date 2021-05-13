@@ -8,15 +8,16 @@
 <head>
   <meta charset="UTF-8">
   <link rel="apple-touch-icon" sizes="76x76" href="/images/favicon.png">
-  <link rel="icon" type="image/png" href="/images/favicon.png">
+  <link rel="icon" href="/images/favicon.png">
   <meta name="viewport"
         content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
   <meta name="theme-color" content="#2f4154">
-  <meta name="description" content="">
+  <meta name="description" content="Linux系统的一些常见指令">
   <meta name="author" content="Aye10032">
   <meta name="keywords" content="">
+  
   <title>Linux常用指令 - 鸽子窝</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
@@ -55,11 +56,11 @@
 
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
-    var CONFIG = {"hostname":"www.aye10032.com","root":"/","version":"1.8.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"onlypost":false},"web_analytics":{"enable":true,"baidu":null,"google":"UA-181041967-1","gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+    var CONFIG = {"hostname":"www.aye10032.com","root":"/","version":"1.8.10","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":null,"google":"UA-181041967-1","gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
   </script>
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
-<meta name="generator" content="Hexo 5.3.0"></head>
+<meta name="generator" content="Hexo 5.4.0"></head>
 
 
 <body>
@@ -153,13 +154,13 @@
         
         
           <li class="nav-item" id="search-btn">
-            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
                 class="iconfont icon-search"></i>&nbsp;</a>
           </li>
         
         
           <li class="nav-item" id="color-toggle-btn">
-            <a class="nav-link" href="javascript:">&nbsp;<i
+            <a class="nav-link" target="_self">&nbsp;<i
                 class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
           </li>
         
@@ -250,7 +251,7 @@
 <p><strong>Debian</strong>，或者称Debian系列，包括Debian和Ubuntu等。Debian是社区类Linux的典范，是迄今为止最遵循GNU规范的Linux系统。Debian最早由Ian Murdock于1993年创建，分为三个版本分支（branch）： stable, testing 和 unstable。其中，unstable为最新的测试版本，其中包括最新的软件包，但是也有相对较多的bug，适合桌面用户。testing的版本都经 过unstable中的测试，相对较为稳定，也支持了不少新技术（比如SMP等）。而stable一般只用于服务器，上面的软件包大部分都比较过时，但是 稳定和安全性都非常的高。Debian最具特色的是apt-get / dpkg包管理方式，其实Redhat的YUM也是在模仿Debian的APT方式，但在二进制文件发行方式中，APT应该是最好的了。Debian的资料也很丰富，有很多支持的社区，有问题求教也有地方可去:)        </p>
 <p><strong>Arch Linux</strong> ，不同于以上两种，属于一种比较“硬核”的Linux系统，是一款基于x86-64架构的 Linux发行版。支持社区参与。系统设计以KISS原则（保持简单和愚蠢）为总体指导原则，注重代码正确、优雅和极简主义，期待用户能够愿意去理解系统的操作。 Arch Linux 系统安装、删除和更新软件的软件包管理器叫做 pacman 。</p>
 <p><del><strong>以上文字摘抄自网络，知道就行了。</strong></del></p>
-<h1 id="Linux目录文件结构"><a href="#Linux目录文件结构" class="headerlink" title="Linux目录文件结构"></a>Linux目录文件结构</h1><p><img src="%5Cimages%5Cposts%5Clinux%5Cjiegou.png" srcset="/img/loading.gif" alt="jiegou"></p>
+<h1 id="Linux目录文件结构"><a href="#Linux目录文件结构" class="headerlink" title="Linux目录文件结构"></a>Linux目录文件结构</h1><p><img src="%5Cimages%5Cposts%5Clinux%5Cjiegou.png" srcset="/img/loading.gif" lazyload alt="jiegou"></p>
 <ul>
 <li>/：根目录，一般根目录下只存放目录，不要存放文件，/etc、/bin、/dev、/lib、/sbin应该和根目录放置在一个分区中</li>
 <li>/bin:/usr/bin:可执行二进制文件的目录，如常用的命令ls、tar、mv、cat等。</li>
@@ -292,10 +293,12 @@
 <p><strong>实例</strong></p>
 <p>显示根目录下的所有文件(含属性与隐藏档)：</p>
 <figure class="highlight autoit"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs autoit">[root<span class="hljs-symbol">@aye10032</span> ~]<span class="hljs-meta"># ls -al</span><br></code></pre></div></td></tr></table></figure>
+
 <h3 id="cd-切换目录"><a href="#cd-切换目录" class="headerlink" title="cd (切换目录)"></a>cd (切换目录)</h3><p> <strong>语法</strong>      </p>
 <figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash"><span class="hljs-built_in">cd</span> (相对路径或绝对路径)<br></code></pre></div></td></tr></table></figure>
 <p> <strong>两种路径</strong></p>
-<p> 比如我们现在有这么一个test文件夹，它的路径是<br> <figure class="highlight awk"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs awk"><span class="hljs-regexp">/root/</span>nhjckx<span class="hljs-regexp">/aye10032/</span>test<br></code></pre></div></td></tr></table></figure><br> 那么这个/root/nhjckx/aye10032/test就是该目录的绝对路径<br> 但是如果此时我已经在/root/nhjckx/aye10032目录下了，那么也可以用<code>cd ./test</code>来进入test目录。<br> 现在再假设我们在/root/nhjckx/aye10032目录下还有一个文件夹test01，那么同理，他的绝对路径就是<br> <figure class="highlight awk"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs awk"><span class="hljs-regexp">/root/</span>nhjckx<span class="hljs-regexp">/aye10032/</span>test01<br></code></pre></div></td></tr></table></figure><br> 此时如果我们在/root/nhjckx/aye10032目录下，同样可以用<code>cd ./test01</code>命令来进入test01这个目录。但是，如果我们此时所处的目录是/root/nhjckx/aye10032/test呢？此时我们有两种选择，一种是使用绝对路径，另外一种是使用相对路径：<br> <figure class="highlight gams"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs gams"><span class="hljs-function"><span class="hljs-title">cd</span></span> ../test01<br></code></pre></div></td></tr></table></figure><br> 同样也可以跳转到test01目录。</p>
+<p> 比如我们现在有这么一个test文件夹，它的路径是<br> <figure class="highlight awk"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs awk"><span class="hljs-regexp">/root/</span>nhjckx<span class="hljs-regexp">/aye10032/</span>test<br></code></pre></div></td></tr></table></figure></p>
+<p> 那么这个/root/nhjckx/aye10032/test就是该目录的绝对路径<br> 但是如果此时我已经在/root/nhjckx/aye10032目录下了，那么也可以用<code>cd ./test</code>来进入test目录。<br> 现在再假设我们在/root/nhjckx/aye10032目录下还有一个文件夹test01，那么同理，他的绝对路径就是<br> <figure class="highlight awk"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs awk"><span class="hljs-regexp">/root/</span>nhjckx<span class="hljs-regexp">/aye10032/</span>test01<br></code></pre></div></td></tr></table></figure><br> 此时如果我们在/root/nhjckx/aye10032目录下，同样可以用<code>cd ./test01</code>命令来进入test01这个目录。但是，如果我们此时所处的目录是/root/nhjckx/aye10032/test呢？此时我们有两种选择，一种是使用绝对路径，另外一种是使用相对路径：<br> <figure class="highlight gams"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs gams"><span class="hljs-function"><span class="hljs-title">cd</span></span> ../test01<br></code></pre></div></td></tr></table></figure><br> 同样也可以跳转到test01目录。</p>
 <blockquote>
 <p>总结：</p>
 <blockquote>
@@ -313,6 +316,7 @@
 <figure class="highlight awk"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs awk">[root@aye10032 test]<span class="hljs-comment"># pwd</span><br><span class="hljs-regexp">/root/</span>test<br></code></pre></div></td></tr></table></figure>
 <h3 id="mkdir-创建新目录"><a href="#mkdir-创建新目录" class="headerlink" title="mkdir (创建新目录)"></a>mkdir (创建新目录)</h3><p><strong>语法</strong></p>
 <figure class="highlight less"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs less"><span class="hljs-selector-tag">mkdir</span> <span class="hljs-selector-attr">[参数]</span>(目录名称)<br></code></pre></div></td></tr></table></figure>
+
 <p><strong>参数</strong></p>
 <blockquote>
 <p>-m 建立目录的同时设置目录的权限；<br>-p 若所要建立目录的上层目录目前尚未建立，则会一并建立上层目录；</p>
@@ -323,6 +327,7 @@
 </ul>
 <p><strong>实例</strong><br>在目录/home下建立目录nhjckx和其下的子目录test，并且只有文件主有读、写和执行权限，其他人无权访问</p>
 <figure class="highlight autoit"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs autoit">[root<span class="hljs-symbol">@aye10032</span> ~]<span class="hljs-meta"># mkdir -m-p 700 /home/nhjckx/test</span><br></code></pre></div></td></tr></table></figure>
+
 <h3 id="rmdir-删除空的目录"><a href="#rmdir-删除空的目录" class="headerlink" title="rmdir (删除空的目录)"></a>rmdir (删除空的目录)</h3><p><strong>语法</strong></p>
 <figure class="highlight less"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs less"><span class="hljs-selector-tag">rmdir</span> <span class="hljs-selector-attr">[参数]</span> (目录名称)<br></code></pre></div></td></tr></table></figure>
 <p><strong>参数</strong></p>
@@ -334,6 +339,7 @@
 </ul>
 <p><strong>实例</strong><br>删除子目录test和其父目录nhjckx</p>
 <figure class="highlight autoit"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs autoit">[root<span class="hljs-symbol">@aye10032</span> ~]<span class="hljs-meta"># cd /home    </span><br>[root<span class="hljs-symbol">@aye10032</span> home]<span class="hljs-meta"># rmdir -p nhjckx/test</span><br></code></pre></div></td></tr></table></figure>
+
 <h3 id="cp-复制文件或目录"><a href="#cp-复制文件或目录" class="headerlink" title="cp (复制文件或目录)"></a>cp (复制文件或目录)</h3><p><strong>语法</strong>      </p>
 <figure class="highlight less"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs less"><span class="hljs-selector-tag">cp</span> <span class="hljs-selector-attr">[参数]</span> (source) (destination)      <br><span class="hljs-selector-tag">cp</span> <span class="hljs-selector-attr">[参数]</span> <span class="hljs-selector-tag">source1</span> <span class="hljs-selector-tag">source2</span> <span class="hljs-selector-tag">source3</span> .... <span class="hljs-selector-tag">directory</span><br></code></pre></div></td></tr></table></figure>
 <p><strong>参数</strong></p>
@@ -345,14 +351,17 @@
 <p><strong>注意，cp指令并不能新建文件夹，所以复制到的目标文件夹必须存在。同时，如果进行操作的文件或文件夹没有<em>权限</em>，则也会报错</strong></p>
 <h3 id="mv-移动文件与目录，或修改名称"><a href="#mv-移动文件与目录，或修改名称" class="headerlink" title="mv (移动文件与目录，或修改名称)"></a>mv (移动文件与目录，或修改名称)</h3><p><strong>语法</strong></p>
 <figure class="highlight less"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs less"><span class="hljs-selector-tag">mv</span> <span class="hljs-selector-attr">[参数]</span> (source) (destination)<br><span class="hljs-selector-tag">mv</span> <span class="hljs-selector-attr">[参数]</span> <span class="hljs-selector-tag">source1</span> <span class="hljs-selector-tag">source2</span> <span class="hljs-selector-tag">source3</span> .... <span class="hljs-selector-tag">directory</span><br></code></pre></div></td></tr></table></figure>
+
 <p><strong>参数</strong>        </p>
 <blockquote>
 <p>-f ：如果目标文件已经存在，不会询问而直接覆盖；<br>-i ：若目标文件 (destination) 已经存在时，会询问是否覆盖;<br>-u ：若目标文件已经存在，且 source 比较新，才会升级 (update);</p>
 </blockquote>
 <p><strong>实例</strong><br>将<code>/home/test</code>目录下的所有文件(用*表示)移动到当前目录下(用.表示)：</p>
 <figure class="highlight autoit"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs autoit">[root<span class="hljs-symbol">@aye10032</span> ~]<span class="hljs-meta"># cp /home/test/* .</span><br></code></pre></div></td></tr></table></figure>
+
 <h3 id="rm-移除文件或目录"><a href="#rm-移除文件或目录" class="headerlink" title="rm (移除文件或目录)"></a>rm (移除文件或目录)</h3><p><strong>语法</strong></p>
 <figure class="highlight less"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs less"><span class="hljs-selector-tag">rm</span> <span class="hljs-selector-attr">[参数]</span>(文件或目录)<br></code></pre></div></td></tr></table></figure>
+
 <p><strong>参数</strong>        </p>
 <blockquote>
 <p>-f ：删除时忽略不存在的文件，不会出现警告信息；<br>-i ：互动模式，在删除前会询问使用者是否动作；<br>-r ：递归删除；</p>
@@ -360,14 +369,16 @@
 <p><strong>实例</strong></p>
 <p>删除<code>/home/test</code>下名为test的文本文档：</p>
 <figure class="highlight stata"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs stata">[root@aye10032 ~]# <span class="hljs-keyword">rm</span> -i /home/<span class="hljs-keyword">test</span>/<span class="hljs-keyword">test</span>.txt<br><span class="hljs-keyword">rm</span>: remove regular <span class="hljs-keyword">file</span> `<span class="hljs-keyword">test</span>.txt&#x27;? y<br></code></pre></div></td></tr></table></figure>
+
 <p>删除整个test目录：</p>
 <figure class="highlight autoit"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs autoit">[root<span class="hljs-symbol">@aye10032</span> ~]<span class="hljs-meta"># rm -rf /home/test</span><br></code></pre></div></td></tr></table></figure>
+
 <p>数据无价，删除请谨慎！<br><br><br><br><br></p>
 <h2 id="文件属性相关"><a href="#文件属性相关" class="headerlink" title="文件属性相关"></a>文件属性相关</h2><blockquote>
 <h4 id="文件属性"><a href="#文件属性" class="headerlink" title="文件属性"></a>文件属性</h4><p>Linux系统是一种典型的多用户系统。不同的用户处于不同的地位，拥有不同的权限，Linux系统对不同的用户访问同一文件（包括目录文件）的权限做了不同的规定。</p>
 <p>在Linux中我们可以使用ls –l命令来显示一个文件的属性以及文件所属的用户和组，如：</p>
 <figure class="highlight tap"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs tap">[root@aye10032 aye10032]<span class="hljs-comment"># ls -l     </span><br>total 29544<br>-rw-r--r--.<span class="hljs-number"> 1 </span>root root       <span class="hljs-number"> 2 </span>Feb<span class="hljs-number"> 26 </span>19:23 banned-ips.json		<br>-rw-r--r--.<span class="hljs-number"> 1 </span>root root       <span class="hljs-number"> 2 </span>Feb<span class="hljs-number"> 26 </span>19:23 banned-players.json		<br>-rw-r--r--.<span class="hljs-number"> 1 </span>root root     <span class="hljs-number"> 180 </span>Feb<span class="hljs-number"> 23 </span>08:47 eula.txt		<br>drwxr-xr-x.<span class="hljs-number"> 2 </span>root root     <span class="hljs-number"> 213 </span>Feb<span class="hljs-number"> 26 </span>19:23 logs		<br>-rw-r--r--.<span class="hljs-number"> 1 </span>root root<span class="hljs-number"> 30222121 </span>Feb<span class="hljs-number"> 23 </span>08:42 minecraft_server.1.12.2.jar		<br>-rw-r--r--.<span class="hljs-number"> 1 </span>root root       <span class="hljs-number"> 2 </span>Feb<span class="hljs-number"> 26 </span>19:23 ops.json		<br>-rw-r--r--.<span class="hljs-number"> 1 </span>root root     <span class="hljs-number"> 753 </span>Feb<span class="hljs-number"> 26 </span>19:23 server.properties		<br>-rw-r--r--.<span class="hljs-number"> 1 </span>root root       <span class="hljs-number"> 2 </span>Feb<span class="hljs-number"> 26 </span>19:23 usercache.json		<br>-rw-r--r--.<span class="hljs-number"> 1 </span>root root       <span class="hljs-number"> 2 </span>Feb<span class="hljs-number"> 23 </span>08:47 whitelist.json		<br>drwxr-xr-x.<span class="hljs-number"> 7 </span>root root     <span class="hljs-number"> 133 </span>Feb<span class="hljs-number"> 26 </span>19:24 world		<br></code></pre></div></td></tr></table></figure>
-<p>我们就以以上我自己的一个文件夹为例来谈一谈，输出的信息从左到右依次包括文件属性、文件硬连接数、所有者、组、文件大小、文件的最后修改时间和文件名，其他的都比较好理解，这里就特别讲一下表示文件属性的三个三元组。<br><img src="%5Cimages%5Cposts%5Clinux%5Cwenjianshuxing.png" srcset="/img/loading.gif" alt="wenjian"><br>这里一共有十个字符，分为四组，其中第一个字符代表这个文件是目录、文件或链接文件等等。</p>
+<p>我们就以以上我自己的一个文件夹为例来谈一谈，输出的信息从左到右依次包括文件属性、文件硬连接数、所有者、组、文件大小、文件的最后修改时间和文件名，其他的都比较好理解，这里就特别讲一下表示文件属性的三个三元组。<br><img src="%5Cimages%5Cposts%5Clinux%5Cwenjianshuxing.png" srcset="/img/loading.gif" lazyload alt="wenjian"><br>这里一共有十个字符，分为四组，其中第一个字符代表这个文件是目录、文件或链接文件等等。</p>
 <ul>
 <li>当为[ d ]则是目录</li>
 <li>当为[ - ]则是文件；</li>
@@ -381,14 +392,17 @@
 </blockquote>
 <h3 id="chgrp-更改文件属组"><a href="#chgrp-更改文件属组" class="headerlink" title="chgrp(更改文件属组)"></a>chgrp(更改文件属组)</h3><p><strong>语法</strong>        </p>
 <figure class="highlight less"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs less"><span class="hljs-selector-tag">chgrp</span> <span class="hljs-selector-attr">[参数]</span> (属组名)(文件名)<br></code></pre></div></td></tr></table></figure>
+
 <p><strong>参数</strong></p>
 <blockquote>
 <p>-R：递归更改文件属组</p>
 </blockquote>
 <p><strong>实例</strong><br>将<code>/home/test</code>及其子目录下的所有文件的用户组改为mrquin：</p>
 <figure class="highlight autoit"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs autoit">[root<span class="hljs-symbol">@aye10032</span> ~]<span class="hljs-meta"># chgrp -R mrquin /home/test</span><br></code></pre></div></td></tr></table></figure>
+
 <h3 id="chown-更改文件属主或同时更改文件属组"><a href="#chown-更改文件属主或同时更改文件属组" class="headerlink" title="chown(更改文件属主或同时更改文件属组)"></a>chown(更改文件属主或同时更改文件属组)</h3><p><strong>语法</strong></p>
 <figure class="highlight less"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs less"><span class="hljs-selector-tag">chown</span> <span class="hljs-selector-attr">[参数]</span> (属主名)(文件名)<br><span class="hljs-selector-tag">chown</span> <span class="hljs-selector-attr">[参数]</span> (属主名:属组名)(文件名)<br></code></pre></div></td></tr></table></figure>
+
 <p><strong>参数</strong>        </p>
 <blockquote>
 <p>-R：递归更改文件属主</p>
@@ -397,8 +411,10 @@
 <figure class="highlight autoit"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs autoit">[root<span class="hljs-symbol">@aye10032</span> ~]<span class="hljs-meta"># chown -R ywwuyi /home/test</span><br></code></pre></div></td></tr></table></figure>
 <p>再将其所有者和用户组改回为mrquin：</p>
 <figure class="highlight autoit"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs autoit">[root<span class="hljs-symbol">@aye10032</span> ~]<span class="hljs-meta"># chown -R mrquin:mrquin /home/test</span><br></code></pre></div></td></tr></table></figure>
+
 <h3 id="chmod-更改文件9个属性"><a href="#chmod-更改文件9个属性" class="headerlink" title="chmod(更改文件9个属性)"></a>chmod(更改文件9个属性)</h3><p><strong>语法</strong>        </p>
 <figure class="highlight less"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs less"><span class="hljs-selector-tag">chmod</span> <span class="hljs-selector-attr">[参数]</span> (属性) (文件或目录)<br></code></pre></div></td></tr></table></figure>
+
 <p> <strong>属性：</strong></p>
 <blockquote>
 <p>Linux文件属性有两种设置方法，一种是数字，一种是符号。<br>Linux文件的基本权限就有九个，分别是[owner/group/others]三种身份,各有自己的[read/write/execute]权限。<br>文件的权限字符为：『-rwxrwxrwx』,其中，我们可以使用数字来代表各个权限，各权限的分数对照表如下：</p>
@@ -419,6 +435,7 @@
 <figure class="highlight awk"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs awk">[root@aye10032 ~]chmod <span class="hljs-number">777</span> <span class="hljs-regexp">/home/</span>test/test.txt<br>[root@aye10032 ~]chmod u=rwx,g=rwx,o=rwx <span class="hljs-regexp">/home/</span>test/test.txt<br></code></pre></div></td></tr></table></figure>
 <p>将上面文件的可执行权限(x)撤销：</p>
 <figure class="highlight awk"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs awk">[root@aye10032 ~]chmod a-x <span class="hljs-regexp">/home/</span>test/test.txt<br></code></pre></div></td></tr></table></figure>
+
 
 
 <h2 id="用户和用户组相关"><a href="#用户和用户组相关" class="headerlink" title="用户和用户组相关"></a>用户和用户组相关</h2><p>上文我们讲到了文件的属性当中多次提到了<strong>用户</strong>和<strong>组</strong>这两个概念。对于大部分平常惯用Windows系统的同学们而言，这个概念可能会一时摸不着头脑。这里就先简单提一下Linux系统</p>
@@ -442,6 +459,7 @@
 <p><strong>实例：</strong>        </p>
 <p>新建用户mrquin，该用户属于用户组mole，同时生成同名的用户主文件夹。</p>
 <figure class="highlight awk"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs awk">[root@aye10032 ~]useradd -g mole –d <span class="hljs-regexp">/usr/m</span>rquin -m mrquin<br></code></pre></div></td></tr></table></figure>
+
 <h3 id="userdel-删除用户"><a href="#userdel-删除用户" class="headerlink" title="userdel(删除用户)"></a>userdel(删除用户)</h3><p><strong>语法：</strong>        </p>
 <p><code>userdel [参数] (用户名称)</code></p>
 <p><strong>参数：</strong></p>
@@ -455,6 +473,7 @@
 <figure class="highlight angelscript"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs angelscript"><span class="hljs-string">[root@aye10032 ~]</span>userdel -r mrquin<br></code></pre></div></td></tr></table></figure>
 
 
+
 <h3 id="usermod-修改用户属性"><a href="#usermod-修改用户属性" class="headerlink" title="usermod(修改用户属性)"></a>usermod(修改用户属性)</h3><p><strong>语法：</strong>        </p>
 <p><code>usermod [参数] (用户名称)</code></p>
 <p><strong>参数：</strong>        </p>
@@ -462,8 +481,10 @@
 <p><strong>实例：</strong>        </p>
 <p>将用户mrquin的所属用户组改为rua：        </p>
 <figure class="highlight angelscript"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs angelscript"><span class="hljs-string">[root@aye10032 ~]</span>usermod -g rua mrquin<br></code></pre></div></td></tr></table></figure>
+
 <h3 id="groupadd-新建用户组"><a href="#groupadd-新建用户组" class="headerlink" title="groupadd(新建用户组)"></a>groupadd(新建用户组)</h3><p>语法：</p>
 <figure class="highlight less"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs less"><span class="hljs-selector-tag">groupadd</span> <span class="hljs-selector-attr">[参数]</span> (用户组名称)<br></code></pre></div></td></tr></table></figure>
+
 <p>参数：</p>
 <blockquote>
 <ul>
@@ -473,6 +494,7 @@
 </blockquote>
 <p>实例：</p>
 <figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">[root@aye10032 ~]groupadd -g-o 144 mrquin<br></code></pre></div></td></tr></table></figure>
+
 
 
 
@@ -506,7 +528,11 @@
                 
               </div>
               
-                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
               
               
                 <div class="post-prevnext">
@@ -536,12 +562,14 @@
 
             
               <!-- Comments -->
-              <article class="comments" id="comments">
+              <article class="comments" id="comments" lazyload>
+                
+                  
                 
                 
   <div id="gitalk-container"></div>
   <script type="text/javascript">
-    Fluid.utils.waitElementVisible('gitalk-container', function() {
+    Fluid.utils.loadComments('#gitalk-container', function() {
       Fluid.utils.createCssLink('/css/gitalk.css')
       Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/gitalk@1.7.0/dist/gitalk.min.js', function () {
         var gitalk = new Gitalk({
@@ -556,7 +584,8 @@
           perPage: 10,
           pagerDirection: 'last',
           createIssueManually: true,
-          distractionFreeMode: false
+          distractionFreeMode: false,
+          proxy: '&lt;your own proxy&gt;/https://github.com/login/oauth/access_token'
         });
         gitalk.render('gitalk-container');
       });
@@ -667,8 +696,9 @@
   
 </footer>
 
-<!-- SCRIPTS -->
 
+  <!-- SCRIPTS -->
+  
   <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
 
@@ -683,7 +713,6 @@
 
 <script  src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" ></script>
 <script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" ></script>
-<script  src="/js/debouncer.js" ></script>
 <script  src="/js/events.js" ></script>
 <script  src="/js/plugins.js" ></script>
 
@@ -691,7 +720,7 @@
 
 
   
-    <script  src="/js/lazyload.js" ></script>
+    <script  src="/js/img-lazyload.js" ></script>
   
 
 
@@ -738,11 +767,12 @@
   <script>
     (function () {
       var path = "/local-search.xml";
-      var inputArea = document.querySelector("#local-search-input");
-      inputArea.onclick = function () {
+      $('#local-search-input').on('click', function() {
         searchFunc(path, 'local-search-input', 'local-search-result');
-        this.onclick = null
-      }
+      });
+      $('#modalSearch').on('shown.bs.modal', function() {
+        $('#local-search-input').focus();
+      });
     })()
   </script>
 
@@ -784,7 +814,6 @@
 
 <!-- 主题的启动项 保持在最底部 -->
 <script  src="/js/boot.js" ></script>
-
 
 
 </body>
