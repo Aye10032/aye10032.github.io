@@ -1,4 +1,4 @@
-sudo: true
+sudo: false
 language: node_js
 node_js:
   - 14 # use nodejs v10 LTS
@@ -7,7 +7,7 @@ branches:
   only:
     - source # build master branch only
 before_install:
-  - apt-get install libpng16-dev
+  - sudo apt-get install libpng16-dev
 #   - brew install libtool automake autoconf nasm
 #   - brew install libpng16-dev
 script:
