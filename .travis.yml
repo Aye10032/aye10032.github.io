@@ -8,6 +8,7 @@ branches:
     - source # build master branch only
 before_install:
   - sudo apt-get install libpng16-dev
+  - sudu apt-get update
 #   - brew install libtool automake autoconf nasm
 #   - brew install libpng16-dev
 script:
