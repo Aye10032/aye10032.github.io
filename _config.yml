@@ -106,10 +106,11 @@ image_minifier:
   enable: true
   interlaced: false
   multipass: false
-  optimizationLevel: 1
+  optimizationLevel: 2
   pngquant: true
   progressive: true
   silent: false
+  exclude: "png"
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
