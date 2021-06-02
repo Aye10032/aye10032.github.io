@@ -1,4 +1,5 @@
 sudo: false
+os: osx
 language: node_js
 node_js:
   - 14 # use nodejs v10 LTS
@@ -6,6 +7,9 @@ cache: npm
 branches:
   only:
     - source # build master branch only
+before_install:
+  - brew install libtool automake autoconf nasm
+  - brew install libpng16-dev
 script:
   - hexo generate
   - echo "www.aye10032.com" > public/CNAME
