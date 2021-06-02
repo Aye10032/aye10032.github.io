@@ -103,7 +103,7 @@ theme: fluid
 all_minifier: true
 
 image_minifier:
-  enable: false
+  enable: true
   interlaced: false
   multipass: false
   optimizationLevel: 2
