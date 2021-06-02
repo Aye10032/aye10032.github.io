@@ -1,5 +1,4 @@
-sudo: false
-os: osx
+sudo: true
 language: node_js
 node_js:
   - 14 # use nodejs v10 LTS
@@ -7,7 +6,8 @@ cache: npm
 branches:
   only:
     - source # build master branch only
-# before_install:
+before_install:
+  - apt-get install libpng16-dev
 #   - brew install libtool automake autoconf nasm
 #   - brew install libpng16-dev
 script:
