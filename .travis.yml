@@ -15,9 +15,9 @@ script:
   - echo "www.aye10032.com" > public/CNAME
 deploy:
   provider: pages
-  cleanup: true
+  cleanup: false
   github-token: $GH_TOKEN
-  keep-history: false
+  keep-history: true
   on:
     branch: source
   local-dir: public
