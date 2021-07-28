@@ -20,12 +20,13 @@ tag:
 	- Minecraft
 
 typora-root-url: ..
+
 ---
 
 外服种子 2075596822522433484        
 出生点 ：-64 256        
 
-<iframe style="width:728px;height:90px;max-width:100%;border:none;display:block;margin:auto" src="https://zh-cn.namemc.com/server/topo.site/embed" width="728" height="90"></iframe>
+<iframe style="width:728px;height:90px;max-width:100%;border:none;display:block;margin:auto" src="https://zh-cn.namemc.com/server/topo.world/embed" width="728" height="90"></iframe>
 
 ## 伪和平     
 
@@ -49,7 +50,8 @@ typora-root-url: ..
 - 2018-2-11,下午5:56完工，伪和平完工（永久加载还没做）。
 - 2020-2-4，晚9:47修复，改用村庄永久加载，FLAG帮忙纠错。
 
-## 深渊       
+## 深渊
+
 - 2018-3-2，深渊开始选址，中心定在-2600，1840
 
 ## 资料室       
@@ -74,18 +76,18 @@ typora-root-url: ..
 
 ## 基地
 
-![image-20210209162914138](/images/posts/topologycraft/image-20210209162914138.png)
+![](/images/posts/topologycraft/image-20210209162914138.png)
 
-![image-20210209163026199](/images/posts/topologycraft/image-20210209163026199.png)
+![Aye & 15家](/images/posts/topologycraft/image-20210209163026199.png)
 
-![image-20210209163132593](/images/posts/topologycraft/image-20210209163132593.png)
+![小格家](/images/posts/topologycraft/image-20210209163132593.png)
 
-![image-20210209163211480](/images/posts/topologycraft/image-20210209163211480.png)
+![comy & 大中家](/images/posts/topologycraft/image-20210209163211480.png)
 
 ## 设施
 
-![image-20210209163301426](/images/posts/topologycraft/image-20210209163301426.png)
+![女巫塔&墨鱼塔](/images/posts/topologycraft/image-20210209163301426.png)
 
-![image-20210209163322260](/images/posts/topologycraft/image-20210209163322260.png)
+![刷怪塔](/images/posts/topologycraft/image-20210209163322260.png)
 
-![image-20210209163455762](/images/posts/topologycraft/image-20210209163455762.png)
+![蘑菇岛](/images/posts/topologycraft/image-20210209163455762.png)
