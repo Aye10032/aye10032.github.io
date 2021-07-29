@@ -2,6 +2,7 @@
 title: about
 date: 2021-02-15 17:41:22
 layout: about
+
 typora-root-url: ..
 ---
 
@@ -54,6 +55,7 @@ GitHub：[https://github.com/Aye10032](https://github.com/Aye10032)
   - PC
     - 全境封锁1、2（老电工混子）
     - 怪物猎人（虫棍下等人）
+    - FF14（召唤&舞者）
     - 守望先锋（手柄玩家，队友血压拉满）
     - 刺客信条系列
     - 看门狗1、2
@@ -125,4 +127,3 @@ GitHub：[https://github.com/Aye10032](https://github.com/Aye10032)
 - 其他
   - 辩论（万年二辩，鄙人不善写稿）
   - 魔方（速拧老菜鸡，三速勉强SUB20，盲拧纯娱乐）
-  - <font color=red>左壬</font>
