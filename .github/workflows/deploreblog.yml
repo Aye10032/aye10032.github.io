@@ -26,6 +26,7 @@ jobs:
         yarn run hexo clean
         yarn run hexo generate
         echo "www.aye10032.com" > public/CNAME
+        ls -la
 
     - name: Hexo Deploy           # 部署步骤，这里以 hexo deploy 为例
       env:
