@@ -115,7 +115,7 @@ image_minifier:
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: git
-  repo: https://github.com/Aye10032/Aye10032.github.io
+  repo: git@github.com:Aye10032/Aye10032.github.io.git
   branch: gh-pages
   name: Aye10032
   email: aye10032@gmail.com
