@@ -1,7 +1,7 @@
 language: node_js
 node_js:
-  - 15 # use nodejs v10 LTS
-# cache: npm
+  - node # use nodejs v10 LTS
+cache: npm
 branches:
   only:
     - source # build master branch only
