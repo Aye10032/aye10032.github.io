@@ -114,7 +114,7 @@ image_minifier:
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
-type: git
+  type: git
   repo: https://github.com/Aye10032/Aye10032.github.io.git
   branch: [gh-pages]
-  message: [update]
+  message: [Site updated: {{ now('YYYY-MM-DD HH:mm:ss') }}]
