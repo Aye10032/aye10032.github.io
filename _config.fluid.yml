@@ -202,6 +202,9 @@ custom_css:
 # Customize the HTML content at the bottom (located above the footer), be careful not to conflict with `post: custom`
 custom_html: ''
 
+# 自定义 <head> 节点中的 HTML 内容
+custom_head: '<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2406358340653849" crossorigin="anonymous"></script>'
+
 # 网页访问统计
 # Analysis of website visitors
 web_analytics:  # 网页访问统计
