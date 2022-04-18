@@ -22,7 +22,6 @@
     "hexo-renderer-marked": "^3.0.0",
     "hexo-renderer-stylus": "^2.0.1",
     "hexo-server": "^2.0.0",
-    "hexo-theme-fluid": "1.8.14",
     "hexo-all-minifier": "0.5.7"
   }
 }
