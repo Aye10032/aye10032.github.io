@@ -50,6 +50,20 @@ sudo useradd -m steam
 sudo passwd steam 
 ```
 
+下面，我们为这个用户赋予使用root指令的权限：
+
+```bash
+sudo nano /etc/sudoers
+```
+
+在原有的root下面加上你新建的用户名，后面直接照抄root的格式：
+
+![](/images/posts/barotrauma/rooter.png)
+
+按`CTRL+O`保存，`CTRL+X`退出。
+
+
+
 接下来，切换到我们最新建立的这个账户，并进入它的根目录：
 
 ```bash
@@ -220,7 +234,7 @@ nano barotrauma-server/config_player.xml
 将你本地这个文件的内容复制下来，并覆盖掉服务端的该文件：
 
 ```bash
-nana barotrauma-server/Data/clientpermissions.xml
+nano barotrauma-server/Data/clientpermissions.xml
 ```
 
 这个文件夹实际上是管理用户权限的，这样一来你就拥有了服务器的全部权限，可以使用控制台的所有指令了。
