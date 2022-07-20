@@ -23,7 +23,7 @@ typora-root-url: ..
 ---
 
 
-<iframe src="//player.bilibili.com/player.html?aid=385242548&bvid=BV1wZ4y1i7Za&cid=754041897&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+<iframe src="//player.bilibili.com/player.html?aid=385242548&bvid=BV1wZ4y1i7Za&cid=754041897&page=1" width="100%" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
 
 
 # 一、安装SteamCMD
