@@ -26,7 +26,7 @@ GitHub：[https://github.com/Aye10032](https://github.com/Aye10032)
 
 #### .PS: ↓↓↓你不认识也没关系，但是她们真的很可爱
 
-{% gi 9 3-3-3 %}
+{% gi 11 3-3-3-2 %}
 
 ![](/images/EcURIQNUMAEHa3W.jpg)
 
@@ -47,5 +47,9 @@ GitHub：[https://github.com/Aye10032](https://github.com/Aye10032)
 ![](/images/88887062_p0.jpg)
 
 ![](/images/87535230_p0.jpg)
+
+![](/images/hanakotoba.jpg)
+
+![](/images/街角魔族.png)
 
 {% endgi %}
