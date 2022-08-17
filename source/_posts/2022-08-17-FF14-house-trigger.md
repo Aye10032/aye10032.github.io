@@ -2,7 +2,7 @@
 
 layout: post
 
-title: "FF14炸房提醒插件食用指南"
+title: "FF14房屋监控插件食用指南"
 
 date: 2022-08-17 09:57:00
 
