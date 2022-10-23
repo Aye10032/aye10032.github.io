@@ -18,8 +18,17 @@ jobs:
       with:
         node-version: "14.x"
 
+
+    # Install pandoc for mathjax (Optional)
+    - name: Install pandoc
+      run: |
+        cd /tmp
+        wget -c https://github.com/jgm/pandoc/releases/download/2.14.0.3/pandoc-2.14.0.3-1-amd64.deb
+        sudo dpkg -i pandoc-2.14.0.3-1-amd64.deb
+
     - name: Hexo Generate         # 安装 Hexo 依赖并且生成静态文件
       run: |
+        pandoc --version
         rm -f .yarnclean
         yarn --frozen-lockfile --ignore-engines --ignore-optional --non-interactive --silent --ignore-scripts --production=false
         rm -rf ./public
