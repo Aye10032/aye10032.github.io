@@ -6,6 +6,8 @@ title: "teamspeak服务器搭建指南"
 
 date: 2022-11-20 21:54:00
 
+updated: 2022-11-20 21:54:00
+
 excerpt: "新版teamspeak搭建手册"
 
 categories: 
