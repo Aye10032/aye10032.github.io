@@ -72,7 +72,9 @@ typora-root-url: ..
 
 
 
-# 二、安装配置服务端
+# 三、安装配置服务端
+
+## 1、设置配置文件
 
 在准备好文件之后，就开始安装服务端了，
 
@@ -81,8 +83,6 @@ typora-root-url: ..
 ```bash
 sudo apt update
 ```
-
-
 
 一般来说，我们都是以roo权限登陆的服务器，但是由于teamspeak是不能用这一用户运行的，因此我们需要新建一个用户来运行teamspeak服务端文件：
 
@@ -133,3 +133,161 @@ touch .ts3server_license_accepted
 ./ts3server_startscript.sh start
 ```
 
+运行之后，你可以看到这样一串信息，那么恭喜你，服务端运行成功了
+
+![](/images/posts/teamspeak/成功信息.png)
+
+把这一段信息复制下来备用，之后Ctrl +c终止服务即可
+
+## 2、打开防火墙
+
+现在的服务器一般来说防火墙直接在面板的策略组里面放行就行了，总共放行三个端口：
+
+- 9987/udp
+- 10011/tcp
+- 30033/tcp
+
+
+
+如果你服务器上还有防火墙程序例如，可以再手动添加端口放行：
+
+```bash
+ systemctl start firewalld
+ firewall-cmd --zone=public --add-port=9987/udp --permanent
+ firewall-cmd --zone=public --add-port=10011/tcp --permanent
+ firewall-cmd --zone=public --add-port=30033/tcp --permanent
+ firewall-cmd --reload
+```
+
+
+
+# 四、设置服务开机启动
+
+首先还是先切换回root用户(会要求输入root用户密码)：
+
+```bash
+su -
+```
+
+然后我们来新建一个自定义服务文件ts3.service（这里编辑器你用vim也行）：
+
+```bash
+nano /lib/systemd/system/ts3.service
+```
+
+该配置文件内容如下：
+
+```bash
+ [Unit]
+ Description=Teamspeak server
+ After=network.target
+ [Service]
+ WorkingDirectory=/home/teamspeak/teamspeak3
+ User=teamspeak
+ Group=teamspeak
+ Type=forking
+ ExecStart=/home/teamspeak/teamspeak3/ts3server_startscript.sh start inifile=ts3server.ini
+ ExecStop=/home/teamspeak/teamspeak3/ts3server_startscript.sh stop
+ PIDFile=/home/teamspeak/teamspeak3/ts3server.pid
+ RestartSec=15
+ Restart=always
+ [Install]
+ WantedBy=multi-user.target
+```
+
+
+
+注意：这里的WorkingDirectory，ExecStart，ExecStop， PIDFile这四个参数是你服务端文件的绝对路径，如果你之前文件夹的路径跟我不一样，这里记得修改。
+
+之后保存退出并重启服务器即可。
+
+
+在服务文件编辑完毕之后，我们就可以使用systemctl指令来启动teamspeak服务端并令其开机自启：
+
+启动服务端
+
+```bash
+systemctl start ts3
+```
+
+
+关闭服务端
+
+```bash
+systemctl stop ts3
+```
+
+
+开机自启
+
+```bash
+systemctl enable ts3
+```
+
+
+查看服务端运行信息
+
+```bash
+systemctl status ts3
+```
+
+至此，服务端配置完毕，开始运行。 
+
+
+
+# 五、报错处理
+
+但是别急，有可能你运行`systemctl status ts3`看到的是这样的信息：
+
+![](/images/posts/teamspeak/失败信息.png)
+
+这时候我们还是先停止服务器运行，并重启服务器：
+
+```bash
+systemctl disable ts3
+systemctl stop ts3
+reboot
+```
+
+接下来切到teamspeak用户，进入TS服务器目录，然后运行这条指令：
+
+```bash
+su - teamspeak
+cd teamspeak3
+./ts3server_minimal_runscript.sh createinifile=1
+```
+
+看到差不多这样的信息，就说明成功了
+
+![](/images/posts/teamspeak/成功信息2.png)
+
+此时CTRL+C退出，并重新回到root，再次赋予开机启动并开启服务器，查看状态应该可以看到如下信息
+
+```
+su -
+systemctl enable ts3
+systemctl start ts3
+systemctl status ts3
+```
+
+![](/images/posts/teamspeak/成功信息3.png)
+
+好了，服务器开启成功。
+
+
+
+# 客户端连接、配置
+
+安装客户端完毕之后，打开并选择connections--connect，输入服务端IP，即可连接上服务器，第一个连接服务端的用户会被要求输入密钥
+
+![](/images/posts/teamspeak/服务器初始化.png)
+
+![输入密钥](/images/posts/teamspeak/服务器初始化1.png)
+
+接下来你就可以对服务器进行自己的配置啦，如果不想把服务器公开，记得在设置里面取消勾选这个：
+
+![](/images/posts/teamspeak/取消公开.png)
+
+上面几张图是TS5客户端的截图，如果你用的是老版客户端，界面可能会不太一样，但是大同小异。
+
+那么本文到此结束，谢谢。
