@@ -12,9 +12,11 @@ excerpt: "新版teamspeak搭建手册"
 
 categories: 
 	- 教程
+    - 网络
 
 tag: 
 	- 教程
+    - 网络
 
 typora-root-url: ..
 ---
