@@ -1,23 +1,16 @@
 ---
 
 layout: post
-
 title: "teamspeak服务器搭建指南"
-
-date: 2022-11-20 21:54:00
-
+date: 2022/11/20 21:54:00
+updated: 2022/11/20 21:54:00 
 excerpt: "新版teamspeak搭建手册"
-
 categories: 
-	- 教程 
-    - 网络 
-
+- 教程
+- 网络
 tag: 
-	- 教程 
-    - 网络 
-
-updated: 2022-11-20 21:54:00 
-
+- 教程
+- 网络
 typora-root-url: ..
 ---
 
