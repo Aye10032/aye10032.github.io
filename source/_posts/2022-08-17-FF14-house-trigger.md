@@ -4,14 +4,16 @@ layout: post
 
 title: "FF14房屋监控插件食用指南"
 
-date: 2022-08-17 09:57:00
+date: 2022-08-17 09:57:00	
+
+updated: 2022-08-17 09:57:00	
 
 excerpt: "搭配BOT使用"
 
 categories: 
 	- 日常
 	- 游戏
-	- FF4
+	- FF14
 
 tag: 
 	- 日常
