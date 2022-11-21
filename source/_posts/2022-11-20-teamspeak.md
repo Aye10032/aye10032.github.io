@@ -2,8 +2,8 @@
 
 layout: post
 title: "teamspeak服务器搭建指南"
-date: 2022/11/20 21:54:00
-updated: 2022/11/20 21:54:00 
+date: 2022-11-20 21:54:00
+updated: 2022-11-20 21:54:00
 excerpt: "新版teamspeak搭建手册"
 categories: 
 - 教程
@@ -273,7 +273,7 @@ systemctl status ts3
 
 
 
-# 客户端连接、配置
+# 六、客户端连接、配置
 
 安装客户端完毕之后，打开并选择connections--connect，输入服务端IP，即可连接上服务器，第一个连接服务端的用户会被要求输入密钥
 
