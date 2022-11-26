@@ -1,23 +1,16 @@
 ---
 
 layout: post
-
 title: "Barotrauma潜渊症服务器搭建笔记"
-
 date: 2022-06-23 19:08:25
-
+updated: 2022-06-23 19:08:25
 excerpt: "在Ubuntu系统下搭建Barotrauma潜渊症服务器的心得"
-
 categories: 
-	- 日常
-	- 游戏
-	- 潜渊症
-
+- 游戏
+- 潜渊症
 tag: 
-	- 日常
-	- 游戏
-	- 潜渊症
-
+- 游戏
+- 潜渊症
 typora-root-url: ..
 
 ---
