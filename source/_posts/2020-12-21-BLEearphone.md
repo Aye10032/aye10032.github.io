@@ -4,15 +4,17 @@ layout: post
 
 title: "WIN10关闭蓝牙耳机绝对音量功能"
 
-date: 2020-12-21
+date: 2020-12-21 08:00:31
+
+updated: 2020-12-21 08:00:32
 
 categories: 
 	- 教程
-	- 日常
+	- 计算机
 
 tag: 
 	- 教程
-	- 日常
+	- 计算机
 typora-root-url: ..
 ---
 
