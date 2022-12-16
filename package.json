@@ -22,7 +22,7 @@
     "hexo-renderer-pandoc": "0.3.1",
     "hexo-renderer-stylus": "^2.0.1",
     "hexo-server": "^2.0.0",
-    "hexo-theme-fluid": "1.9.3",
+    "hexo-theme-fluid": "1.9.4",
     "hexo-all-minifier": "0.5.7"
   }
 }
