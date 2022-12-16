@@ -3,7 +3,7 @@
 layout: post
 title: "Barotrauma潜渊症服务器搭建笔记"
 date: 2022-06-23 19:08:25
-updated: 2022-06-23 19:08:25
+updated: 2022-06-23 19:08:26
 excerpt: "在Ubuntu系统下搭建Barotrauma潜渊症服务器的心得"
 categories: 
 - 游戏
