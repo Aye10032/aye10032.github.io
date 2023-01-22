@@ -223,6 +223,81 @@ typora-root-url: ..
 
 
 
+## 3、Renderer 模块
+
+{% note info%}
+渲染相关
+{% endnote %}
+
+
+
+|           名称           |                     作用                      |                     备注                      |
+| :----------------------: | :-------------------------------------------: | :-------------------------------------------: |
+|       Render Mode        |                   渲染模式                    |                                               |
+|     Normal Direction     |                与照明模式相关                 | Billboard的默认朝向受<br>Render Alignment影响 |
+|         Material         |                     材质                      |                                               |
+|      Trial Material      |                   拖尾材质                    |                                               |
+|        Sort Mode         |              粒子之间的排序模式               |                                               |
+|        Sort Fudge        |            两个粒子系统之间的排序             |                  小的在前面                   |
+|    Min Particle Size     | 粒子渲染的最小大小<br/>（占屏幕的百分比大小） |                                               |
+|    Max Particle Size     | 粒子渲染的最大大小<br>（占屏幕的百分比大小）  |                                               |
+|     Render Alignment     |                 渲染对齐方向                  |                                               |
+|           Flip           |                     翻转                      |                                               |
+|        Allow Roll        |                  在VR中有用                   |                                               |
+|          Pivot           |          粒子渲染相对于中心点的偏移           |                                               |
+|     Visualize Pivot      |               显示粒子的中心点                |                                               |
+|         Masking          |                     遮罩                      |                                               |
+| Apply Active Color Space |                  与光照有关                   |                                               |
+|  Custom Vertex Streams   |                 自定义顶点流                  |                                               |
+|       Cast Shadows       |                 是否投射阴影                  |                                               |
+|       Shadow Bias        |         粒子上是否会有别的粒子的阴影          |                                               |
+|      Motion Vectors      |          是否用运动矢量跟踪粒子系统           |                                               |
+|     Sorting Layer ID     |                  与排序相关                   |                                               |
+|      Order In Layer      |                  与排序相关                   |                                               |
+|       Light Probes       |                   光照探针                    |                                               |
+|    Reflection Probes     |                   反射探针                    |                                               |
+
+
+
+### Render Mode
+
+- **Billboard**：二维粒子材质，平面永远朝向摄像机
+- **Stretched Billboard**：拉伸的材质
+- **Horizontal Billboard**：二位粒子材质，永远平行于地面
+- **Vertical Billboard**：二位粒子材质，永远面向摄像机且垂直于地面
+- **Mesh**：三维材质
+
+
+
+### Sort Mode
+
+- **None**
+- **By Distance**：按照距离排序，近的会覆盖远的
+- **Oldest in Front**：旧的会覆盖新的
+- **Youngest in Front**：新的会覆盖旧的
+
+
+
+### Render Alignment
+
+- **View**：朝向相机
+- **World**：永远朝向世界坐标
+- **Local**：朝向局部坐标方向，受transform中的rotation影响
+- **Facing**：面向游戏对象的位置
+- **Velocity**：面向当前速度的方向
+
+
+
+### Masking
+
+- **No Masking**：无遮罩
+- **Visible Inside Mask**：在遮罩范围内显示
+- **Visible Outside Mask**：在遮罩范围外显示
+
+
+
+
+
 # 二、相关技巧
 
 ## 不选中也持续播放粒子特效
