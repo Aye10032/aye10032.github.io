@@ -223,7 +223,7 @@ typora-root-url: ..
 
 
 
-## 3、Renderer 模块
+## 4、Renderer 模块
 
 {% note info%}
 渲染相关
@@ -293,6 +293,31 @@ typora-root-url: ..
 - **No Masking**：无遮罩
 - **Visible Inside Mask**：在遮罩范围内显示
 - **Visible Outside Mask**：在遮罩范围外显示
+
+
+
+## 5、Noise 模块
+
+{% note info%}
+噪声信号相关
+{% endnote %}
+
+|       名称        |               作用                |   备注   |
+| :---------------: | :-------------------------------: | :------: |
+|   Separate Axes   |   在各个轴上设置噪声的影响程度    |          |
+|     Strength      |          粒子的波动强度           |          |
+|     Frequency     |        粒子发生波动的频率         |          |
+|   Scroll Speed    |        粒子波动的变化速度         |          |
+|      Damping      | Strength与Frequency是否<br>成正比 |          |
+|      Octaves      |          叠加几层噪声图           | 开销较大 |
+| Octave Multiplier |            强度的衰减             |          |
+|   Octave Scale    |            频率的衰减             |          |
+|      Quality      |         波动噪声图的质量          |          |
+|       Remap       |      将最终的噪声值重新映射       |          |
+|    Remap Curve    |    生命周期与噪声值的关系曲线     |          |
+|  Position Amount  |        噪波值是否影响位置         |          |
+|  Rotation Amount  |        噪波值是否影响角度         |          |
+|    Size Amount    |        噪波值是否影响缩放         |          |
 
 
 
