@@ -3,7 +3,7 @@
 layout: post
 title: "unity 粒子效果笔记"
 date: 2023-01-21 10:34:00
-updated: 2023-01-22 11:18:00
+updated: 2023-01-27 12:24:00
 excerpt: "unity 粒子效果模块相关"
 categories: 
 - 学习
@@ -322,6 +322,138 @@ typora-root-url: ..
 
 
 
+
+## 6、lifetime 相关模块
+
+### Velocity Over Lifetime
+
+{% note info%}
+调节粒子的速度矢量
+{% endnote %}
+
+|     名称      |          作用          |         备注          |
+| :-----------: | :--------------------: | :-------------------: |
+|    Linear     |     各轴向上的速度     | 可以设定时间-速度曲线 |
+|     Space     |      速度的参考系      |                       |
+|    Orbital    |  设定粒子绕坐标轴旋转  |                       |
+|    Offset     | 设定例子对坐标轴的便宜 |                       |
+|    Radial     |     粒子远离的速度     |                       |
+| Speed Monitor |  对上述参数的乘积倍率  |                       |
+
+#### Space
+
+- **Local**：局部坐标系，受transfor中设置影响
+- **World**：世界坐标，固定不变
+
+
+
+### Limit Velocity Over Lifetime
+
+{% note info%}
+控制粒子的最大速度
+{% endnote %}
+
+|         名称         |              作用              |        备注        |
+| :------------------: | :----------------------------: | :----------------: |
+|    Separate Axes     |         各轴向上的速度         |                    |
+|        Speed         |   粒子在生命周期内的最大速度   |                    |
+|        Dampen        |  当前速度衰减到最大数的的参数  | 当超过Speed时生效  |
+|         Drag         |            空气阻力            | 与其他变量独立作用 |
+|   Multiply By Size   | 尺寸更大的粒子受到阻力影响更大 |                    |
+| Multiply By Velocity | 速度更大的粒子受到阻力影响更大 |                    |
+
+
+
+### Force Over Lifetime
+
+{% note info%}
+生命周期中力对粒子作用的影响
+{% endnote %}
+
+
+
+|   名称    |        作用        |               备注                |
+| :-------: | :----------------: | :-------------------------------: |
+|  X、Y、Z  | 各个轴向上施加的力 |                                   |
+|   Space   |       参考系       |                                   |
+| Randomize | 在每一帧上进行随机 | 仅当X、Y、Z存在多个选择<br>时有用 |
+
+
+
+### Color Over Lifetime
+
+{% note info%}
+粒子颜色随生命周期变化相关
+{% endnote %}
+
+渐变色的色条，上面的滑块调整透明的，下面的滑块调整颜色
+
+
+
+### Color By Speed
+
+{% note info%}
+粒子颜色随速度变化相关
+{% endnote %}
+
+| 名称  |         作用         | 备注 |
+| :---: | :------------------: | :--: |
+| Color |                      |      |
+| Speed | 速度与颜色的映射范围 |      |
+
+
+
+### Size Over Lifetime
+
+{% note info%}
+粒子尺寸随生命周期变化相关
+{% endnote %}
+
+|     名称      |      作用      | 备注 |
+| :-----------: | :------------: | :--: |
+| Separate Axes | 指定缩放坐标轴 |      |
+|     Size      | 速度——时间曲线 |      |
+
+
+
+### Size By Speed
+
+{% note info%}
+粒子尺寸随速度变化相关
+{% endnote %}
+
+|     名称      |         作用         | 备注 |
+| :-----------: | :------------------: | :--: |
+| Separate Axes |    指定缩放坐标轴    |      |
+|     Size      |    速度——时间曲线    |      |
+|     Speed     | 速度与颜色的映射范围 |      |
+
+
+
+### Rotation Over Lifetime
+
+{% note info%}
+粒子角度随生命周期变化相关
+{% endnote %}
+
+|       名称       |       作用       | 备注 |
+| :--------------: | :--------------: | :--: |
+|  Separate Axes   |  指定旋转坐标轴  |      |
+| Angular Velocity | 角速度——时间曲线 |      |
+
+
+
+### Rotation By Speed
+
+{% note info%}
+粒子角度随速度变化相关
+{% endnote %}
+
+|       名称       |          作用          | 备注 |
+| :--------------: | :--------------------: | :--: |
+|  Separate Axes   |     指定旋转坐标轴     |      |
+| Angular Velocity |    角速度——时间曲线    |      |
+|   Speed Range    | 速度与角速度的映射范围 |      |
 
 # 二、相关技巧
 
