@@ -526,6 +526,73 @@ typora-root-url: ..
 
 
 
+## 9、Light 模块
+
+{% note info%}
+与粒子光效有关的模块
+{% endnote %}
+
+|          名称           |            作用            | 备注 |
+| :---------------------: | :------------------------: | :--: |
+|          Light          |          光照效果          |      |
+|          Ratio          |      粒子有光效的概率      |      |
+|   Random Distribution   |     Ratio是否随机生效      |      |
+|   Use Particle Color    |     是否使用粒子的颜色     |      |
+|   Size Affects Range    | 光照范围是否受粒子尺寸影响 |      |
+| Alpha Affects Intensity |  光照强度是否受透明度影响  |      |
+|    Range Multiplier     |      光照范围变化曲线      |      |
+|  Intensity Multiplier   |      光照强度变化曲线      |      |
+|     Maximum Lights      |          最大光强          |      |
+
+
+
+## 10、Trails 模块
+
+{% note info%}
+与粒子尾迹有关的模块
+{% endnote %}
+
+|            名称             |                 作用                 |               备注               |
+| :-------------------------: | :----------------------------------: | :------------------------------: |
+|            Mode             |               尾迹模式               |                                  |
+|            Ratio            |           粒子有尾迹的比例           |     仅当Particle Mode时生效      |
+|          Lifetime           | 尾迹的生命周期（粒子生命周期的几倍） |     仅当Particle Mode时生效      |
+|   Minimum Vertex Distance   |        轨迹曲线顶点的采样距离        |     仅当Particle Mode时生效      |
+|         World Space         |     轨迹是否跟随粒子源移动而移动     |     仅当Particle Mode时生效      |
+|      Die With Particle      |       尾迹是否随粒子消亡而消亡       |     仅当Particle Mode时生效      |
+|        Ribbon Count         |               丝带数量               |      仅当Ribbon Mode时生效       |
+|  Split Sub Emitter Ribbons  |          与子发射器相关设置          |      仅当Ribbon Mode时生效       |
+| Attach Ribbons to Transform |        丝带是否连接到发射原点        |      仅当Ribbon Mode时生效       |
+|        Texture Mode         |             纹理映射模式             |                                  |
+|     Size Affects Width      |      轨迹宽度是否受粒子宽度影响      |                                  |
+|    Size Affects Lifetime    |    轨迹生命周期是否受粒子尺寸影响    |                                  |
+|   Inherit Particle Color    |         轨迹是否继承粒子颜色         |                                  |
+|     Color Over Lifetime     |            颜色——时间曲线            |    仅轨迹不继承粒子颜色时生效    |
+|      Width Over Trail       |            宽度——长度曲线            | 仅轨迹宽度不受粒子宽度影响时生效 |
+|     Color Over Lifetime     |            颜色——长度曲线            |    仅轨迹不继承粒子颜色时生效    |
+|   Generate Lighting Data    |                                      |                                  |
+|         Shadow Bias         |               阴影偏差               |                                  |
+
+
+
+### Mode
+
+- **Particle**：每个粒子一条尾迹
+- **Ribbon**：粒子之间连成一条
+
+
+
+### Texture Mode
+
+- **Stretch**：拉伸
+- **Tile**：平铺
+- **Repeat per Segment**：按照宽度平铺
+- **Distribute per Segment**：按照宽度拉伸
+
+
+
+
+
 # 二、相关技巧
 
 ## 不选中也持续播放粒子特效
