@@ -455,6 +455,77 @@ typora-root-url: ..
 | Angular Velocity |    角速度——时间曲线    |      |
 |   Speed Range    | 速度与角速度的映射范围 |      |
 
+
+
+
+
+## 7、Collision 模块
+
+{% note info%}
+粒子物理碰撞相关
+{% endnote %}
+
+|            名称             |              作用              |                        备注                         |
+| :-------------------------: | :----------------------------: | :-------------------------------------------------: |
+|            Type             |           碰撞的类型           |                                                     |
+|            Mode             |         碰撞的游戏模式         |                 仅type为world时有效                 |
+|        Visualization        |         可视化显示类型         |                仅type为planes时有效                 |
+|         Scale Plane         |          可视化的缩放          |                仅type为planes时有效                 |
+|           Dampen            |    粒子碰撞后损失的速度比例    |                                                     |
+|           Bounce            |    粒子碰撞后反弹的速度衰减    |                                                     |
+|        Lifetime Loss        |      碰撞后生命周期的衰减      |                                                     |
+|       Min Kill Speed        |       消失的最低速度阈值       |                                                     |
+|       Max Kill Speed        |       消失的最大速度阈值       |                                                     |
+|        Radius Scale         |           碰撞箱大小           |                                                     |
+|      Collision Quality      |            碰撞质量            |                 仅type为world时有效                 |
+|        Collides With        |       与哪些图层发生碰撞       |                 仅type为world时有效                 |
+|    Max Collision Shapes     | 粒子最多可以与多少个面发生碰撞 |                 仅type为world时有效                 |
+|  Enable Dynamic Colliders   |     粒子是否与刚体发生碰撞     |                 仅type为world时有效                 |
+|       Collider Force        |    粒子与刚体碰撞时的作用力    | 仅type为world，且<br>Enable Dynamic Colliders时有效 |
+| Multiply by Collision Angle |                                |                                                     |
+| Multiply by Particle Speed  |                                |                                                     |
+|  Multiply by Particle Size  |                                |                                                     |
+|   Send Collision Message    |          发送碰撞事件          |                                                     |
+|      Visualize Bounds       |        可视化例子碰撞箱        |                                                     |
+
+
+
+### Type
+
+- **Planes**：可以指定碰撞对象
+- **World**：会与所有带有碰撞箱的物体发生碰撞
+
+
+
+### Visualization
+
+- **Solid**：平面
+- **Grid**：网格
+
+## 8、Trigger 模块
+
+{% note info%}
+与触发相关
+{% endnote %}
+
+|       名称       |       作用       | 备注 |
+| :--------------: | :--------------: | :--: |
+|    Colliders     |    碰撞体对象    |      |
+|      Inside      |     在内部时     |      |
+|     Outside      |     在外部时     |      |
+|      Enter       |      进入时      |      |
+|       Exit       |      离开时      |      |
+|   Radius Scale   |    碰撞箱大小    |      |
+| Visualize Bounds | 可视化例子碰撞箱 |      |
+
+### 事件类型
+
+- **Kill**：杀死
+- **Ignore**：忽略
+- **Callback**：回调函数
+
+
+
 # 二、相关技巧
 
 ## 不选中也持续播放粒子特效
