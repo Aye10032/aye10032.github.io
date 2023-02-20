@@ -123,7 +123,7 @@ bangumi: # 追番设置
   lazyload: true
   srcValue: '__image__'
   lazyloadAttrName: 'data-src=__image__'
-  loading: '/images/loading.gif'
+  loading: '' #/images/loading.gif
   showMyComment: false
   pagination: true
   metaColor: '#FB7299'
