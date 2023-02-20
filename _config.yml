@@ -111,6 +111,50 @@ image_minifier:
   progressive: true
   silent: false
 
+bangumi: # 追番设置
+  enable: true
+  source: bili
+  bgmInfoSource: 'bgmApi'
+  path:
+  vmid: 40077740
+  title: '我的追番'
+  quote: '无内鬼，来点二次元'
+  show: 1
+  lazyload: true
+  srcValue: '__image__'
+  lazyloadAttrName: 'data-src=__image__'
+  loading:
+  showMyComment: false
+  pagination: false
+  metaColor:
+  color:
+  webp: true
+  progress: true
+  extraOrder:
+  proxy:
+    host: '代理host'
+    port: '代理端口'
+  extra_options:
+    key: value
+cinema: # 追剧设置
+  enable: false
+  path:
+  vmid:
+  title: '追剧列表'
+  quote: '生命不息，追剧不止！'
+  show: 1
+  lazyload: true
+  srcValue: '__image__'
+  lazyloadAttrName: 'data-src=__image__'
+  loading:
+  metaColor:
+  color:
+  webp:
+  progress:
+  extraOrder:
+  extra_options:
+    key: value
+
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:

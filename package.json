@@ -23,6 +23,7 @@
     "hexo-renderer-stylus": "^2.0.1",
     "hexo-server": "^2.0.0",
     "hexo-theme-fluid": "1.9.4",
-    "hexo-all-minifier": "0.5.7"
+    "hexo-all-minifier": "0.5.7",
+    "hexo-bilibili-bangumi": "^1.8.3"
   }
 }
