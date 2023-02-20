@@ -118,15 +118,15 @@ bangumi: # 追番设置
   path:
   vmid: 40077740
   title: '我的追番'
-  quote: '无内鬼，来点二次元'
+  quote: ''
   show: 1
   lazyload: true
   srcValue: '__image__'
   lazyloadAttrName: 'data-src=__image__'
-  loading:
+  loading: '/images/loading.gif'
   showMyComment: false
-  pagination: false
-  metaColor:
+  pagination: true
+  metaColor: '#FB7299'
   color:
   webp: true
   progress: true
@@ -135,7 +135,7 @@ bangumi: # 追番设置
     host: '代理host'
     port: '代理端口'
   extra_options:
-    key: value
+    subtitle: '无内鬼，来点二次元'
 cinema: # 追剧设置
   enable: false
   path:
@@ -147,7 +147,7 @@ cinema: # 追剧设置
   srcValue: '__image__'
   lazyloadAttrName: 'data-src=__image__'
   loading:
-  metaColor:
+  metaColor: '#FB7299'
   color:
   webp:
   progress:
