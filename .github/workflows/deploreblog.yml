@@ -4,9 +4,9 @@ on: [push]                        # 监听到 push 事件后触发
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
+    permissions:
+      contents: write
     steps:
     - name: Checkout              # 拉取当前执行 Actions 仓库的指定分支
       uses: actions/checkout@v2
@@ -16,7 +16,7 @@ jobs:
     - name: Setup Node            # 安装 Node 环境
       uses: actions/setup-node@v1
       with:
-        node-version: "14.x"
+        node-version: "16.x"
 
 
     # Install pandoc for mathjax (Optional)
@@ -26,6 +26,17 @@ jobs:
         wget -c https://github.com/jgm/pandoc/releases/download/2.14.0.3/pandoc-2.14.0.3-1-amd64.deb
         sudo dpkg -i pandoc-2.14.0.3-1-amd64.deb
 
+#    - name: Install Dependencies
+#      run: npm install
+#
+#    - name: Update bili
+#      run: |
+#        yarn run hexo bangumi -d
+#        yarn run hexo bangumi -u
+#
+#    - name: Build
+#      run: npm run build
+    
     - name: Hexo Generate         # 安装 Hexo 依赖并且生成静态文件
       run: |
         pandoc --version
@@ -52,3 +63,9 @@ jobs:
         git config --global user.name "$GIT_NAME"
         git config --global user.email "$GIT_EMAIL"
         yarn run hexo deploy
+
+#      - name: Deploy
+#        uses: peaceiris/actions-gh-pages@v3
+#        with:
+#          github_token: ${{ secrets.GITHUB_TOKEN }}
+#          publish_dir: ./public
