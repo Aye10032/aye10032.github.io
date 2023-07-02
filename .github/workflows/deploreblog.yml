@@ -14,10 +14,20 @@ jobs:
         ref: source
 
     - name: Setup Node            # 安装 Node 环境
-      uses: actions/setup-node@v1
+      uses: actions/setup-node@v2
       with:
         node-version: "16.x"
 
+    # 缓存依赖项: https://docs.github.com/cn/actions/using-workflows/caching-dependencies-to-speed-up-workflows
+    - name: Cache NPM dependencies
+      uses: actions/cache@v2
+      with:
+        # npm cache files are stored in `~/.npm` on Linux/macOS
+        path: ~/.npm
+        # path: node_modules
+        key: ${{ runner.OS }}-npm-cache
+        restore-keys: |
+        ${{ runner.OS }}-npm-cache
 
     # Install pandoc for mathjax (Optional)
     - name: Install pandoc
@@ -26,46 +36,61 @@ jobs:
         wget -c https://github.com/jgm/pandoc/releases/download/2.14.0.3/pandoc-2.14.0.3-1-amd64.deb
         sudo dpkg -i pandoc-2.14.0.3-1-amd64.deb
 
-#    - name: Install Dependencies
-#      run: npm install
-#
-#    - name: Update bili
-#      run: |
-#        yarn run hexo bangumi -d
-#        yarn run hexo bangumi -u
-#
-#    - name: Build
-#      run: npm run build
-    
-    - name: Hexo Generate         # 安装 Hexo 依赖并且生成静态文件
+    - name: Install Dependencies
+      run: npm install
+
+    - name: Update bili
       run: |
-        pandoc --version
-        rm -f .yarnclean
-        yarn --frozen-lockfile --ignore-engines --ignore-optional --non-interactive --silent --ignore-scripts --production=false
-        rm -rf ./public
         yarn run hexo bangumi -d
         yarn run hexo bangumi -u
-        yarn run hexo clean
-        yarn run hexo generate
-        echo "www.aye10032.com" > public/CNAME
-        ls -la
 
-    - name: Hexo Deploy           # 部署步骤，这里以 hexo deploy 为例
-      env:
-        SSH_PRIVATE: ${{ secrets.SSH_PRIVATE }}
-        GIT_NAME: Aye10032
-        GIT_EMAIL: aye10032@gmail.com
+    - name: Clean
+      run: npm run clean
+
+    - name: Build
+      run: npm run build
+
+#    - name: Hexo Generate         # 安装 Hexo 依赖并且生成静态文件
+#      run: |
+#        pandoc --version
+#        rm -f .yarnclean
+#        yarn --frozen-lockfile --ignore-engines --ignore-optional --non-interactive --silent --ignore-scripts --production=false
+#        rm -rf ./public
+#        yarn run hexo bangumi -d
+#        yarn run hexo bangumi -u
+#        yarn run hexo clean
+#        yarn run hexo generate
+#        echo "www.aye10032.com" > public/CNAME
+#        ls -la
+#
+#    - name: Hexo Deploy           # 部署步骤，这里以 hexo deploy 为例
+#      env:
+#        SSH_PRIVATE: ${{ secrets.SSH_PRIVATE }}
+#        GIT_NAME: Aye10032
+#        GIT_EMAIL: aye10032@gmail.com
+#      run: |
+#        mkdir -p ~/.ssh/
+#        echo "$SSH_PRIVATE" | tr -d '\r' > ~/.ssh/id_rsa
+#        chmod 600 ~/.ssh/id_rsa
+#        ssh-keyscan github.com >> ~/.ssh/known_hosts
+#        git config --global user.name "$GIT_NAME"
+#        git config --global user.email "$GIT_EMAIL"
+#        yarn run hexo deploy
+
+    - name: Deploy
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        deploy_key: ${{ secrets.SSH_PRIVATE  }}
+        user_name: Aye10032
+        user_email: Aye10032@gmail.com
+        # 获取提交文章源码时的commit message，作为发布gh-pages分支的信息
+        commit_message: ${{ github.event.head_commit.message }}
+        full_commit_message: ${{ github.event.head_commit.message }}
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        # GITHUB_TOKEN不是个人访问令牌，GitHub Actions 运行器会自动创建一个GITHUB_TOKEN密钥以在您的工作流程中进行身份验证。因此，您无需任何配置即可立即开始部​​署
+        publish_dir: ./public
+        allow_empty_commit: true # 允许空提交
+    # Use the output from the `deploy` step(use for test action)
+    - name: Get the output
       run: |
-        mkdir -p ~/.ssh/
-        echo "$SSH_PRIVATE" | tr -d '\r' > ~/.ssh/id_rsa
-        chmod 600 ~/.ssh/id_rsa
-        ssh-keyscan github.com >> ~/.ssh/known_hosts
-        git config --global user.name "$GIT_NAME"
-        git config --global user.email "$GIT_EMAIL"
-        yarn run hexo deploy
-
-#      - name: Deploy
-#        uses: peaceiris/actions-gh-pages@v3
-#        with:
-#          github_token: ${{ secrets.GITHUB_TOKEN }}
-#          publish_dir: ./public
+        echo "${{ steps.deploy.outputs.notify }}"
