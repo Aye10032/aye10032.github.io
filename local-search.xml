@@ -4,6 +4,35 @@
   
   
   <entry>
+    <title>Docker使用心得</title>
+    <link href="/2023/08/27/2023-08-27-docker/"/>
+    <url>/2023/08/27/2023-08-27-docker/</url>
+    
+    <content type="html"><![CDATA[<h1 id="一安装1">一、安装<sup id="fnref:1" class="footnote-ref"><a href="#fn:1" rel="footnote"><span class="hint--top hint--rounded" aria-label="[Install Docker Engine on Ubuntu](https://docs.docker.com/engine/install/ubuntu/)">[1]</span></a></sup></h1><p>本教程使用系统为Ubuntu22.04</p><h2 id="安装依赖和仓库配置">1.1 安装依赖和仓库配置</h2><p>首先安装相关依赖</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo apt-get update<br>sudo apt-get install ca-certificates curl gnupg<br></code></pre></td></tr></table></figure><p>接下啦添加docker的GPG密钥：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo install -m 0755 -d /etc/apt/keyrings<br>curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg<br>sudo <span class="hljs-built_in">chmod</span> a+r /etc/apt/keyrings/docker.gpg<br></code></pre></td></tr></table></figure><p>设置仓库：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">echo</span> \<br>  <span class="hljs-string">&quot;deb [arch=&quot;</span>$(dpkg --print-architecture)<span class="hljs-string">&quot; signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \</span><br><span class="hljs-string">  &quot;</span>$(. /etc/os-release &amp;&amp; <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;<span class="hljs-variable">$VERSION_CODENAME</span>&quot;</span>)<span class="hljs-string">&quot; stable&quot;</span> | \<br>  sudo <span class="hljs-built_in">tee</span> /etc/apt/sources.list.d/docker.list &gt; /dev/null<br></code></pre></td></tr></table></figure><p>更新仓库</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo apt-get update<br></code></pre></td></tr></table></figure><h2 id="安装并测试">1.2 安装并测试</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin<br></code></pre></td></tr></table></figure><p>测试是否安装成功</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker --version<br></code></pre></td></tr></table></figure><p><img src="/images/posts/docker/docker_version.png" /></p><h1 id="参考">参考</h1><section class="footnotes"><div class="footnote-list"><ol><li><span id="fn:1" class="footnote-text"><span><a href="https://docs.docker.com/engine/install/ubuntu/">Install Docker Engine on Ubuntu</a> <a href="#fnref:1" rev="footnote" class="footnote-backref"> ↩︎</a></span></span></li></ol></div></section>]]></content>
+    
+    
+    <categories>
+      
+      <category>教程</category>
+      
+      <category>计算机</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>教程</tag>
+      
+      <tag>计算机</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>测序数据处理自用笔记</title>
     <link href="/2023/08/11/2023-08-11-trim_goal/"/>
     <url>/2023/08/11/2023-08-11-trim_goal/</url>
