@@ -4,6 +4,35 @@
   
   
   <entry>
+    <title>学术论文写作规范</title>
+    <link href="/2023/09/27/2023-09-27-english/"/>
+    <url>/2023/09/27/2023-09-27-english/</url>
+    
+    <content type="html"><![CDATA[<h1 id="学术论文写作规范">学术论文写作规范</h1><h2 id="academic-writing-style">1. academic writing style</h2><ul><li><strong>Avoid using "I"</strong><ul><li>❌：<mark style="color:red;"><strong>I think it is important</strong></mark> to examine ……</li><li>✔：<mark style="color:green;"><strong>Examining</strong></mark> …… <mark style="color:green;"><strong>is important</strong></mark></li></ul></li><li><strong>Do not address the reader directly</strong><ul><li>❌：<mark style="color:red;"><strong>You</strong></mark> could watch further details of these activities at ……</li><li>✔：Further details of these activities <mark style="color:green;"><strong>are given</strong></mark> here at ……</li></ul></li><li><strong>Do not use contractions</strong><ul><li>❌：Having close social ties <mark style="color:red;"><strong>isn't</strong></mark> ……</li><li>✔：Having close social ties <mark style="color:green;"><strong>is not</strong></mark> ……</li></ul></li><li><strong>Use appropriate negative forms</strong><ul><li>❌：There were <mark style="color:red;"><strong>not any</strong></mark> significant ……</li><li>✔：There were <mark style="color:green;"><strong>no</strong></mark> significant ……</li></ul></li><li><strong>Avoid using vague expressions</strong><ul><li>❌：…… such as step count <mark style="color:orange;"><strong>and so on</strong></mark></li><li>✔：…… such as step count, <mark style="color:green;"><strong>calories burned, heart rate and even sleep pattern</strong></mark></li></ul></li><li><strong>Avoid using direct questions</strong><ul><li>❌：Are there any other way to treat this disease ?</li><li>✔：It is necessary to explore other options to treat this disease.</li></ul></li><li><strong>Place adverbs before verbs</strong><ul><li>❌：The experiment procedure was <mark style="color:red;"><strong>controlled carefully</strong></mark>.</li><li>✔：The experiment procedure was <mark style="color:green;"><strong>carefully controlled</strong></mark>.</li></ul></li><li><strong>Do not split infinitives</strong><ul><li>❌：Neural networks have the ability <mark style="color:red;"><strong>to</strong></mark> <mark style="color:orange;"><strong>correctly</strong></mark> <mark style="color:red;"><strong>classify</strong></mark> new patterns.</li><li>✔：Neural networks have the ability <mark style="color:green;"><strong>to classify</strong></mark> new patterns correctly.</li></ul></li><li><strong>Avoid being wordiness</strong></li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>学习</category>
+      
+      <category>期末复习</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>学习</tag>
+      
+      <tag>期末复习</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>使用mdbook构筑你自己的电子笔记</title>
     <link href="/2023/09/12/2023-09-12-mdbook/"/>
     <url>/2023/09/12/2023-09-12-mdbook/</url>
