@@ -4,6 +4,35 @@
   
   
   <entry>
+    <title>使用ffmpeg合并视频的多条音轨</title>
+    <link href="/2023/12/22/2023-12-22-ffmepg-merge/"/>
+    <url>/2023/12/22/2023-12-22-ffmepg-merge/</url>
+    
+    <content type="html"><![CDATA[<h1 id="前言">前言</h1><p>最近在使用OBS录视频，设置了不同的输入分别录制音轨，就像下面这样：</p><p><img src="/images/posts/ffmpeg/OBS多音轨.png" /></p><p>那么对于这些多个音轨，需要进行合并之后再投稿等等</p><h1 id="指令">指令</h1><figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs bat">@<span class="hljs-built_in">echo</span> off<br><span class="hljs-built_in">setlocal</span> enabledelayedexpansion<br><br><span class="hljs-built_in">set</span> &quot;output_folder=output&quot;<br><br><span class="hljs-keyword">if</span> <span class="hljs-keyword">exist</span> &quot;<span class="hljs-variable">%output_folder%</span>&quot; (<br>    <span class="hljs-built_in">rmdir</span> /s /q &quot;<span class="hljs-variable">%output_folder%</span>&quot;<br>)<br><br><span class="hljs-built_in">mkdir</span> &quot;<span class="hljs-variable">%output_folder%</span>&quot;<br><br><span class="hljs-keyword">for</span> <span class="hljs-variable">%%F</span> <span class="hljs-keyword">in</span> (*.mkv) <span class="hljs-keyword">do</span> (<br>    <span class="hljs-built_in">echo</span> &quot;-------------------------&quot;<br>    <span class="hljs-built_in">set</span> &quot;input_file=<span class="hljs-variable">%%~</span>nF&quot;<br>    <span class="hljs-built_in">set</span> &quot;output_file=<span class="hljs-variable">!input_file!</span>_merge.mkv&quot;<br><br>    ffmpeg -i &quot;<span class="hljs-variable">%%F</span>&quot; -filter_complex &quot;[<span class="hljs-number">0</span>:<span class="hljs-number">1</span>][<span class="hljs-number">0</span>:<span class="hljs-number">2</span>][<span class="hljs-number">0</span>:<span class="hljs-number">3</span>]amerge=inputs=<span class="hljs-number">3</span>[a]&quot; -map <span class="hljs-number">0</span>:v -map &quot;[a]&quot; -c:v <span class="hljs-built_in">copy</span> -c:a aac -b:a <span class="hljs-number">256</span>k &quot;output/<span class="hljs-variable">!output_file!</span>&quot;<br>)<br><br><span class="hljs-built_in">echo</span> All files processed successfully.<br><span class="hljs-built_in">pause</span><br></code></pre></td></tr></table></figure><p>如果你有更多音轨，比如四个，就改成：</p><figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bat">ffmpeg -i &quot;<span class="hljs-variable">%%F</span>&quot; -filter_complex &quot;[<span class="hljs-number">0</span>:<span class="hljs-number">1</span>][<span class="hljs-number">0</span>:<span class="hljs-number">2</span>][<span class="hljs-number">0</span>:<span class="hljs-number">3</span>][<span class="hljs-number">0</span>:<span class="hljs-number">4</span>]amerge=inputs=<span class="hljs-number">4</span>[a]&quot; -map <span class="hljs-number">0</span>:v -map &quot;[a]&quot; -c:v <span class="hljs-built_in">copy</span> -c:a aac -b:a <span class="hljs-number">256</span>k &quot;output/<span class="hljs-variable">!output_file!</span>&quot;<br></code></pre></td></tr></table></figure><p>如果你只想压制1、3音轨，就改成</p><figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bat">ffmpeg -i &quot;<span class="hljs-variable">%%F</span>&quot; -filter_complex &quot;[<span class="hljs-number">0</span>:<span class="hljs-number">1</span>][<span class="hljs-number">0</span>:<span class="hljs-number">3</span>]amerge=inputs=<span class="hljs-number">2</span>[a]&quot; -map <span class="hljs-number">0</span>:v -map &quot;[a]&quot; -c:v <span class="hljs-built_in">copy</span> -c:a aac -b:a <span class="hljs-number">256</span>k &quot;output/<span class="hljs-variable">!output_file!</span>&quot;<br></code></pre></td></tr></table></figure><p>以此类推，按照你的需求进行修改即可</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>教程</category>
+      
+      <category>计算机</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>教程</tag>
+      
+      <tag>计算机</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>P8S时间轴</title>
     <link href="/2023/11/10/2023-11-10-P8S/"/>
     <url>/2023/11/10/2023-11-10-P8S/</url>
