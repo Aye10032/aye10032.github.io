@@ -6,9 +6,12 @@ layout: about
 typora-root-url: ..
 ---
 
-萌新一个，现有的知识纯靠自学，越学越是发现~~人类是有极限的~~自己的不足，也是在此过程中继续学习并成长着。		
 
-平时一般玩玩崩三FGO明日方舟赛马娘，写写minecraft的mod，觉得Java是世界上最好的语言（当然python也不错...啊，C#似乎也还行），国土战略局特工、新大陆的苍蓝星、光呆，OSU手残党，东方永远只能通easy，🐟厨、邦邦PP推、PJSK25时推、虹团雫推。		
+生信人，越学越是发现~~人类是有极限的~~自己的不足，也是在此过程中继续学习并成长着。		
+
+平时一般玩玩崩三FGO明日方舟赛马娘BA崩铁，写写minecraft的mod，觉得Java是世界上最好的语言（当然python也不错...啊，C#似乎也还行），国土战略局特工、新大陆的苍蓝星、光呆、褪色者，OSU手残党，东方永远只能通easy，🐟厨、邦邦PP推、PJSK25时推、虹团雫推。		
+
+[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=Aye10032)](https://github.com/anuraghazra/github-readme-stats)
 
 博客里面写的东西也肯定还有许多错误，也请多多指教了。
 
