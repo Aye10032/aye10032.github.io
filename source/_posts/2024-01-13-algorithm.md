@@ -7,7 +7,7 @@ title: "算法设计与分析作业"
 date: 2024-01-13
 updated: 2024-01-13
 
-excerpt: "国科大秋季学期卜东波算法设计与分析作业"
+excerpt: "国科大2023秋季学期卜东波算法设计与分析作业"
 
 categories: 
 	- 学习
@@ -963,3 +963,156 @@ def MAX_MONEY(int[] array):
 ### 时间复杂度
 
 由于仅需要一次遍历连乘，因此时间复杂度为$O(n)$
+
+
+
+# 四、线性规划
+
+## Q1
+
+### 题目
+
+You want to determine the quantities $x_1,x_2,\dots,x_n$ of n different foods, each containing m types of nutrients. The amount of the i-th nutrient in the j-th food is represented as an, and the prices of the n foods are $c_1,c_2,\dots,c_n$. Your goal is to find a recipe where the content of each of the m nutrients is at least $b_1,b_2,\dots,b_m$, while minimizing the total cost.
+
+### 建模
+
+$$
+\begin{align}
+\min\ &\sum_{i=1}^n c_ix_i
+\\
+\text{s.t.}\ &\sum_{j=1}^m a_{ij}x_{ij} - b_i \geq 0 &i=1,2,\dots,m
+\\
+&x_i\geq 0 & i=1,2,\dots,m
+\end{align}
+$$
+
+
+
+## Q2
+
+### 题目
+
+You now need to pack dormitory items. You have m items and n boxes, with enough boxes to accommodate all items. The space occupied by the i-th item is $C_i$, and the capacity of the j-th box is $S_j$. Your goal is to pack all items using as few boxes as possible.
+
+### 建模
+
+这里设 $x_{ij}$ 表示第i个物品是否放在第j个盒子里，由于目标是使用尽可能少的盒子，因此对于每一列（即每个盒子）我们的希望是全部为零的列越多越好，则可以列出如下式子：
+$$
+\begin{align}
+\min &\sum_{j=1}^{n} A_j
+\\
+\text{s.t.}\ & A_j = \begin{cases}
+1 &  \sum\limits_{i=1}^{m} x_{ij} \neq 0 
+\\
+0 & otherwise
+\end{cases}
+
+\\
+& \sum_i^m C_ix_{ij} - S_j \leq 0 & j = 1,2,\dots,n
+\\
+&x_{ij} \in \{0,1\}
+\end{align}
+$$
+
+## Q3
+
+### 题目
+
+On a farm, there are two different crops: wheat and soybeans. Planting one acre of wheat requires 5 units of fertilizer and 2 units of water, while planting one acre of soybeans requires 3 units of fertilizer and 4 units of water. The farm has 30 units of fertilizer and 20 units of water available. Each acre of wheat can be sold for 150 dollars, and each acre of soybeans can be sold for 120 dollars. The farm owner wants to maximize the total income.
+
+### 建模
+
+设小麦和大豆分种植数量分别为$x_1$和$x_2$，则要求的是最大化收入，约束为使用的水和肥料不能超过农场的库存，则可以进行如下建模：
+$$
+\begin{align}
+\max\ &150x_1+120x_2
+\\
+\text{s.t.}\ &5x_1+3x_2 - 30 \leq 0
+\\
+&2x_1 + 4x_2 - 20 \leq 0
+\end{align}
+$$
+
+## Q4
+
+### 题目
+
+The company manufactures three products, A1, A2, and A3, utilizing resources such as metal sheets, labor, and machinery. The quantities of various resources required to manufacture one unit of each product are provided in the table below. Without considering fixed costs, the unit profits for each product are 40,000 yuan, 50,000 yuan, and 60,000 yuan, respectively. Available resources include 500 tons of metal sheets, 300 workers per month, and 100 machines per month. In addition to production, fixed costs must be paid: 1 million yuan for A1, 1.5 million yuan for A2, and 2 million yuan for A3. Develop a production plan for the company to maximize profits.
+
+|         Resources          |  A1  |  A2  |  A3  |
+| :------------------------: | :--: | :--: | :--: |
+|       Metal sheets/t       |  2   |  4   |  8   |
+| Labor force (person/month) |  2   |  3   |  4   |
+|  Machinery (units/month)   |  1   |  2   |  3   |
+
+
+
+### 建模
+
+这道题存在一个fixed costs，但是题目中并没有表明它的缴费频率或者与是否生产对应成本有关，不过无论如何缴费，这这里我们都可以将fixed costs视为一个常数$C_i$，因为它和产品的数量并无关系。
+
+那么设三种产品生产数量分别为$x_1$、$x_2$、$x_3$，则可以进行如下建模：
+$$
+\begin{align}
+\max\ & 40000x_1+50000x_2+60000x_3 -\sum_{i=1}^3C_ia_i
+\\
+\text{s.t.}\ &2x_1+4x_2+8x_3 - 500 \leq 0
+\\
+&2x_1+3x_2+4x_3 - 300 \leq 0
+\\
+&x_1+2x_2+3x_3 - 100 \leq 0
+\\
+&a_i = \begin{cases}
+0 & x_i = 0
+\\
+1 & x_i \neq0
+\end{cases}\quad ,i\in\{1,2,3\}
+\end{align}
+$$
+
+
+
+
+
+## Q5
+
+### 题目
+
+The company plans to open branches in four districts in the urban area, with a total of 10 locations to choose from. Taking into account the consumption levels and residential density of residents in each district, the following rules are established:
+
+- In District 1, at most two points can be selected from $A_1$, $A_2$, and $A_3$; 
+- In District 2, at least one point must be selected from $A_4$ and $A_5$; 
+- In District 3, at least one point must be selected from $A_6$ and $A_7$; 
+- In District 4, at least two points must be selected from $A_8$, $A_9$, and $A_{10}$.
+
+The investment and annual profit for each point $A_j$ vary depending on the location, as shown in the table below. The total investment of the company should not exceed 7.2 million yuan. Which sales points should be selected to maximize the company’s annual profit?
+
+|            |  A1  |  A2  |  A3  |  A4  |  A5  |  A6  |  A7  |  A8  |  A9  | A10  |
+| :--------: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: |
+| Investment | 100  | 120  | 150  |  80  |  70  |  90  |  80  | 140  | 160  | 180  |
+|   Profit   |  36  |  40  |  50  |  22  |  20  |  30  |  25  |  48  |  58  |  61  |
+
+
+
+### 建模
+
+对于这道题，设$x_i$为是否选择$A_i$，是则为1，否则为0。为了方便起见，设每一点的Investment为$I_i$，Profit为$P_i$则可以进行如下建模：
+$$
+\begin{align}
+\max\ &\sum_{i=1}^{10}P_i\times x_i
+\\
+\text{s.t.}\ &\sum_{i=1}^{10}x_i = 4
+\\
+&x_1+x_2+x_3 \leq 2
+\\
+&x_4+x_5 \geq 1
+\\
+&x_6+x_7 \geq 1
+\\
+&x_8+x_9+x_{10} \geq 2
+\\
+&\sum_{i=1}^{10} I_i \times x_i  \leq 7200000
+\\
+&x_i \in \{0,1\}
+\end{align}
+$$
