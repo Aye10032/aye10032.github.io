@@ -26,21 +26,21 @@ typora-root-url: ..
 # 一、分治
 
 {% note info%}
-**主定理**：$$T(n) = aT\left(\dfrac nb\right) + f(n^d)$$，其中：
-
-- a：子问题的数量
-- b：子问题规模与原问题的比
-- $f(n^d)$：合并子问题以及除了递归调用之外的算法的时间复杂度
+**主定理**
 
 $$
-T(n)=\begin{cases}
+T(n)=aT\left(\dfrac nb\right) + f(n^d)=\begin{cases}
 O(n^{\log_ba}) & d<\log_ba\\
 O(n^{\log_ba}\log n) &d=\log_ba\\
 O(n^d)&d>\log_ba
 \end{cases}
 $$
 
+其中：
 
+- a：子问题的数量
+- b：子问题规模与原问题的比
+- $f(n^d)$：合并子问题以及除了递归调用之外的算法的时间复杂度
 
 {% endnote %}
 
@@ -50,7 +50,7 @@ $$
 
 ### 题目
 
-You are interested in analyzing some hard-to-obtain data from two separate databases. Each database contains n numerical values, so there are 2n values total and you may assume that no two values are the same. You’d like to determine the median of this set of 2n values, which we will define here to be the nth smallest value. However, the only way you can access these values is through queries to the databases. In a single query, you can specify a value k to one of the two databases, and the chosen database will return the kth smallest value that it contains. Since queries are expensive, you would like to compute the median using as few queries as possible. Give an algorithm that finds the median value using at most $$O(\log n)$$ queries.
+You are interested in analyzing some hard-to-obtain data from two separate databases. Each database contains n numerical values, so there are 2n values total and you may assume that no two values are the same. You’d like to determine the median of this set of 2n values, which we will define here to be the nth smallest value. However, the only way you can access these values is through queries to the databases. In a single query, you can specify a value k to one of the two databases, and the chosen database will return the kth smallest value that it contains. Since queries are expensive, you would like to compute the median using as few queries as possible. Give an algorithm that finds the median value using at most $O(\log n)$ queries.
 
 
 
@@ -95,9 +95,9 @@ $$
 
 ### 题目
 
-Given any 10 points, $$p_1, p_2, \dots, p_{10}$$, on a two-dimensional Euclidean plane, please write an algorithm to find the distance between the closest pair of points. 
+Given any 10 points, $p_1, p_2, \dots, p_{10}$, on a two-dimensional Euclidean plane, please write an algorithm to find the distance between the closest pair of points. 
 
-1. Using a brute-force algorithm to solve this problem, analyze the time complexity of your implemented brute-force algorithm and explain why the algorithm’s time complexity is $$O(n^2)$$, where n is the number of points.
+1. Using a brute-force algorithm to solve this problem, analyze the time complexity of your implemented brute-force algorithm and explain why the algorithm’s time complexity is $O(n^2)$, where n is the number of points.
 2. Propose an improved algorithm to solve this problem with a time complexity better than the brute-force algorithm. Describe the algorithm’s idea and analyze its time complexity.
 
 
@@ -168,7 +168,7 @@ def FIND(P, l, r):
 
 #### 时间复杂度：
 
-最开始需要进行一次全体排序，时间复杂度为$$O(n\log{n})$$，之后FIND部分，包含两个递归调用和一次排序、一次遍历：
+最开始需要进行一次全体排序，时间复杂度为$O(n\log{n})$，之后FIND部分，包含两个递归调用和一次排序、一次遍历：
 $$
 T(n)= 2T(\frac{n}{2}) + O(n\log{n}) + O(n) = O(n\log^2{n})
 $$
@@ -179,9 +179,9 @@ $$
 
 ### 题目
 
-Given an integer $n$, where $100 < n < 10000$, please design an efficient algorithm to calculate $$3^n$$, with a time complexity not exceeding $$O(n)$$. 
+Given an integer $n$, where $100 < n < 10000$, please design an efficient algorithm to calculate $3^n$, with a time complexity not exceeding $O(n)$. 
 
-1. Implement a naive calculation method to compute $$3^n$$ and analyze the time complexity of the naive calculation method. 
+1. Implement a naive calculation method to compute $3^n$ and analyze the time complexity of the naive calculation method. 
 2. Propose an improved algorithm to calculate 3n with a time complexity not exceeding $O(n)$. Describe the algorithm’s concept and analyze its time complexity
 
 
@@ -340,7 +340,7 @@ def CAL(M, N):
 
 ### 时间复杂度
 
-核心操作为两次幂运算，每次的时间复杂度均为$$\log{n}$$，故总的时间复杂度仍然为$$\log{n}$$
+核心操作为两次幂运算，每次的时间复杂度均为$\log{n}$，故总的时间复杂度仍然为$\log{n}$
 
 $$
 T(n) = 2T(\frac{n}{2}) + O(1) = O(\log{n})
