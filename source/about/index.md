@@ -13,6 +13,12 @@ typora-root-url: ..
 
 [![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=Aye10032)](https://github.com/anuraghazra/github-readme-stats)
 
+
+
+[![Harlok's WakaTime stats](https://github-readme-stats.vercel.app/api/wakatime?username=Aye10032)](https://github.com/anuraghazra/github-readme-stats)
+
+
+
 博客里面写的东西也肯定还有许多错误，也请多多指教了。
 
 
