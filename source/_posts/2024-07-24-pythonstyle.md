@@ -27,6 +27,12 @@ typora-root-url: ..
 
 # Google Python Style Guide
 
+{% note info%}
+
+翻译自[Google Python Style Guide](https://google.github.io/styleguide/pyguide.html#381-docstrings)，使用GPT-4o翻译和人工校对。
+
+{% endnote %}
+
 ## 1 Background 
 
 Python是谷歌使用的主要动态语言。此风格指南是针对Python程序的一系列*应做和不应做*的事项。
