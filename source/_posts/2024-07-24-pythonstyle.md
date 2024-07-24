@@ -5,17 +5,17 @@ layout: post
 title: "python编程规范"
 
 date: 2024-07-24 10:12:10
-updated: 2024-07-24 16:23:22
+updated: 2024-07-24 17:23:22
 
 excerpt: "谷歌Google Python Style Guide翻译"
 
 categories: 
-	- 教程
-    - 计算机
+  - 教程
+  - 计算机
 
 tag: 
-	- 教程
-    - 计算机
+  - 教程
+  - 计算机
 
 math: true
 
