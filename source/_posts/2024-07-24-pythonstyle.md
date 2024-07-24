@@ -27,7 +27,7 @@ typora-root-url: ..
 
 # Google Python Style Guide
 
-{% note warring%}
+{% note warning%}
 
 翻译自[Google Python Style Guide](https://google.github.io/styleguide/pyguide.html#381-docstrings)，使用GPT-4o翻译和人工校对。
 
