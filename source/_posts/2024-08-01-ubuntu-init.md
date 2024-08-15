@@ -139,47 +139,53 @@ sudo chmod 777 ./Miniconda3-latest-Linux-x86_64.sh
 
 ### CUDA
 
-首先安装驱动：
-
-```bash
-sudo ubuntu-drivers install nvidia
-```
-
-驱动理论上只决定支持的CUDA版本的上限，所以无脑装最新的就行了。
-
 安装编译环境：
 
 ```bash
-sudo apt install gcc g++ make cmake
+sudo apt install gcc-12 make cmake
 ```
 
-CUDA使用脚本安装，不安装驱动：
+CUDA使用脚本安装：
 
 ```bash
-wget https://developer.download.nvidia.com/compute/cuda/12.1.0/local_installers/cuda_12.1.0_530.30.02_linux.run
-sudo chmod 777 cuda_12.1.0_530.30.02_linux.run
-./cuda_12.1.0_530.30.02_linux.run
+wget https://developer.download.nvidia.cn/compute/cuda/12.6.0/local_installers/cuda_12.6.0_560.28.03_linux.run
+sudo sh cuda_12.6.0_560.28.03_linux.run
 ```
+
+> /===========
+> /= Summary =
+> /===========
+>
+> Driver:   Installed
+> Toolkit:  Installed in /usr/local/cuda-12.6/
+>
+> Please make sure that
+>  -   PATH includes /usr/local/cuda-12.6/bin
+>  -   LD_LIBRARY_PATH includes /usr/local/cuda-12.6/lib64, or, add /usr/local/cuda-12.6/lib64 to /etc/ld.so.conf and run ldconfig as root
+>
+> To uninstall the CUDA Toolkit, run cuda-uninstaller in /usr/local/cuda-12.6/bin
+> To uninstall the NVIDIA Driver, run nvidia-uninstall
+> Logfile is /var/log/cuda-installer.log
+
+
 
 cudnn
 
 ```bash
-wget https://developer.download.nvidia.cn/compute/cudnn/9.2.1/local_installers/cudnn-local-repo-ubuntu2204-9.2.1_1.0-1_amd64.deb
-sudo dpkg -i cudnn-local-repo-ubuntu2204-9.2.1_1.0-1_amd64.deb
-sudo cp /var/cudnn-local-repo-ubuntu2204-9.2.1/cudnn-*-keyring.gpg /usr/share/keyrings/
+wget https://developer.download.nvidia.cn/compute/cudnn/9.3.0/local_installers/cudnn-local-repo-ubuntu2204-9.3.0_1.0-1_amd64.deb
+sudo dpkg -i cudnn-local-repo-ubuntu2204-9.3.0_1.0-1_amd64.deb
+sudo cp /var/cudnn-local-repo-ubuntu2204-9.3.0/cudnn-*-keyring.gpg /usr/share/keyrings/
 sudo apt update
-sudo apt -y install cudnn-cuda-12
+sudo apt -y install cudnn
 ```
 
 最后在`.zshrc`中添加：
 
 ```bash
-export CUDA_HOME=/usr/local/cuda-12.1
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda-12.1/lib64:/usr/local/cuda/extras/CUPTI/lib64
+export CUDA_HOME=/usr/local/cuda-12.6
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$CUDA_HOME/lib64:/usr/local/cuda/extras/CUPTI/lib64
 export PATH=$PATH:$CUDA_HOME/bin
 ```
-
-> To uninstall the CUDA Toolkit, run cuda-uninstaller in /usr/local/cuda-12.1/bin
 
 
 
@@ -228,6 +234,18 @@ Environment="HTTPS_PROXY=http://127.0.0.1:7890/"
 Environment="NO_PROXY=localhost,127.0.0.1"
 ```
 
+#### 安装N卡驱动支持container-toolkit
+
+```bash
+curl -fsSL https://nvidia.github.io/libnvidia-container/gpgkey | sudo gpg --dearmor -o /usr/share/keyrings/nvidia-container-toolkit-keyring.gpg \
+  && curl -s -L https://nvidia.github.io/libnvidia-container/stable/deb/nvidia-container-toolkit.list | \
+    sed 's#deb https://#deb [signed-by=/usr/share/keyrings/nvidia-container-toolkit-keyring.gpg] https://#g' | \
+    sudo tee /etc/apt/sources.list.d/nvidia-container-toolkit.list
+
+sudo apt update
+sudo apt install -y nvidia-container-toolkit
+```
+
 
 
 ## 其它
@@ -241,9 +259,18 @@ sudo systemctl set-default multi-user.target
 
 
 
-创建新用户
+### 创建新用户
 
 ```bash
 sudo useradd -m -s /usr/bin/zsh user
+```
+
+
+
+### 切换GCC版本
+
+```bash
+sudo ln -s -f /usr/bin/gcc-12 /usr/bin/gcc
+sudo ln -s -f /usr/bin/gcc-11 /usr/bin/gcc
 ```
 
