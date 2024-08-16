@@ -246,6 +246,39 @@ sudo apt update
 sudo apt install -y nvidia-container-toolkit
 ```
 
+设置docker
+
+```bash
+sudo nvidia-ctk runtime configure --runtime=docker
+sudo systemctl restart docker
+```
+
+
+
+### mysql
+
+安装mysql
+
+```bash
+sudo apt update
+sudo apt install mysql-server
+sudo systemctl start mysql.service
+```
+
+设置密码
+
+```bash
+sudo mysql
+```
+
+```sql
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';
+```
+
+```bash
+sudo mysql_secure_installation
+```
+
 
 
 ## 其它
@@ -272,5 +305,26 @@ sudo useradd -m -s /usr/bin/zsh user
 ```bash
 sudo ln -s -f /usr/bin/gcc-12 /usr/bin/gcc
 sudo ln -s -f /usr/bin/gcc-11 /usr/bin/gcc
+```
+
+
+
+### 安装latex环境
+
+```bash
+wget https://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz
+zcat < install-tl-unx.tar.gz | tar xf -
+cd install-tl-*
+sudo ./install-tl
+```
+
+安装时取消选择所有其它语言
+
+将下述内容加入环境变量：
+
+```bash
+export MANPATH=/usr/local/texlive/2024/texmf-dist/doc/man
+export INFOPATH=/usr/local/texlive/2024/texmf-dist/doc/info
+export PATH=/usr/local/texlive/2024/bin/x86_64-linux
 ```
 
