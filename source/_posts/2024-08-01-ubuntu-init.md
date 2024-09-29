@@ -145,7 +145,7 @@ sudo chmod 777 ./Miniconda3-latest-Linux-x86_64.sh
 sudo apt install gcc-12 make cmake
 ```
 
-CUDA使用脚本安装：
+CUDA使用[脚本](https://developer.nvidia.com/cuda-downloads)安装：
 
 ```bash
 wget https://developer.download.nvidia.cn/compute/cuda/12.6.0/local_installers/cuda_12.6.0_560.28.03_linux.run
@@ -169,7 +169,7 @@ sudo sh cuda_12.6.0_560.28.03_linux.run
 
 
 
-cudnn
+cudnn（[官网地址](https://developer.nvidia.com/cudnn-downloads)）
 
 ```bash
 wget https://developer.download.nvidia.cn/compute/cudnn/9.3.0/local_installers/cudnn-local-repo-ubuntu2204-9.3.0_1.0-1_amd64.deb
@@ -186,6 +186,18 @@ export CUDA_HOME=/usr/local/cuda-12.6
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$CUDA_HOME/lib64:/usr/local/cuda/extras/CUPTI/lib64
 export PATH=$PATH:$CUDA_HOME/bin
 ```
+
+
+
+当更新Linux内核后，此方法安装的驱动会失效，此时先使用以下指令卸载参与驱动文件：
+
+```bash
+sudo apt-get remove --purge '^nvidia-.*'
+sudo apt-get remove --purge '^libnvidia-.*'
+sudo apt-get remove --purge '^cuda-.*'
+```
+
+之后重新安装即可
 
 
 
