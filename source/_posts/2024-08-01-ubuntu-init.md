@@ -148,12 +148,12 @@ sudo apt install gcc-12 make cmake
 CUDA使用[脚本](https://developer.nvidia.com/cuda-downloads)安装：
 
 ```bash
-wget https://developer.download.nvidia.cn/compute/cuda/12.6.0/local_installers/cuda_12.6.0_560.28.03_linux.run
-sudo sh cuda_12.6.0_560.28.03_linux.run
+aria2c -s16 -x16 -k1M --file-allocation=none https://developer.download.nvidia.com/compute/cuda/12.6.1/local_installers/cuda_12.6.1_560.35.03_linux.run
+sudo sh cuda_12.6.1_560.35.03_linux.run
 ```
 
 > /===========
-> /= Summary =
+> = Summary =
 > /===========
 >
 > Driver:   Installed
@@ -172,11 +172,11 @@ sudo sh cuda_12.6.0_560.28.03_linux.run
 cudnn（[官网地址](https://developer.nvidia.com/cudnn-downloads)）
 
 ```bash
-wget https://developer.download.nvidia.cn/compute/cudnn/9.3.0/local_installers/cudnn-local-repo-ubuntu2204-9.3.0_1.0-1_amd64.deb
-sudo dpkg -i cudnn-local-repo-ubuntu2204-9.3.0_1.0-1_amd64.deb
-sudo cp /var/cudnn-local-repo-ubuntu2204-9.3.0/cudnn-*-keyring.gpg /usr/share/keyrings/
+aria2c -s16 -x16 -k1M --file-allocation=none https://developer.download.nvidia.com/compute/cudnn/9.4.0/local_installers/cudnn-local-repo-ubuntu2404-9.4.0_1.0-1_amd64.deb
+sudo dpkg -i cudnn-local-repo-ubuntu2404-9.4.0_1.0-1_amd64.deb
+sudo cp /var/cudnn-local-repo-ubuntu2404-9.4.0/cudnn-*-keyring.gpg /usr/share/keyrings/
 sudo apt update
-sudo apt -y install cudnn
+sudo apt -y install cudnn-cuda-12
 ```
 
 最后在`.zshrc`中添加：
