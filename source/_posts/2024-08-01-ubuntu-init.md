@@ -192,9 +192,10 @@ export PATH=$PATH:$CUDA_HOME/bin
 当更新Linux内核后，此方法安装的驱动会失效，此时先使用以下指令卸载参与驱动文件：
 
 ```bash
-sudo apt-get remove --purge '^nvidia-.*'
-sudo apt-get remove --purge '^libnvidia-.*'
-sudo apt-get remove --purge '^cuda-.*'
+sudo apt-get --purge remove "*cuda*" "*cublas*" "*cufft*" "*cufile*" "*curand*" \
+ "*cusolver*" "*cusparse*" "*gds-tools*" "*npp*" "*nvjpeg*" "nsight*" "*nvvm*"
+sudo apt-get remove --purge "*nvidia-driver*" "libxnvctrl*"
+sudo apt-get autoremove --purge -V
 ```
 
 之后重新安装即可
