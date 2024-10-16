@@ -30,9 +30,9 @@ jobs:
 
     - name: Update bili
       run: |
-        hexo bangumi -u
-        hexo cinema -u
-        hexo game -u
+        yarn run hexo bangumi -u
+        yarn run hexo cinema -u
+        yarn run hexo game -u
 
     - name: Clean
       run: npm run clean
