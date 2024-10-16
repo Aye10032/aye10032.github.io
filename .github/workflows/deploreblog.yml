@@ -16,7 +16,7 @@ jobs:
     - name: Setup Node            # 安装 Node 环境
       uses: actions/setup-node@v2
       with:
-        node-version: "16.x"
+        node-version: "20.x"
 
     # Install pandoc for mathjax (Optional)
     - name: Install pandoc
