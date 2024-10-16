@@ -28,16 +28,16 @@ jobs:
     - name: Install Dependencies
       run: npm install
 
-    - name: Update bili
-      run: |
-        yarn run hexo bangumi -d
-        yarn run hexo bangumi -u
-
     - name: Clean
       run: npm run clean
 
     - name: Build
       run: npm run build
+
+    - name: Update bili
+      run: |
+        yarn run hexo bangumi -d
+        yarn run hexo bangumi -u
 
 #    - name: Hexo Generate         # 安装 Hexo 依赖并且生成静态文件
 #      run: |
