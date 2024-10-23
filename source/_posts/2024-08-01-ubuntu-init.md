@@ -341,3 +341,142 @@ export INFOPATH=/usr/local/texlive/2024/texmf-dist/doc/info
 export PATH=/usr/local/texlive/2024/bin/x86_64-linux
 ```
 
+
+
+## 监控
+
+### Prometheus
+
+#### install server
+
+从[下载界面](https://prometheus.io/download/)下载安装包：
+
+```bash
+wget https://github.com/prometheus/prometheus/releases/download/v3.0.0-beta.1/prometheus-3.0.0-beta.1.linux-amd64.tar.gz
+tar -zxvf prometheus-3.0.0-beta.1.linux-amd64.tar.gz
+sudo mv prometheus-3.0.0-beta.1.linux-amd64 /usr/local/prometheus
+```
+
+
+
+设置启动项：
+
+```bash
+sudo nano /etc/systemd/system/prometheus.service
+```
+
+内容如下：
+
+```sh
+[Unit]
+Description=Prometheus demo
+After=network.target
+
+[Service]
+Type=simple
+User=root
+ExecStart=/usr/local/prometheus/prometheus --config.file=/usr/local/prometheus/prometheus.yml --storage.tsdb.path=/usr/local/prometheus/data
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
+```
+
+
+
+#### node_exporter
+
+同样下载安装包：
+
+```bash
+wget https://github.com/prometheus/node_exporter/releases/download/v1.8.2/node_exporter-1.8.2.linux-amd64.tar.gz
+tar -zxvf node_exporter-1.8.2.linux-amd64.tar.gz
+sudo mv node_exporter-1.8.2.linux-amd64 /usr/local/node_exporter
+```
+
+
+
+设置启动项：
+
+```bash
+sudo nano /etc/systemd/system/node_exporter.service
+```
+
+内容如下：
+
+```sh
+[Unit]
+Description=Prometheus demo
+After=network.target
+
+[Service]
+Type=simple
+User=root
+ExecStart=/usr/local/node_exporter/node_exporter
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
+```
+
+
+
+修改`prometheus.yml`，添加以下内容：
+
+```yaml
+global:
+  scrape_interval: 15s
+
+scrape_configs:
+- job_name: node
+  static_configs:
+  - targets: ['localhost:9100']
+```
+
+
+
+#### nvidia_gpu_exporter
+
+安装：
+
+```bash
+wget https://github.com/utkuozdemir/nvidia_gpu_exporter/releases/download/v1.2.1/nvidia-gpu-exporter_1.2.1_linux_amd64.deb
+sudo dpkg -i nvidia-gpu-exporter_1.2.1_linux_amd64.deb
+```
+
+
+
+修改`prometheus.yml`，添加以下内容：
+
+```yaml
+global:
+  scrape_interval: 15s
+
+scrape_configs:
+- job_name: node
+  static_configs:
+  - targets: ['localhost:9835']
+```
+
+
+
+### Grafana
+
+#### 安装
+
+```bash
+sudo apt install apt-transport-https software-properties-common wget
+sudo mkdir -p /etc/apt/keyrings/
+wget -q -O - https://apt.grafana.com/gpg.key | gpg --dearmor | sudo tee /etc/apt/keyrings/grafana.gpg > /dev/null
+echo "deb [signed-by=/etc/apt/keyrings/grafana.gpg] https://apt.grafana.com stable main" | sudo tee -a /etc/apt/sources.list.d/grafana.list
+
+sudo apt update
+sudo apt install grafana
+```
+
+会自动创建`systemd`启动项
+
+
+
+#### 添加数据源
+
