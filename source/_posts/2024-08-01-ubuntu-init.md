@@ -343,6 +343,17 @@ export PATH=/usr/local/texlive/2024/bin/x86_64-linux
 
 
 
+### 开启N卡持久化
+
+```bash
+cd /usr/share/doc/NVIDIA_GLX-1.0/samples
+sudo tar -xvf nvidia-persistenced-init.tar.bz2
+cd nvidia-persistenced-init
+sudo ./install.sh
+```
+
+
+
 ## 监控
 
 ### Prometheus
